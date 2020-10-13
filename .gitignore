@@ -1,0 +1,13 @@
+.idea/
+.git/
+workspace/views_c
+default.db
+destination.db
+frontend/web/proxy.txt
+frontend/web/time.txt
+frontend/web/test.txt
+resources/img
+resources/files
+vendor/
+config/local
+mods.json

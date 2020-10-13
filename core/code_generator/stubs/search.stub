@@ -1,0 +1,23 @@
+<?php
+
+
+namespace {dummySearchRequestPath};
+
+
+use core\RequestSearch;
+
+/**
+ * Class {dummySearchRequest}
+ * @package {dummySearchRequestPath}
+ *
+{dummyPropertyFields} */
+
+class {dummySearchRequest} extends RequestSearch
+{
+{dummyFields}
+
+    public function rules()
+    {
+        return [];
+    }
+}

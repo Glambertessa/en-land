@@ -1,0 +1,2 @@
+        if($request->{dummyField})
+            $query->where('{dummyField}', 'LIKE', "%$request->{dummyField}%");

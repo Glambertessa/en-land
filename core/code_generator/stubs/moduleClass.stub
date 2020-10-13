@@ -1,0 +1,22 @@
+<?php
+
+namespace {dummyModulePath};
+
+
+use core\App;
+
+class {dummyModuleClass}
+{
+    public static function run()
+    {
+        $config['adminLeftMenu'] = [
+            [
+                'title' => '{dummyTitle}',
+                'url' => '{dummyUrl}',
+                'icon' => '{dummyIcon}',
+            ],
+        ];
+
+        App::mergeConfig($config);
+    }
+}

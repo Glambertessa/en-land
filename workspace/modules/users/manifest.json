@@ -1,0 +1,11 @@
+{
+  "name": "users",
+  "version": "1.0",
+  "type": "module",
+  "class": "workspace\\modules\\users\\Users",
+  "description": "users module",
+  "configFile": "config/users.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": []
+}

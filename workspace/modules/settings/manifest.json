@@ -1,0 +1,11 @@
+{
+  "name": "settings",
+  "version": "1.0",
+  "type": "module",
+  "class": "workspace\\modules\\settings\\Settings",
+  "description": "settings module",
+  "configFile": "config/settings.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": []
+}

@@ -1,0 +1,75 @@
+.blue-text {
+    color: #2e6da4;
+}
+
+.breadcrumbs {
+    text-align: right;
+}
+
+.custom-container {
+    width: 30%;
+}
+
+.custom-link {
+    color: black;
+    text-decoration: none;
+}
+
+.fixed-width {
+    width: 15px;
+}
+
+.img {
+    height: 100px;
+    width: 200px;
+}
+
+.info {
+    font-size: 13px;
+}
+
+.logout-line {
+    border-top-style: solid;
+    border-top-color: lightgrey;
+    border-top-width: 1px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.module-action {
+    width: 80%;
+    margin: auto;
+}
+
+.title-center {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.content-center {
+    margin-top: 1.5%;
+    text-align: center;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.gen-info {
+    background: #eaeaea;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.gen_success {
+    color: darkgreen;
+}
+
+.gen_existed {
+    color: orangered;
+}
+
+.back {
+    margin: 10px;
+}

@@ -1,0 +1,29 @@
+{
+  "require": {
+    "ext-simplexml": "*",
+    "ext-fileinfo": "*",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-ftp": "*",
+    "ext-zip": "*",
+    "craft-group\/phroute": "^2.1.1",
+    "illuminate\/events": "^6.0",
+    "illuminate\/database": "^6.0",
+    "swiftmailer\/swiftmailer": "^6.2",
+    "illuminate\/filesystem": "^6.16",
+    "snapappointments\/bootstrap-select": "^1.13",
+    "samejack\/php-argv": "dev-master",
+    "symfony\/filesystem": "^5.0",
+    "rakit\/validation": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "core\\": "core\/",
+      "workspace\\": "workspace\/"
+    },
+    "files": [
+      "init.php"
+    ]
+  }
+}

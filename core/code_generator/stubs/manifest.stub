@@ -1,0 +1,11 @@
+{
+  "name": "{dummyModule}",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\{dummyModule}\\{dummyModuleClass}",
+  "description": "{dummyModule} module",
+  "configFile": "config/{dummyConfig}.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}

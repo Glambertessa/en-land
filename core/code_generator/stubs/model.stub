@@ -1,0 +1,33 @@
+<?php
+
+
+namespace {dummyModelsPath};
+
+
+use Illuminate\Database\Eloquent\Model;
+use {dummySearchRequestPath}\{dummySearchRequest};
+
+class {dummyModel} extends Model
+{
+    protected $table = "{dummyTable}";
+
+    public $fillable = [{dummyFields}];
+
+    public function _save()
+    {
+{dummySaveData}
+        $this->save();
+    }
+
+    /**
+     * @param {dummySearchRequest} $request
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public static function search({dummySearchRequest} $request)
+    {
+        $query = self::query();
+
+{dummySearchQuery}
+        return $query->get();
+    }
+}

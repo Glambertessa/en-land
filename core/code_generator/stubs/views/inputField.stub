@@ -1,0 +1,4 @@
+        <div class="form-group">
+            <label for="{dummyField}">{dummyLabel}:</label>
+            <input type="text" name="{dummyField}" id="{dummyField}" class="form-control" {dummyFieldValue} {dummyRequired} />
+        </div>

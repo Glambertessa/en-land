@@ -1,0 +1,83 @@
+<?php
+
+
+namespace {dummyControllerNamespace};
+
+
+use core\App;
+use core\Controller;
+use {dummyModelsPath}\{dummyModel};
+use {dummySearchRequestPath}\{dummySearchRequest};
+
+class {dummyController} extends Controller
+{
+    protected function init()
+    {
+        $this->viewPath = '{dummyViewsPath}';
+        $this->layoutPath = App::$config['adminLayoutPath'];
+        App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
+        App::$breadcrumbs->addItem(['text' => '{dummyModel}', 'url' => 'admin/{dummySlug}']);
+    }
+
+    public function actionIndex()
+    {
+        $request = new {dummySearchRequest}();
+        $model = {dummyModel}::search($request);
+
+        return $this->render('{dummyModule}/index.tpl', ['h1' => '{dummyModel}', 'options' => $this->setOptions($model)]);
+    }
+
+    public function actionView($id)
+    {
+        $model = {dummyModel}::where('id', $id)->first();
+
+        $options = $this->setOptions();
+
+        return $this->render('{dummyModule}/view.tpl', ['model' => $model, 'options' => $options]);
+    }
+
+    public function actionStore()
+    {
+        if($this->validation()) {
+            $model = new {dummyModel}();
+            $model->_save();
+
+            $this->redirect('{dummyPrefix}/{dummySlug}');
+        } else
+            return $this->render('{dummyModule}/store.tpl', ['h1' => 'Добавить']);
+    }
+
+    public function actionEdit($id)
+    {
+        $model = {dummyModel}::where('id', $id)->first();
+
+        if($this->validation()) {
+            $model->_save();
+
+            $this->redirect('admin/{dummySlug}');
+        } else
+            return $this->render('{dummyModule}/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model]);
+    }
+
+    public function actionDelete()
+    {
+        {dummyModel}::where('id', $_POST['id'])->delete();
+    }
+
+    public function setOptions($data)
+    {
+        return [
+            'data' => $data,
+            'serial' => '#',
+            'fields' => [
+{dummyOptionFields}
+            ],
+            'baseUri' => '{dummySlug}'
+        ];
+   }
+
+   public function validation()
+   {
+       return ({dummyCondition}) ? true : false;
+   }
+}
