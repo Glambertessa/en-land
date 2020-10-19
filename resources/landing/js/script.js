@@ -1,32 +1,29 @@
 'use strict';
 
-var animItems = document.querySelectorAll('._anim-items');
+let animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
-    var animOnScroll = function animOnScroll(params) {
-        for (var index = 0; index < animItems.length; index++) {
-            var animItem = animItems[index];
-            var animItemHeight = animItem.offsetHeight;
-            var animItemOffset = offset(animItem).top;
-            var animStart = 4;
-            var animItemPoint = window.innerHeight - animItemHeight / animStart;
+    let animOnScroll = function animOnScroll(params) {
+        for (let index = 0; index < animItems.length; index++) {
+            let animItem = animItems[index];
+            let animItemHeight = animItem.offsetHeight;
+            let animItemOffset = offset(animItem).top;
+            let animStart = 4;
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
             if (animItemHeight > window.innerHeight)
                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
 
-            if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) {
+            if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight)
                 animItem.classList.add('_active');
-            } else {
-                if (!animItem.classList.contains('_anim-once')) {
+            else if (!animItem.classList.contains('_anim-once'))
                     animItem.classList.remove('_active');
-                }
-            }
         }
     };
 
     window.addEventListener('scroll', animOnScroll);
 
-    var offset = function offset(el) {
-        var rect = el.getBoundingClientRect(),
+    let offset = function offset(el) {
+        let rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
@@ -36,43 +33,38 @@ if (animItems.length > 0) {
     }, 300);
 }
 
-var socialBlock = document.querySelectorAll('.social__block > img.icon');
+let socialBlock = document.querySelectorAll('.social__block > img.icon');
 socialBlock.forEach(function (e) {
     return e.addEventListener('click', function (e, i, arr) {
         return setActiveIcon(e, socialBlock);
     });
 });
-var socialBlockModal = document.querySelectorAll('.social__block__modal > img.icon');
+let socialBlockModal = document.querySelectorAll('.social__block__modal > img.icon');
 socialBlockModal.forEach(function (e) {
     return e.addEventListener('click', function (e, i, arr) {
         return setActiveIcon(e, socialBlockModal);
     });
 });
-var validate = document.querySelector('.submit__error');
-var validateModal = document.querySelector('.submit__error__modal');
-var modalResponse = document.querySelector('.modalResponse');
+let validate = document.querySelector('.submit__error');
+let validateModal = document.querySelector('.submit__error__modal');
+let modalResponse = document.querySelector('.modalResponse');
 
 function callMe(isModal) {
-    if (isModal) {
+    if (isModal)
         if (isFormValid('#nameModal', '#phoneModal') && isSocialBlockActive(socialBlockModal)) {
             validateModal.style.display = 'none';
-            var _modalDialog = document.querySelector('.modalDialog');
+            let _modalDialog = document.querySelector('.modalDialog');
             _modalDialog.style.display = 'none';
             openResponseModal();
-        } else {
-            validateModal.style.display = 'block';
-        }
-    } else {
+        } else validateModal.style.display = 'block';
+    else
         if (isFormValid(null, '#phone') && isSocialBlockActive(socialBlock)) {
             validate.style.display = 'none';
             openResponseModal();
-        } else {
-            validate.style.display = 'block';
-        }
-    }
+        } else validate.style.display = 'block';
 }
 
-var setActiveIcon = function setActiveIcon(e, block) {
+let setActiveIcon = function setActiveIcon(e, block) {
     e.preventDefault();
     block.forEach(function (e) {
         return e.classList.contains('icon__active') ? e.classList.remove('icon__active') : null;
@@ -80,54 +72,48 @@ var setActiveIcon = function setActiveIcon(e, block) {
     e.target.classList.add('icon__active');
 };
 
-var isSocialBlockActive = function isSocialBlockActive(block) {
+let isSocialBlockActive = function isSocialBlockActive(block) {
     for (var i = 0; i < block.length; i++) {
         if (block[i].classList.contains('icon__active'))
             return true;
     }
     return false;
 };
-var isDialogActive = function isDialogActive(nameOfDialog) {
-    var dialog = document.querySelector('.' + nameOfDialog);
-    if (dialog.style.display === 'none' || dialog.style.display.length === 0)
-        return false;
-    return true;
+let isDialogActive = function isDialogActive(nameOfDialog) {
+    let dialog = document.querySelector('.' + nameOfDialog);
+    return !(dialog.style.display === 'none' || dialog.style.display.length === 0);
+
 };
-var isFormValid = function isFormValid(nameInput, phoneInput) {
-    var nameInp = document.querySelector(nameInput);
-    var phoneInp = document.querySelector(phoneInput);
-    if (nameInput) {
-        if (nameInp.value.length > 0 && phoneInp.value.length === 16)
-            return true;
-        return false;
-    } else {
-        if (phoneInp.value.length === 16)
-            return true;
-        return false;
-    }
+let isFormValid = function isFormValid(nameInput, phoneInput) {
+    let nameInp = document.querySelector(nameInput);
+    let phoneInp = document.querySelector(phoneInput);
+    if (nameInput)
+        return nameInp.value.length > 0 && phoneInp.value.length === 16;
+    else
+        return phoneInp.value.length === 16;
 };
 
 function openResponseModal() {
     modalResponse.style.display = 'flex';
 }
 
-var element = document.getElementById('phone');
-var maskOptions = {
+let element = document.getElementById('phone');
+let maskOptions = {
     mask: '+{7}(000)000-00-00'
 };
-var mask = IMask(element, maskOptions);
-var element1 = document.getElementById('phoneModal');
-var mask1 = IMask(element1, maskOptions);
-var modalDialog = document.querySelector('.modalDialog');
-var body = document.querySelector('body');
+let mask = IMask(element, maskOptions);
+let element1 = document.getElementById('phoneModal');
+let mask1 = IMask(element1, maskOptions);
+let modalDialog = document.querySelector('.modalDialog');
+let body = document.querySelector('body');
 
 function closeDialog(element) {
-    var dialog = document.querySelector('.' + element);
+    let dialog = document.querySelector('.' + element);
     dialog.style.display = 'none';
 }
 
 function openDialog(event) {
-    var socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
+    let socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
     socialBlock.forEach(function (e) {
         return e.addEventListener('click', function (e, i, arr) {
             return setActiveIcon(e, socialBlock);
@@ -140,74 +126,90 @@ function openDialog(event) {
     body.style.overflow = 'hidden';
 }
 
+function btnOrderPopup() {
+    let btn = $("#form-order-popup .btn-order");
+    let alertText = $("#form-order-popup .submit__error__modal");
+    let radio = $("#form-order-popup .popup_block_apps input");
+    let phone = false;
+    let user = false;
+    let isRadio = false;
 
+    btn.click(function () {
+        radio.each(function () {
+            if ($(this).prop("checked")) {
+                isRadio = true;
+                return false;
+            }});
 
-// function btnOrderPopup() {
-//     var btn = $("#form-order-popup .btn-order");
-//     var alertText = $("#form-order-popup .js-alert");
-//     var radio = $("#form-order-popup .popup_block_apps input");
-//     var phone = false;
-//     var user = false;
-//     var isRadio = false;
-//     btn.click(function () {
-//         ym(67610002,'reachGoal','order');
-//         gtag('event', 'order', { 'event_category': 'form', 'event_action': 'order', });
-//
-//         radio.each(function () {
-//             if ($(this).prop("checked")) {
-//                 isRadio = true;
-//                 return false;
-//             }
-//         });
-//
-//         //Проверка юзернейма
-//         if ($("#form-order-popup .js-userName").val() != "" && $("#form-order-popup .js-userName").val() != null) {
-//             user = true;
-//         } else {
-//             user = false;
-//         }
-//
-//         //Проверка телефона
-//         if ($("#form-order-popup .js-phone").val() != "" && $("#form-order-popup .js-phone").val() != null) {
-//             phone = true;
-//         } else {
-//             phone = false;
-//         }
-//
-//         if (isRadio == true && user == true && phone == true) {
-//             alertText.css("display", "none");
-//             $('.js-popup-order').removeClass('open');
-//             popupThankOpen();
-//
-//             let social_network = '';
-//             if($("#pop_whatsApp").prop("checked"))
-//                 social_network = 'whatsApp';
-//             else if ($("#pop_telegram").prop("checked"))
-//                 social_network = 'telegram';
-//             else if ($("#pop_viber").prop("checked"))
-//                 social_network = 'viber';
-//
-//             console.log($("#nameModal").val());
-//
-//             // $.ajax({
-//             //     url: '/add-order',
-//             //     type: 'POST',
-//             //     data: {name: $("#nameModal").val(), phone: $("#phoneModal").val(), social_network: social_network},
-//             //     success: function () {
-//             //     },
-//             //     error: function () {
-//             //     }
-//             // });
-//         } else {
-//             alertText.css("display", "block");
-//         }
-//     });
-// }
-//
-$(document).ready(function() {
-    $(document).on('click', '.modal_submit', function (e) {
-        e.preventDefault();
-        let name = $("#nameModal");
-        console.log(name);
+        user = $("#form-order-popup .js-userName").val() !== "" && $("#form-order-popup .js-userName").val() !== null;
+        phone = $("#form-order-popup .js-phone").val() !== "" && $("#form-order-popup .js-phone").val() !== null;
+
+        if (isRadio === true && user === true && phone === true) {
+            let _modalDialog = document.querySelector('.modalDialog');
+            _modalDialog.style.display = 'none';
+            openResponseModal();
+
+            let social_network = '';
+            if($("#pop_whatsApp").prop("checked")) social_network = 'whatsApp';
+            else if ($("#pop_telegram").prop("checked")) social_network = 'telegram';
+            else if ($("#pop_viber").prop("checked")) social_network = 'viber';
+
+            $.ajax({
+                url: '/add-order',
+                type: 'POST',
+                data: {name: $("#nameModal").val(), phone: $("#phoneModal").val(), social_network: social_network},
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (res) {
+                    console.log(res);
+                }
+            });
+        } else
+            alertText.css("display", "block");
     });
+}
+
+function btnOrderBottom() {
+    let btn = $("#form-order .btn-order-bottom");
+    let alertText = $("#form-order .submit__error");
+    let radio = $("#form-order .popup_block_apps input");
+
+    btn.click(function () {
+        let isRadio = false;
+        radio.each(function () {
+            if ($(this).prop("checked")) {
+                isRadio = true;
+                return false;
+            }});
+
+        if (isRadio === true && $("#form-order .js-phone").val() !== "" && $("#form-order .js-phone").val() !== null) {
+            openResponseModal();
+
+            let social_network = '';
+            if($("#whatsApp").prop("checked")) social_network = 'whatsApp';
+            else if ($("#telegram").prop("checked")) social_network = 'telegram';
+            else if ($("#viber").prop("checked")) social_network = 'viber';
+
+            console.log(social_network);
+
+            $.ajax({
+                url: '/add-order',
+                type: 'POST',
+                data: {phone: $("#customer_phone").val(), social_network: social_network},
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (res) {
+                    console.log(res);
+                }
+            });
+        } else
+            alertText.css("display", "block");
+    });
+}
+
+$(document).ready(function() {
+    btnOrderPopup();
+    btnOrderBottom();
 });

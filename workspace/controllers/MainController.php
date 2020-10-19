@@ -34,7 +34,6 @@ class MainController extends Controller
 
     public function actionAddOrder()
     {
-        Debug::dd($_POST['name'] . ' ' . $_POST['phone'] . ' ' . $_POST['social_network']);
         $customer = new Customer();
         $customer->_save();
 

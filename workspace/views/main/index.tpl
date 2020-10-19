@@ -11,7 +11,8 @@
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
                         <a href="{$item->value}">
-                            <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png" alt="{$item->key}">
+                            <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png"
+                                 alt="{$item->key}">
                             <span class="nav__social-title">Написать в {$item->key}</span>
                         </a>
                     </div>
@@ -24,10 +25,14 @@
                 <label class="menu__btn" for="menu__toggle"><span></span></label>
                 <ul class="menu__box">
                     <li>
-                        <a class="menu__item" href="/">ВК<image src="assets/images/nav-vk-logo.png" alt=""></image></a>
+                        <a class="menu__item" href="/">ВК
+                            <image src="assets/images/nav-vk-logo.png" alt=""></image>
+                        </a>
                     </li>
                     <li>
-                        <a class="menu__item" href="/">WhatsApp<image src="assets/images/nav-wapp-logo.png" alt=""></image></a>
+                        <a class="menu__item" href="/">WhatsApp
+                            <image src="assets/images/nav-wapp-logo.png" alt=""></image>
+                        </a>
                     </li>
                     <li><a class="menu__item" href="/">О нас</a></li>
                     <li><a class="menu__item" href="/">Бесплатные материалы</a></li>
@@ -333,7 +338,7 @@
 </div>
 <div class="about">
     <div class="container">
-        <div class="inner">
+        <form class="inner">
             <h2 class="title _anim-items">Как это работает:</h2>
             <h3 class="subtitle _anim-items">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et d iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -341,45 +346,53 @@
             <div class="content_inner _anim-items">
                 <div class="col__left">
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
+                        <div class="item__header__inner"><img class="item__icon"
+                                                              src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png" alt=""/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png"
+                                                      alt=""/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
+                        <div class="item__header__inner"><img class="item__icon"
+                                                              src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p><img class="content__image" src="/resources/landing/img/backlog.png" alt=""/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/backlog.png"
+                                                      alt=""/>
                         </div>
                     </div>
                 </div>
                 <div class="col__right">
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
+                        <div class="item__header__inner"><img class="item__icon"
+                                                              src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png" alt=""/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png"
+                                                      alt=""/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
+                        <div class="item__header__inner"><img class="item__icon"
+                                                              src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p><img class="content__image" src="/resources/landing/img/baloons.png" alt=""/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/baloons.png"
+                                                      alt=""/>
                         </div>
                     </div>
                 </div>
@@ -398,7 +411,8 @@
             </div>
             <div class="btn">
                 <div class="button">
-                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                    <button class="button__inner _anim-items"
+                            style="color:null;background:null;fontSize:null;"
                             onClick="openDialog()">Хочу записаться
                         <div class="button__gradient"></div>
                     </button>
@@ -406,90 +420,140 @@
             </div>
             <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
             <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-            <div class="social__block"><img class="icon" src="/resources/landing/img/telegram-brands.png"
-                                            alt="Не поддерживает браузер"/><img class="icon"
-                                                                                src="/resources/landing/img/whatsapp-brands.png"
-                                                                                alt="Не поддерживает браузер"/><img
-                        class="icon" src="/resources/landing/img/viber-brands.png" alt="Не поддерживает браузер"/></div>
-            <div class="social__submit"></div>
-            <div class="social__btn">
-                <!--label(for='phone')-->
-                <label for="phone"></label>
-                <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
-                <div class="button">
-                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
-                            onClick="callMe()">Перезвоните мне
-                        <div class="button__gradient"></div>
-                    </button>
+<!-- --------------------------------------------------------------------------------------------------- -->
+            <form id="form-order" name="order" method="post" action="add-order">
+                {*                <div class="social__block">*}
+                {*                    <img class="icon" src="/resources/landing/img/telegram-brands.png" alt="Не поддерживает браузер"/>*}
+                {*                    <img class="icon" src="/resources/landing/img/whatsapp-brands.png" alt="Не поддерживает браузер"/>*}
+                {*                    <img class="icon" src="/resources/landing/img/viber-brands.png" alt="Не поддерживает браузер"/>*}
+                {*                </div>*}
+                {*                <div class="social__submit"></div>*}
+
+                <div class="popup_block_apps">
+                    <input type="radio" id="pop_telegram" name="social_network" class="social_network" value="telegram"
+                           required="required">
+                    <label for="pop_telegram">
+                        <img src="/resources/landing/img/telegram-brands.png" alt="">
+                    </label>
+
+                    <input type="radio" id="pop_whatsApp" name="social_network" class="social_network" value="whatsApp"
+                           required="required">
+                    <label for="pop_whatsApp">
+                        <img src="/resources/landing/img/whatsapp-brands.png" alt="">
+                    </label>
+
+                    <input type="radio" id="pop_viber" name="social_network" class="social_network" value="viber"
+                           required="required">
+                    <label for="pop_viber">
+                        <img src="/resources/landing/img/viber-brands.png" alt="">
+                    </label>
                 </div>
-            </div>
-            <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
-        </div>
+
+                <div class="social__btn">
+                    <input class="form__input" id="customer_phone" placeholder="+7 (    ) ___-__ - __" type="tel"
+                           name="phone"/>
+                    <div class="button">
+                        <button type="button" class="btn-order-bottom"
+                                {*                            style="color:null;background:null;fontSize:null;" onClick="callMe()"*}
+                        >
+                            Перезвоните мне
+                            <div class="button__gradient"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
+            </form>
     </div>
+</div>
 </div>
 <!-- --------------------------------------------------------------------------------------------------------------- -->
 <div class="modalDialog" style="display:none">
     <div class="modalDialog__inner">
         <p class="modal__title">Заказать</p>
         <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
-        <button class="closeDialog" onClick="closeDialog('modalDialog')">
-            <hr/>
-            <hr/>
-        </button>
-{*        <form method="post" action="add-order">*}
-            <div class="social__block__modal">
-                <img class="icon social" data-id="telegram" src="/resources/landing/img/telegram-brands.png" alt=""/>
-                <img class="icon social" data-id="whatsapp" src="/resources/landing/img/whatsapp-brands.png" alt=""/>
-                <img class="icon social" data-id="viber" src="/resources/landing/img/viber-brands.png" alt=""/>
+        <form id="form-order-popup" method="post" action="add-order">
+            <button class="closeDialog" onClick="closeDialog('modalDialog')">
+                <hr/>
+                <hr/>
+            </button>
+            {*            <div class="social__block__modal">*}
+            {*                <img class="icon social" data-id="telegram" src="/resources/landing/img/telegram-brands.png" alt=""/>*}
+            {*                <img class="icon social" data-id="whatsapp" src="/resources/landing/img/whatsapp-brands.png" alt=""/>*}
+            {*                <img class="icon social" data-id="viber" src="/resources/landing/img/viber-brands.png" alt=""/>*}
+            {*            </div>*}
+
+            <div class="popup_block_apps">
+                <input type="radio" id="pop_telegram" name="social_network" class="social_network" value="telegram"
+                       required="required">
+                <label for="pop_telegram">
+                    <img src="/resources/landing/img/telegram-brands.png" alt="">
+                </label>
+
+                <input type="radio" id="pop_whatsApp" name="social_network" class="social_network" value="whatsApp"
+                       required="required">
+                <label for="pop_whatsApp">
+                    <img src="/resources/landing/img/whatsapp-brands.png" alt="">
+                </label>
+
+                <input type="radio" id="pop_viber" name="social_network" class="social_network" value="viber"
+                       required="required">
+                <label for="pop_viber">
+                    <img src="/resources/landing/img/viber-brands.png" alt="">
+                </label>
             </div>
 
-            <input class="form__input modal__input" id="nameModal" name="name" placeholder="Представьтесь, пожалуйста"/>
-            <input class="form__input modal__input" id="phoneModal" name="phone" placeholder="Номер телефона" type="tel"/>
+            <input class="form__input modal__input js-userName" id="nameModal" name="name"
+                   placeholder="Представьтесь, пожалуйста"/>
+            <input class="form__input modal__input js-phone" id="phoneModal" name="phone" placeholder="Номер телефона"
+                   type="tel"/>
 
             <div class="button">
-                <button type="button" id="modal_submit" class="button__inner _anim-items"
-                        style="color:null;background:null;fontSize:null;" onClick="callMe(true)">
-                    Перезвоните мне<div class="button__gradient"></div>
+                <button type="button" id="modal_submit" class="button__inner _anim-items btn-order"
+                        {*                        style="color:null;background:null;fontSize:null;" onClick="callMe(true)"*}
+                >
+                    Перезвоните мне
+                    <div class="button__gradient"></div>
                 </button>
             </div>
             <div class="submit__error__modal">Пожалуйста, выберите все поля</div>
-{*        </form>*}
+        </form>
+
+        <div class="back_drop"></div>
     </div>
-    <div class="back_drop"></div>
-</div>
-<!-- --------------------------------------------------------------------------------------------------------------- -->
-<div class="modalResponse" style="display:none">
-    <div class="modalDialog__inner">
-        <p class="modal__title">Спасибо</p>
-        <p>Скоро мы с вами свяжемся</p>
-        <button class="closeDialog" onClick="closeDialog('modalResponse')">
-            <hr/>
-            <hr/>
-        </button>
+    <!-- --------------------------------------------------------------------------------------------------------------- -->
+    <div class="modalResponse" style="display:none">
+        <div class="modalDialog__inner">
+            <p class="modal__title">Спасибо</p>
+            <p>Скоро мы с вами свяжемся</p>
+            <button class="closeDialog" onClick="closeDialog('modalResponse')">
+                <hr/>
+                <hr/>
+            </button>
+        </div>
+        <div class="back_drop"></div>
     </div>
-    <div class="back_drop"></div>
-</div>
-<div class="footer">
-    <div class="container footer__container">
-        <div class="nav">
-            <div class="nav__main">
-                <a class="nav__link" href="/">Все курсы</a>
-            </div>
-            <div class="nav__about">
-                <a class="nav__link" href="/">О нас</a>
-                <a class="nav__link" href="/">Бесплатные материалы</a>
-                <a class="nav__link" href="/">Новости</a>
-            </div>
-            <div class="nav__social">
-                {foreach from=$social item=item}
-                <div class="nav__social-item">
-                    <a href="{$item->value}">
-                        <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png" alt="{$item->key}">
-                        <span class="nav__social-title">Написать в {$item->key}</span>
-                    </a>
+    <div class="footer">
+        <div class="container footer__container">
+            <div class="nav">
+                <div class="nav__main">
+                    <a class="nav__link" href="/">Все курсы</a>
                 </div>
-                {/foreach}
+                <div class="nav__about">
+                    <a class="nav__link" href="/">О нас</a>
+                    <a class="nav__link" href="/">Бесплатные материалы</a>
+                    <a class="nav__link" href="/">Новости</a>
+                </div>
+                <div class="nav__social">
+                    {foreach from=$social item=item}
+                        <div class="nav__social-item">
+                            <a href="{$item->value}">
+                                <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png"
+                                     alt="{$item->key}">
+                                <span class="nav__social-title">Написать в {$item->key}</span>
+                            </a>
+                        </div>
+                    {/foreach}
+                </div>
             </div>
         </div>
     </div>
-</div>
