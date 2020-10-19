@@ -2,17 +2,20 @@
     <div class="container">
         <div class="nav">
             <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
-            <div class="nav__about"><a class="nav__link" href="/">О нас</a><a class="nav__link" href="/">Бесплатные
-                    материалы</a><a class="nav__link" href="/">Новости</a>
+            <div class="nav__about">
+                <a class="nav__link" href="/">О нас</a>
+                <a class="nav__link" href="/">Бесплатные материалы</a>
+                <a class="nav__link" href="/">Новости</a>
             </div>
             <div class="nav__social">
-                <div class="nav__social-item"><a href="/">
-                        <img class="nav__social-logo" src="/resources/landing/img/nav-vk-logo.png"
-                             alt=""/><span class="nav__social-title">Написать в ВК</span></a></div>
-                <div class="nav__social-item"><a href="/">
-                        <img class="nav__social-logo" src="/resources/landing/img/nav-wapp-logo.png"
-                             alt=""/><span class="nav__social-title">Написать в WhatsApp</span></a>
-                </div>
+                {foreach from=$social item=item}
+                    <div class="nav__social-item">
+                        <a href="{$item->value}">
+                            <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png" alt="{$item->key}">
+                            <span class="nav__social-title">Написать в {$item->key}</span>
+                        </a>
+                    </div>
+                {/foreach}
             </div>
         </div>
         <div class="burger burger_menu">
@@ -20,12 +23,12 @@
                 <input id="menu__toggle" type="checkbox"/>
                 <label class="menu__btn" for="menu__toggle"><span></span></label>
                 <ul class="menu__box">
-                    <li><a class="menu__item" href="/">ВК
-                            <image src="/resources/landing/img/nav-vk-logo.png"></image>
-                        </a></li>
-                    <li><a class="menu__item" href="/">WhatsApp
-                            <image src="/resources/landing/img/nav-wapp-logo.png"></image>
-                        </a></li>
+                    <li>
+                        <a class="menu__item" href="/">ВК<image src="assets/images/nav-vk-logo.png" alt=""></image></a>
+                    </li>
+                    <li>
+                        <a class="menu__item" href="/">WhatsApp<image src="assets/images/nav-wapp-logo.png" alt=""></image></a>
+                    </li>
                     <li><a class="menu__item" href="/">О нас</a></li>
                     <li><a class="menu__item" href="/">Бесплатные материалы</a></li>
                     <li><a class="menu__item" href="/">Новости</a></li>
@@ -43,7 +46,8 @@
                 командная работа.
             </h2>
             <div class="header__vacancies">
-                <div class="vacancy"><img src="/resources/landing/img/imageVacancy.png" alt=""/></div>
+                <div class="vacancy"><img src="/resources/landing/img/imageVacancy.png" alt=""/>
+                </div>
             </div>
         </div>
         <div class="header__main-image _anim-items"><img src="/resources/landing/img/header-bg.png" alt=""/></div>
@@ -206,7 +210,7 @@
             </div>
         </div>
         <div class="format__main">
-            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/img/Ramka.png"/>
+            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/img/Ramka.png" alt=""/>
                 <div class="format-pack__title">
                     <h3>Пакет Стандарт</h3>
                 </div>
@@ -249,8 +253,8 @@
                         </div>
                         <div class="format-price__main">
                             <div class="format-price__info">
-                                <p class="format-price__price">5000 &#8381;</p>
-                                <p class="format-price__places">/ Осталось мест: 6</p>
+                                <p class="format-price__price">{$standard_price} &#8381;</p>
+                                <p class="format-price__places">/ Осталось мест: {$standard_left}</p>
                             </div>
                             <p class="format-price__howToPay">Оплата частями по рассрочке</p>
                         </div>
@@ -263,7 +267,7 @@
                     </div>
                 </div>
             </div>
-            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/img/Ramka.png"/>
+            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/img/Ramka.png" alt=""/>
                 <div class="format-pack__title">
                     <h3>Пакет Продвинутый</h3>
                 </div>
@@ -310,8 +314,8 @@
                         </div>
                         <div class="format-price__main">
                             <div class="format-price__info">
-                                <p class="format-price__price">8000 &#8381;</p>
-                                <p class="format-price__places">/ Осталось мест: 6</p>
+                                <p class="format-price__price">{$advanced_price} &#8381;</p>
+                                <p class="format-price__places">/ Осталось мест: {$advanced_left}</p>
                             </div>
                             <p class="format-price__howToPay">Оплата частями по рассрочке</p>
                         </div>
@@ -331,74 +335,65 @@
     <div class="container">
         <div class="inner">
             <h2 class="title _anim-items">Как это работает:</h2>
-            <h3 class="subtitle _anim-items">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et d iqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris </h3>
+            <h3 class="subtitle _anim-items">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et d iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris </h3>
             <div class="content_inner _anim-items">
                 <div class="col__left">
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon"
-                                                              src="/resources/landing/img/icon_plus.png"/>
+                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p>
-                            <img class="content__image" src="/resources/landing/img/textbook.png"/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png" alt=""/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon"
-                                                              src="/resources/landing/img/icon_plus.png"/>
+                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p>
-                            <img class="content__image" src="/resources/landing/img/backlog.png"/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/backlog.png" alt=""/>
                         </div>
                     </div>
                 </div>
                 <div class="col__right">
                     <div class="item">
-                        <div class="item__header__inner">
-                            <img class="item__icon" src="/resources/landing/img/icon_plus.png"/>
+                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p>
-                            <img class="content__image" src="/resources/landing/img/textbook.png"/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/textbook.png" alt=""/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner">
-                            <img class="item__icon" src="/resources/landing/img/icon_plus.png"/>
+                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
                             <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                         </div>
                         <div class="item__content">
                             <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
                                 грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие
-                                речи на слух.</p>
-                            <img class="content__image" src="/resources/landing/img/baloons.png"/>
+                                речи на слух.</p><img class="content__image" src="/resources/landing/img/baloons.png" alt=""/>
                         </div>
                     </div>
                 </div>
             </div>
             <img class="strelkaVniz" src="/resources/landing/img/StrelkaVniz.png"/>
             <div class="item">
-                <div class="item__header__inner additional"><img class="item__icon"
-                                                                 src="/resources/landing/img/icon_plus.png"/>
+                <div class="item__header__inner additional">
+                    <img class="item__icon" src="/resources/landing/img/icon_plus.png" alt=""/>
                     <p class="item__title">Проводим диагностику вашего уровня английского.</p>
                 </div>
                 <div class="item__content">
                     <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской
-                        грамматики,
-                        но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p>
-                    <img class="content__image" src="/resources/landing/img/retrospectiva.png"/>
+                        грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на
+                        слух.</p><img class="content__image" src="/resources/landing/img/retrospectiva.png" alt=""/>
                 </div>
             </div>
             <div class="btn">
@@ -411,17 +406,15 @@
             </div>
             <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
             <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-            <div class="social__block">
-                <object class="icon" type="image/svg+xml" data="picture.svg"><img
-                            src="/resources/landing/img/telegram-brands.svg"/></object>
-                <object class="icon" type="image/svg+xml" data="picture.svg"><img
-                            src="/resources/landing/img/telegram-brands.svg"/></object>
-                <object class="icon" type="image/svg+xml" data="picture.svg"><img
-                            src="/resources/landing/img/telegram-brands.svg"/></object>
-            </div>
+            <div class="social__block"><img class="icon" src="/resources/landing/img/telegram-brands.png"
+                                            alt="Не поддерживает браузер"/><img class="icon"
+                                                                                src="/resources/landing/img/whatsapp-brands.png"
+                                                                                alt="Не поддерживает браузер"/><img
+                        class="icon" src="/resources/landing/img/viber-brands.png" alt="Не поддерживает браузер"/></div>
             <div class="social__submit"></div>
             <div class="social__btn">
                 <!--label(for='phone')-->
+                <label for="phone"></label>
                 <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
                 <div class="button">
                     <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
@@ -430,60 +423,72 @@
                     </button>
                 </div>
             </div>
+            <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
         </div>
-        <!--+nav()-->
     </div>
 </div>
-<div class="modalDialog">
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<div class="modalDialog" style="display:none">
     <div class="modalDialog__inner">
         <p class="modal__title">Заказать</p>
-        <div class="social__block">
-            <object class="icon" type="image/svg+xml" data="picture.svg">
-                <img src="/resources/landing/img/telegram-brands.svg"/>
-            </object>
-            <object class="icon" type="image/svg+xml" data="picture.svg">
-                <img src="/resources/landing/img/telegram-brands.svg"/>
-            </object>
-            <object class="icon" type="image/svg+xml" data="picture.svg">
-                <img src="/resources/landing/img/telegram-brands.svg"/>
-            </object>
-        </div>
-        <button class="closeDialog" onClick="closeDialog()">
+        <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
+        <button class="closeDialog" onClick="closeDialog('modalDialog')">
             <hr/>
             <hr/>
         </button>
-        <input class="form__input modal__input" placeholder="Представьтесь, пожалуйста"/>
-        <input class="form__input" id="phoneModal" placeholder="Номер телефона" type="tel" name="phone"/>
-        <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="callMe()">Перезвоните мне
-                <div class="button__gradient"></div>
-            </button>
-        </div>
+{*        <form method="post" action="add-order">*}
+            <div class="social__block__modal">
+                <img class="icon social" data-id="telegram" src="/resources/landing/img/telegram-brands.png" alt=""/>
+                <img class="icon social" data-id="whatsapp" src="/resources/landing/img/whatsapp-brands.png" alt=""/>
+                <img class="icon social" data-id="viber" src="/resources/landing/img/viber-brands.png" alt=""/>
+            </div>
+
+            <input class="form__input modal__input" id="nameModal" name="name" placeholder="Представьтесь, пожалуйста"/>
+            <input class="form__input modal__input" id="phoneModal" name="phone" placeholder="Номер телефона" type="tel"/>
+
+            <div class="button">
+                <button type="button" id="modal_submit" class="button__inner _anim-items"
+                        style="color:null;background:null;fontSize:null;" onClick="callMe(true)">
+                    Перезвоните мне<div class="button__gradient"></div>
+                </button>
+            </div>
+            <div class="submit__error__modal">Пожалуйста, выберите все поля</div>
+{*        </form>*}
+    </div>
+    <div class="back_drop"></div>
+</div>
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<div class="modalResponse" style="display:none">
+    <div class="modalDialog__inner">
+        <p class="modal__title">Спасибо</p>
+        <p>Скоро мы с вами свяжемся</p>
+        <button class="closeDialog" onClick="closeDialog('modalResponse')">
+            <hr/>
+            <hr/>
+        </button>
     </div>
     <div class="back_drop"></div>
 </div>
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
+            <div class="nav__main">
+                <a class="nav__link" href="/">Все курсы</a>
+            </div>
             <div class="nav__about">
                 <a class="nav__link" href="/">О нас</a>
                 <a class="nav__link" href="/">Бесплатные материалы</a>
                 <a class="nav__link" href="/">Новости</a>
             </div>
             <div class="nav__social">
+                {foreach from=$social item=item}
                 <div class="nav__social-item">
-                    <a href="/">
-                        <img class="nav__social-logo" src="/resources/landing/img/nav-vk-logo.png" alt=""/>
-                        <span class="nav__social-title">Написать в ВК</span>
+                    <a href="{$item->value}">
+                        <img class="nav__social-logo" src="/resources/landing/img/{$item->key}.png" alt="{$item->key}">
+                        <span class="nav__social-title">Написать в {$item->key}</span>
                     </a>
                 </div>
-                <div class="nav__social-item">
-                    <a href="/">
-                        <img class="nav__social-logo" src="/resources/landing/img/nav-wapp-logo.png" alt=""/>
-                        <span class="nav__social-title">Написать в WhatsApp</span>
-                    </a>
-                </div>
+                {/foreach}
             </div>
         </div>
     </div>

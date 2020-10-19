@@ -7,6 +7,7 @@
 {/capture}
 
 {capture name=js_body}
+    <script src="/resources/landing/js/jquery/jquery.min.js"></script>
     <script src="/resources/landing/js/script.js"></script>
 {/capture}
 

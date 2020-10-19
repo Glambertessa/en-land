@@ -21,16 +21,20 @@ class MainController extends Controller
         $this->view->setTitle('Английский');
         $this->setLayout('front.tpl');
 
-        $phone = Settings::where('key', 'phone')->first();
-        $price = Settings::where('key', 'price')->first();
-        $social = Settings::where('key', 'Telegram')->orWhere('key', 'Viber')->orWhere('key', 'Whatsapp')
-            ->orWhere('key', 'Instagram')->get();
+        $standard_price = Settings::where('key', 'standard_price')->first();
+        $advanced_price = Settings::where('key', 'advanced_price')->first();
+        $standard_left = Settings::where('key', 'standard_left')->first();
+        $advanced_left = Settings::where('key', 'advanced_left')->first();
+        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
 
-        return $this->render('main/index.tpl', ['phone' => $phone->value, 'price' => $price->value, 'social' => $social]);
+        return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
+            'advanced_price' => $advanced_price->value, 'standard_left' => $standard_left->value,
+            'advanced_left' => $advanced_left->value, 'social' => $social]);
     }
 
     public function actionAddOrder()
     {
+        Debug::dd($_POST['name'] . ' ' . $_POST['phone'] . ' ' . $_POST['social_network']);
         $customer = new Customer();
         $customer->_save();
 
