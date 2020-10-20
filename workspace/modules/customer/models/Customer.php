@@ -13,11 +13,11 @@ class Customer extends Model
 
     public $fillable = ['name', 'phone', 'social_network', 'created_at', 'updated_at'];
 
-    public function _save()
+    public function _save($data)
     {
-        $this->name = (isset($_POST["name"])) ? $_POST["name"] : 'empty';
-        $this->phone = $_POST["phone"];
-        $this->social_network = $_POST["social_network"];
+        $this->name = (isset($data->name) && $data->name) ? $data->name : 'empty';
+        $this->phone = $data->phoneNumber;
+        $this->social_network = $data->socialLink;
 
         $this->save();
     }

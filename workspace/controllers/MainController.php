@@ -34,10 +34,12 @@ class MainController extends Controller
 
     public function actionAddOrder()
     {
-        $customer = new Customer();
-        $customer->_save();
+        $data = json_decode($_POST['data']);
 
-        $this->redirect('');
+        $customer = new Customer();
+        return $customer->_save($data);
+
+        //$this->redirect('');
     }
 
     public function actionLanguage()
