@@ -14,7 +14,7 @@ use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Filesystem\Filesystem;
-use samejack\PHP\PHP_ArgvParser;
+use core\ArgvParser;
 
 class MigrationController extends ConsoleController
 {

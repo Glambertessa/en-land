@@ -13,7 +13,7 @@ class Customer
             [
                 'title' => 'Заказчики',
                 'url' => '/admin/customer',
-                'icon' => '<i class="nav-icon fa fa-file"></i>',
+                'icon' => '<i class="nav-icon fas fa-user-friends"></i>',
             ],
         ];
 

@@ -1,0 +1,11 @@
+{
+  "name": "question",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\question\\Question",
+  "description": "question module",
+  "configFile": "config/question.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}

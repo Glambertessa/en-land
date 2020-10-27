@@ -1,0 +1,11 @@
+{
+  "name": "answer",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\answer\\Answer",
+  "description": "answer module",
+  "configFile": "config/answer.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}

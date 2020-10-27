@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\test\\Test",
+  "description": "test module",
+  "configFile": "config/test.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}

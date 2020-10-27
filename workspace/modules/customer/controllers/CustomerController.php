@@ -31,7 +31,7 @@ class CustomerController extends Controller
     {
         $model = Customer::where('id', $id)->first();
 
-        $options = $this->setOptions();
+        $options = $this->setOptions($model);
 
         return $this->render('customer/view.tpl', ['model' => $model, 'options' => $options]);
     }
@@ -83,6 +83,6 @@ class CustomerController extends Controller
 
    public function validation()
    {
-       return (isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["social_network"])) ? true : false;
+       return isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["social_network"]);
    }
 }

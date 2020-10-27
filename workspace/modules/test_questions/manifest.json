@@ -1,0 +1,11 @@
+{
+  "name": "test_questions",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\test_questions\\Test_questions",
+  "description": "test_questions module",
+  "configFile": "config/test_questions.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}
