@@ -6,6 +6,7 @@ namespace workspace\modules\test\controllers;
 
 use core\App;
 use core\Controller;
+use core\Debug;
 use workspace\modules\test\models\Test;
 use workspace\modules\test\requests\TestSearchRequest;
 
@@ -24,16 +25,15 @@ class TestController extends Controller
         $request = new TestSearchRequest();
         $model = Test::search($request);
 
-        return $this->render('test/index.tpl', ['h1' => 'Test', 'options' => $this->setOptions($model)]);
+        return $this->render('test/index.tpl', ['h1' => 'Тесты', 'options' => $this->setOptions($model)]);
     }
 
     public function actionView($id)
     {
         $model = Test::where('id', $id)->first();
-        $questions = Test::find(1)->questions()->get();
 
         return $this->render('test/view.tpl', ['model' => $model, 'options' => $this->setOptions($model),
-            'questions_options' => $this->setQuestionsOptions($questions)]);
+            'questions_options' => $this->setQuestionsOptions($model->questions)]);
     }
 
     public function actionStore()
@@ -142,6 +142,6 @@ class TestController extends Controller
 
     public function validation()
     {
-        return isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["status"]) && isset($_POST["time"]) && isset($_POST["photo"]);
+        return isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["status"]) && isset($_POST["time"]);
     }
 }

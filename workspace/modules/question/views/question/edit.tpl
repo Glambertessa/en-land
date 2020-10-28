@@ -12,34 +12,55 @@
 
         <div class="form-group">
             <label for="status">Статус:</label>
-            <input type="text" name="status" id="status" class="form-control" value="{$model->status}" required="required" />
+            <select class="form-control" name="status" id="status">
+                {if $model->status eq 1}
+                    <option selected value="1">Активный</option>
+                {else}
+                    <option value="1">Активный</option>
+                {/if}
+                {if $model->status eq 0}
+                    <option selected value="0">Неактивный</option>
+                {else}
+                    <option value="0">Неактивный</option>
+                {/if}
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="type">Тип:</label>
-            <input type="text" name="type" id="type" class="form-control" value="{$model->type}" required="required" />
+            <label for="status">Статус:</label>
+            <select class="form-control" name="status" id="status">
+                {if $model->type eq 1}
+                    <option selected value="1">Вопрос с одним ответом</option>
+                {else}
+                    <option value="1">Активный</option>
+                {/if}
+            </select>
         </div>
 
-        <div class="form-group">
-            <label for="weight">Вес:</label>
-            <input type="text" name="weight" id="weight" class="form-control" value="{$model->weight}"  />
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="weight">Вес:</label>*}
+{*            <input type="text" name="weight" id="weight" class="form-control" value="{$model->weight}"  />*}
+{*        </div>*}
 
         <div class="form-group">
             <label for="point">Баллы:</label>
             <input type="text" name="point" id="point" class="form-control" value="{$model->point}"  />
         </div>
 
-        <div class="form-group">
-            <label for="photo">Картинка:</label>
-            <input type="text" name="photo" id="photo" class="form-control" value="{$model->photo}"  />
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="photo">Картинка:</label>*}
+{*            <input type="text" name="photo" id="photo" class="form-control" value="{$model->photo}"  />*}
+{*        </div>*}
 
         <div class="form-group">
             <label for="test_id"></label>
             <select class="form-control" name="test_id" id="test_id">
                 {foreach from=$tests item=item}
-                    <option value="{$item->id}">{$item->title}</option>
+                    {if $item->id eq $model->test_id}
+                        <option selected value="{$item->id}">{$item->title}</option>
+                    {else}
+                        <option value="{$item->id}">{$item->title}</option>
+                    {/if}
                 {/foreach}
             </select>
         </div>

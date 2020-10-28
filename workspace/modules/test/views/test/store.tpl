@@ -8,25 +8,30 @@
             <input type="text" name="title" id="title" class="form-control"  required="required" />
         </div>
 
-        <div class="form-group">
-            <label for="description">Описание:</label>
-            <input type="text" name="description" id="description" class="form-control"   />
+        <div class="form-group mt-3">
+            <label for="text">Описание:</label>
+            {workspace\modules\ckeditor\widgets\CkEditorWidget::widget(['name' => 'description', 'id' => 'text_editor_description'])->run()}
+            <small id="descriptionMessage"
+                   class="form-text">{if isset($errors['description'])}{$errors['description']}{/if}</small>
         </div>
 
         <div class="form-group">
             <label for="status">Статус:</label>
-            <input type="text" name="status" id="status" class="form-control"  required="required" />
+            <select class="form-control" name="status" id="status">
+                    <option selected value="1">Активный</option>
+                    <option value="0">Неактивный</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="time">Время:</label>
-            <input type="text" name="time" id="time" class="form-control"   />
+            <label for="time">Время на выполнение (в минутах, 0 - если не ограничено):</label>
+            <input type="text" name="time" id="time" class="form-control" value="0" />
         </div>
 
-        <div class="form-group">
-            <label for="photo">Картинка:</label>
-            <input type="text" name="photo" id="photo" class="form-control"   />
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="photo">Картинка:</label>*}
+{*            <input type="text" name="photo" id="photo" class="form-control"   />*}
+{*        </div>*}
 
 
         <div class="form-group">

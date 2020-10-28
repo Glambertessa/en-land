@@ -79,7 +79,7 @@ class TestQuestionsController extends Controller
             'data' => $data,
             'serial' => '#',
             'fields' => [
-                'id' => 'Id',
+//                'id' => 'Id',
                 'test_id' => 'Test_id',
                 'question_id' => 'Question_id',
             ],

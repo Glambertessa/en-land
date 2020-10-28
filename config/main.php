@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'app_name' => 'CG Framework',
+    'app_name' => 'English for IT',
     'adminLeftMenu' => [
     ],
     'component_manager' => [

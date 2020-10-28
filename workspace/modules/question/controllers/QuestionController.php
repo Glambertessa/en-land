@@ -6,6 +6,7 @@ namespace workspace\modules\question\controllers;
 
 use core\App;
 use core\Controller;
+use core\Debug;
 use workspace\modules\question\models\Question;
 use workspace\modules\question\requests\QuestionSearchRequest;
 use workspace\modules\test\models\Test;
@@ -25,18 +26,15 @@ class QuestionController extends Controller
         $request = new QuestionSearchRequest();
         $model = Question::search($request);
 
-        return $this->render('question/index.tpl', ['h1' => 'Question', 'options' => $this->setOptions($model)]);
+        return $this->render('question/index.tpl', ['h1' => 'Вопросы', 'options' => $this->setOptions($model)]);
     }
 
     public function actionView($id)
     {
         $model = Question::where('id', $id)->first();
-        $answers = Question::find(1)->answers;
 
-        $options = $this->setOptions($model);
-
-        return $this->render('question/view.tpl', ['model' => $model, 'options' => $options, 'answers' => $answers,
-            'answers_options' => $this->setAnswersOptions($answers)]);
+        return $this->render('question/view.tpl', ['model' => $model, 'options' => $this->setOptions($model),
+            'answers_options' => $this->setAnswersOptions($model->answers)]);
     }
 
     public function actionStore()
@@ -47,7 +45,7 @@ class QuestionController extends Controller
             $model = new Question();
             $model->_save();
 
-            $this->redirect('admin/test/' . $model->test_id);
+            $this->redirect('admin/test/');
         } else
             return $this->render('question/store.tpl', ['h1' => 'Добавить', 'tests' => $tests]);
     }
@@ -55,13 +53,14 @@ class QuestionController extends Controller
     public function actionEdit($id)
     {
         $model = Question::where('id', $id)->first();
+        $tests = Test::all();
 
         if($this->validation()) {
             $model->_save();
 
             $this->redirect('admin/test/' . $model->test_id);
         } else
-            return $this->render('question/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model]);
+            return $this->render('question/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model, 'tests' => $tests]);
     }
 
     public function actionDelete()
@@ -75,15 +74,33 @@ class QuestionController extends Controller
             'data' => $data,
             'serial' => '#',
             'fields' => [
-                'id' => 'Id',
-                'question' => 'Question',
-                'status' => 'Status',
-                'type' => 'Type',
-                'weight' => 'Weight',
-                'point' => 'Point',
-                'photo' => 'Photo',
-                'created_at' => 'Created_at',
-                'updated_at' => 'Updated_at',
+//                'id' => 'Id',
+                'question' => 'Вопрос',
+                '_status' => [
+                    'label' => 'Статус',
+                    'value' => function($model) {
+                        if($model->status == 1)
+                            return 'Активный';
+                        elseif ($model->status == 0)
+                            return 'Неактивный';
+                        else
+                            return '';
+                    }
+                ],
+                '_type' => [
+                    'label' => 'Тип',
+                    'value' => function($model) {
+                        if($model->type == 1)
+                            return 'Вопрос с одним ответом';
+                        else
+                            return '';
+                    }
+                ],
+//                'weight' => 'Вес',
+                'point' => 'Баллы',
+//                'photo' => 'Картинка',
+//                'created_at' => 'Created_at',
+//                'updated_at' => 'Updated_at',
             ],
             'baseUri' => 'question'
         ];
@@ -95,16 +112,36 @@ class QuestionController extends Controller
             'data' => $data,
             'serial' => '#',
             'fields' => [
-                'id' => 'Id',
-                'answer' => 'Answer',
-                'status' => 'Status',
-                'type' => 'Type',
-                'weight' => 'Weight',
-                'point' => 'Point',
-                'photo' => 'Photo',
-                'question_id' => 'Question_id',
-                'created_at' => 'Created_at',
-                'updated_at' => 'Updated_at',
+//                'id' => 'Id',
+                'answer' => 'Ответ',
+                '_status' => [
+                    'label' => 'Статус',
+                    'value' => function($model) {
+                        if($model->status == 1)
+                            return 'Активный';
+                        elseif ($model->status == 0)
+                            return 'Неактивный';
+                        else
+                            return '';
+                    }
+                ],
+                '_type' => [
+                    'label' => 'Тип',
+                    'value' => function($model) {
+                        if($model->type == 1)
+                            return 'Правлильный ответ';
+                        elseif ($model->type == 0)
+                            return 'Неправильный ответ';
+                        else
+                            return '';
+                    }
+                ],
+//                'weight' => 'Вес',
+                'point' => 'Баллы',
+//                'photo' => 'Картинка',
+//                'question_id' => 'Question_id',
+//                'created_at' => 'Created_at',
+//                'updated_at' => 'Updated_at',
             ],
             'baseUri' => 'answer'
         ];
@@ -112,6 +149,6 @@ class QuestionController extends Controller
 
    public function validation()
    {
-       return isset($_POST["question"]) && isset($_POST["status"]) && isset($_POST["type"]) && isset($_POST["weight"]) && isset($_POST["point"]) && isset($_POST["photo"]);
+       return isset($_POST["question"]) && isset($_POST["status"]) && isset($_POST["type"]) && isset($_POST["point"]);
    }
 }

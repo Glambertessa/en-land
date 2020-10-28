@@ -4,6 +4,7 @@
 namespace workspace\modules\test\models;
 
 
+use core\Debug;
 use Illuminate\Database\Eloquent\Model;
 use workspace\modules\test\requests\TestSearchRequest;
 
@@ -15,11 +16,11 @@ class Test extends Model
 
     public function _save()
     {
-            $this->title = $_POST["title"];
-            $this->description = $_POST["description"];
-            $this->status = $_POST["status"];
-            $this->time = $_POST["time"];
-            $this->photo = $_POST["photo"];
+        $this->title = $_POST["title"];
+        $this->description = $_POST["description"];
+        $this->status = $_POST["status"];
+        $this->time = $_POST["time"];
+        $this->photo = $_POST["photo"];
 
         $this->save();
     }
@@ -32,28 +33,28 @@ class Test extends Model
     {
         $query = self::query();
 
-        if($request->id)
+        if ($request->id)
             $query->where('id', 'LIKE', "%$request->id%");
 
-        if($request->title)
+        if ($request->title)
             $query->where('title', 'LIKE', "%$request->title%");
 
-        if($request->description)
+        if ($request->description)
             $query->where('description', 'LIKE', "%$request->description%");
 
-        if($request->status)
+        if ($request->status)
             $query->where('status', 'LIKE', "%$request->status%");
 
-        if($request->time)
+        if ($request->time)
             $query->where('time', 'LIKE', "%$request->time%");
 
-        if($request->photo)
+        if ($request->photo)
             $query->where('photo', 'LIKE', "%$request->photo%");
 
-        if($request->created_at)
+        if ($request->created_at)
             $query->where('created_at', 'LIKE', "%$request->created_at%");
 
-        if($request->updated_at)
+        if ($request->updated_at)
             $query->where('updated_at', 'LIKE', "%$request->updated_at%");
 
 

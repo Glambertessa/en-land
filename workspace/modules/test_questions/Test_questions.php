@@ -11,9 +11,9 @@ class Test_questions
     {
         $config['adminLeftMenu'] = [
             [
-                'title' => 'TestQuestions',
+                'title' => 'Связи Q&A',
                 'url' => '/admin/test-questions',
-                'icon' => '<i class="nav-icon fa fa-file"></i>',
+                'icon' => '<i class="nav-icon fas fa-arrows-alt-h"></i>',
             ],
         ];
 

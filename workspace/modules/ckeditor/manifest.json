@@ -1,0 +1,10 @@
+{
+  "name": "ckeditor",
+  "version": "0.2",
+  "type": "module",
+  "class": "workspace\\modules\\ckeditor\\Ckeditor",
+  "description": "ckeditor module",
+  "configFile": "config/main.php",
+  "relations": "",
+  "composer": ""
+}

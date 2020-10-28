@@ -10,28 +10,33 @@
 
         <div class="form-group">
             <label for="status">Статус:</label>
-            <input type="text" name="status" id="status" class="form-control" required="required"/>
+            <select class="form-control" name="status" id="status">
+                <option selected value="1">Активный</option>
+                <option value="0">Неактивный</option>
+            </select>
         </div>
 
         <div class="form-group">
             <label for="type">Тип:</label>
-            <input type="text" name="type" id="type" class="form-control" required="required"/>
+            <select class="form-control" name="type" id="type">
+                <option value="1">Вопрос с одним ответом</option>
+            </select>
         </div>
 
-        <div class="form-group">
-            <label for="weight">Вес:</label>
-            <input type="text" name="weight" id="weight" class="form-control"/>
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="weight">Вес:</label>*}
+{*            <input type="text" name="weight" id="weight" class="form-control"/>*}
+{*        </div>*}
 
         <div class="form-group">
             <label for="point">Балл:</label>
-            <input type="text" name="point" id="point" class="form-control"/>
+            <input type="text" name="point" id="point" class="form-control" value="1"/>
         </div>
 
-        <div class="form-group">
-            <label for="photo">Картинка:</label>
-            <input type="text" name="photo" id="photo" class="form-control"/>
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="photo">Картинка:</label>*}
+{*            <input type="text" name="photo" id="photo" class="form-control"/>*}
+{*        </div>*}
 
         <div class="form-group">
             <label for="test_id"></label>

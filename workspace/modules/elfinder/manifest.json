@@ -1,0 +1,11 @@
+{
+  "name": "elfinder",
+  "version": "0.2",
+  "type": "module",
+  "class": "workspace\\modules\\elfinder\\Elfinder",
+  "description": "elfinder module",
+  "configFile": "config/main.php",
+  "routFile": "routing/rout.php",
+  "relations": "",
+  "composer": ""
+}

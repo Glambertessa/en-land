@@ -74,4 +74,9 @@ class Question extends Model
     {
         return $this->hasMany('workspace\modules\answer\models\Answer');
     }
+
+    public function tests()
+    {
+        return $this->belongsToMany('workspace\modules\question\models\Question', 'test_questions');
+    }
 }

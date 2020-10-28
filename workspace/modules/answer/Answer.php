@@ -11,9 +11,9 @@ class Answer
     {
         $config['adminLeftMenu'] = [
             [
-                'title' => 'Answer',
+                'title' => 'Ответы',
                 'url' => '/admin/answer',
-                'icon' => '<i class="nav-icon fa fa-file"></i>',
+                'icon' => '<i class="nav-icon fas fa-lightbulb"></i>',
             ],
         ];
 
