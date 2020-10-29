@@ -8,6 +8,7 @@ use core\Controller;
 use core\Debug;
 use workspace\modules\customer\models\Customer;
 use workspace\modules\settings\models\Settings;
+use workspace\modules\test\models\Test;
 use workspace\modules\users\models\User;
 use workspace\requests\LoginRequest;
 use workspace\requests\RegistrationRequest;
@@ -28,6 +29,24 @@ class MainController extends Controller
         $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
 
         return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
+            'advanced_price' => $advanced_price->value, 'standard_left' => $standard_left->value,
+            'advanced_left' => $advanced_left->value, 'social' => $social]);
+    }
+
+    public function actionTest()
+    {
+        $this->view->setTitle('Тест');
+        $this->setLayout('front.tpl');
+
+        $test = Test::where('title', 'Экспресс-тест на определение уровня')->first();
+
+        $standard_price = Settings::where('key', 'standard_price')->first();
+        $advanced_price = Settings::where('key', 'advanced_price')->first();
+        $standard_left = Settings::where('key', 'standard_left')->first();
+        $advanced_left = Settings::where('key', 'advanced_left')->first();
+        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
+
+        return $this->render('main/test.tpl', ['test' => $test, 'standard_price' => $standard_price->value,
             'advanced_price' => $advanced_price->value, 'standard_left' => $standard_left->value,
             'advanced_left' => $advanced_left->value, 'social' => $social]);
     }
@@ -60,7 +79,7 @@ class MainController extends Controller
             $_SESSION['role'] = $model->role;
             $_SESSION['username'] = $model->username;
 
-            $this->redirect('');
+            $this->redirect('admin');
         }
         return $this->render('main/sign-up.tpl', ['errors' => $request->getMessagesArray()]);
     }
@@ -83,7 +102,7 @@ class MainController extends Controller
                     $_SESSION['role'] = $model->role;
                     $_SESSION['username'] = $model->username;
 
-                    $this->redirect('');
+                    $this->redirect('admin');
                 }
             }
             return $this->render('main/sign-in.tpl', ['errors' => $request->getMessagesArray()]);

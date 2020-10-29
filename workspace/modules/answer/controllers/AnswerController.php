@@ -6,6 +6,8 @@ namespace workspace\modules\answer\controllers;
 
 use core\App;
 use core\Controller;
+use core\Debug;
+use core\GridViewHelper;
 use workspace\modules\answer\models\Answer;
 use workspace\modules\answer\requests\AnswerSearchRequest;
 use workspace\modules\question\models\Question;
@@ -40,26 +42,30 @@ class AnswerController extends Controller
     public function actionStore()
     {
         $questions = Question::all();
+        $request = new AnswerSearchRequest();
 
-        if($this->validation()) {
+        $question = (isset($request->question_id)) ? Question::where('id', $request->question_id)->first() : Question::first();
+
+        if($this->validation($request)) {
             $model = new Answer();
             $model->_save();
 
-            $this->redirect('admin/answer');
+            $this->redirect('admin/question/' . $question->id);
         } else
-            return $this->render('answer/store.tpl', ['h1' => 'Добавить', 'questions' => $questions]);
+            return $this->render('answer/store.tpl', ['h1' => 'Добавить', 'questions' => $questions, 'question_id' => $question->id]);
     }
 
     public function actionEdit($id)
     {
         $model = Answer::where('id', $id)->first();
+        $request = new AnswerSearchRequest();
 
         $questions = Question::all();
 
-        if($this->validation()) {
+        if($this->validation($request)) {
             $model->_save();
 
-            $this->redirect('admin/answer');
+            $this->redirect('admin/question/' . $_POST['question_id']);
         } else
             return $this->render('answer/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model, 'questions' => $questions]);
     }
@@ -83,7 +89,7 @@ class AnswerController extends Controller
                         if($model->status == 1)
                             return 'Активный';
                         elseif ($model->status == 0)
-                            return 'Неактивный';
+                            return GridViewHelper::div('Неактивный', 'inactive-field');
                         else
                             return '';
                     }
@@ -92,7 +98,7 @@ class AnswerController extends Controller
                     'label' => 'Тип',
                     'value' => function($model) {
                         if($model->type == 1)
-                            return 'Правлильный ответ';
+                            return GridViewHelper::div('Правильный ответ', 'right-answer');
                         elseif ($model->type == 0)
                             return 'Неправильный ответ';
                         else
@@ -110,8 +116,8 @@ class AnswerController extends Controller
         ];
    }
 
-   public function validation()
+   public function validation($request)
    {
-       return isset($_POST["answer"]) && isset($_POST["status"]) && isset($_POST["type"]) && isset($_POST["point"]);
+       return isset($request->answer) && isset($request->status) && isset($request->type) && isset($request->point);
    }
 }

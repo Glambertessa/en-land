@@ -73,3 +73,11 @@
 .back {
     margin: 10px;
 }
+
+.right-answer {
+    background-color: #FFF5BD;
+}
+
+.inactive-field {
+    background-color: #FFBBA7;
+}

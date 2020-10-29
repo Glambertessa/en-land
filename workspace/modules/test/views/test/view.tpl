@@ -6,5 +6,5 @@
 {core\DetailView::widget()->setParams($model, $options)->run()}
 
 <div class="h2">Добавить вопрос</div>
-<a href="/admin/question/create" class="btn btn-dark">Создать</a>
+<a href="/admin/question/create?test_id={$model->id}" class="btn btn-dark">Создать</a>
 {core\Cjax::widget(['id' => 'cjax', 'data' => core\GridView::widget($questions_options)->run()])->run()}

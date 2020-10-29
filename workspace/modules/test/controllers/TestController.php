@@ -6,7 +6,7 @@ namespace workspace\modules\test\controllers;
 
 use core\App;
 use core\Controller;
-use core\Debug;
+use core\GridViewHelper;
 use workspace\modules\test\models\Test;
 use workspace\modules\test\requests\TestSearchRequest;
 
@@ -38,7 +38,9 @@ class TestController extends Controller
 
     public function actionStore()
     {
-        if ($this->validation()) {
+        $request = new TestSearchRequest();
+
+        if ($this->validation($request)) {
             $model = new Test();
             $model->_save();
 
@@ -50,8 +52,9 @@ class TestController extends Controller
     public function actionEdit($id)
     {
         $model = Test::where('id', $id)->first();
+        $request = new TestSearchRequest();
 
-        if ($this->validation()) {
+        if ($this->validation($request)) {
             $model->_save();
 
             $this->redirect('admin/test');
@@ -61,7 +64,9 @@ class TestController extends Controller
 
     public function actionDelete()
     {
-        Test::where('id', $_POST['id'])->delete();
+        $request = new TestSearchRequest();
+
+        Test::where('id', $request->id)->delete();
     }
 
     public function setOptions($data)
@@ -70,7 +75,6 @@ class TestController extends Controller
             'data' => $data,
             'serial' => '#',
             'fields' => [
-//                'id' => 'Id',
                 'title' => 'Название',
                 'description' => 'Описание',
                 '_status' => [
@@ -79,7 +83,7 @@ class TestController extends Controller
                         if($model->status == 1)
                             return 'Активный';
                         elseif ($model->status == 0)
-                            return 'Неактивный';
+                            return GridViewHelper::div('Неактивный', 'inactive-field');
                         else
                             return '';
                     }
@@ -107,7 +111,6 @@ class TestController extends Controller
             'data' => $data,
             'serial' => '#',
             'fields' => [
-//                'id' => 'Id',
                 'question' => 'Вопрос',
                 '_status' => [
                     'label' => 'Статус',
@@ -115,7 +118,7 @@ class TestController extends Controller
                         if($model->status == 1)
                             return 'Активный';
                         elseif ($model->status == 0)
-                            return 'Неактивный';
+                            return GridViewHelper::div('Неактивный', 'inactive-field');
                         else
                             return '';
                     }
@@ -129,8 +132,8 @@ class TestController extends Controller
                             return '';
                     }
                 ],
-//                'weight' => 'Вес',
                 'point' => 'Баллы',
+//                'weight' => 'Вес',
 //                'photo' => 'Картинка',
 //                'test_id' => 'Test_id',
 //                'created_at' => 'Created_at',
@@ -140,8 +143,8 @@ class TestController extends Controller
         ];
     }
 
-    public function validation()
+    public function validation($request)
     {
-        return isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["status"]) && isset($_POST["time"]);
+        return isset($request->title) && isset($request->description) && isset($request->status) && isset($request->time);
     }
 }

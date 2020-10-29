@@ -11,6 +11,8 @@ App::$collector->group(['after' => 'main_group', 'params' => ['AFTER']], functio
 App::$collector->any('sign-up', ['workspace\controllers\MainController', 'actionSignUp']);
 App::$collector->any('sign-in', ['workspace\controllers\MainController', 'actionSignIn']);
 App::$collector->any('logout', ['workspace\controllers\MainController', 'actionLogout']);
+App::$collector->any('admin', ['workspace\modules\adminlte\controllers\AdminController', 'actionIndex']);
+App::$collector->any('test', ['workspace\controllers\MainController', 'actionTest']);
 
 if (App::$config['codegen'] == 'on')
     App::$collector->any('codegen', ['workspace\controllers\CodegenController', 'actionCodeGenerator']);

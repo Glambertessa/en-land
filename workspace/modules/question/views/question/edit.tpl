@@ -56,7 +56,7 @@
             <label for="test_id"></label>
             <select class="form-control" name="test_id" id="test_id">
                 {foreach from=$tests item=item}
-                    {if $item->id eq $model->test_id}
+                    {if $item->id eq $test_id}
                         <option selected value="{$item->id}">{$item->title}</option>
                     {else}
                         <option value="{$item->id}">{$item->title}</option>

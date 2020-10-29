@@ -48,7 +48,11 @@
             <label for="question_id"></label>
             <select class="form-control" name="question_id" id="question_id">
                 {foreach from=$questions item=item}
-                    <option value="{$item->id}">{$item->question}</option>
+                    {if $item->id eq $question_id}
+                        <option selected value="{$item->id}">{$item->question}</option>
+                    {else}
+                        <option value="{$item->id}">{$item->question}</option>
+                    {/if}
                 {/foreach}
             </select>
         </div>

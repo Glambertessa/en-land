@@ -179,3 +179,7 @@ function openDialog(event) {
   body.style.overflow = 'hidden';
 }
 //# sourceMappingURL=script.js.map
+function testValidate()
+{
+  
+}

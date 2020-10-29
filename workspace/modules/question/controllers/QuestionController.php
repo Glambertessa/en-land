@@ -7,6 +7,7 @@ namespace workspace\modules\question\controllers;
 use core\App;
 use core\Controller;
 use core\Debug;
+use core\GridViewHelper;
 use workspace\modules\question\models\Question;
 use workspace\modules\question\requests\QuestionSearchRequest;
 use workspace\modules\test\models\Test;
@@ -40,25 +41,28 @@ class QuestionController extends Controller
     public function actionStore()
     {
         $tests = Test::all();
+        $request = new QuestionSearchRequest();
 
-        if($this->validation()) {
+        if($this->validation($request)) {
             $model = new Question();
             $model->_save();
 
-            $this->redirect('admin/test/');
+            $this->redirect('admin/test/' . $request->test_id);
         } else
-            return $this->render('question/store.tpl', ['h1' => 'Добавить', 'tests' => $tests]);
+            return $this->render('question/store.tpl', ['h1' => 'Добавить', 'tests' => $tests,
+                'test_id' => $request->test_id]);
     }
 
     public function actionEdit($id)
     {
         $model = Question::where('id', $id)->first();
         $tests = Test::all();
+        $request = new QuestionSearchRequest();
 
-        if($this->validation()) {
+        if($this->validation($request)) {
             $model->_save();
 
-            $this->redirect('admin/test/' . $model->test_id);
+            $this->redirect('admin/test/' . $request->test_id);
         } else
             return $this->render('question/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model, 'tests' => $tests]);
     }
@@ -82,7 +86,7 @@ class QuestionController extends Controller
                         if($model->status == 1)
                             return 'Активный';
                         elseif ($model->status == 0)
-                            return 'Неактивный';
+                            return GridViewHelper::div('Неактивный', 'inactive-field');
                         else
                             return '';
                     }
@@ -102,7 +106,7 @@ class QuestionController extends Controller
 //                'created_at' => 'Created_at',
 //                'updated_at' => 'Updated_at',
             ],
-            'baseUri' => 'question'
+            'baseUri' => '/admin/question'
         ];
    }
 
@@ -120,7 +124,7 @@ class QuestionController extends Controller
                         if($model->status == 1)
                             return 'Активный';
                         elseif ($model->status == 0)
-                            return 'Неактивный';
+                            return GridViewHelper::div('Неактивный', 'inactive-field');
                         else
                             return '';
                     }
@@ -129,7 +133,7 @@ class QuestionController extends Controller
                     'label' => 'Тип',
                     'value' => function($model) {
                         if($model->type == 1)
-                            return 'Правлильный ответ';
+                            return GridViewHelper::div('Правильный ответ', 'right-answer');
                         elseif ($model->type == 0)
                             return 'Неправильный ответ';
                         else
@@ -143,12 +147,12 @@ class QuestionController extends Controller
 //                'created_at' => 'Created_at',
 //                'updated_at' => 'Updated_at',
             ],
-            'baseUri' => 'answer'
+            'baseUri' => '/admin/answer'
         ];
     }
 
-   public function validation()
+   public function validation($request)
    {
-       return isset($_POST["question"]) && isset($_POST["status"]) && isset($_POST["type"]) && isset($_POST["point"]);
+       return isset($request->question) && isset($request->status) && isset($request->type) && isset($request->point);
    }
 }

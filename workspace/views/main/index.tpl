@@ -150,9 +150,14 @@
                 </div>
                 <div class="offer__level">
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Узнать свой уровень английского')">Узнай свой уровень английского
+                        <a href="test" style="text-decoration: none">
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Узнай свой уровень английского
                             <div class="button__gradient"></div>
                         </button>
+                        </a>
+{*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Узнать свой уровень английского')">Узнай свой уровень английского*}
+{*                            <div class="button__gradient"></div>*}
+{*                        </button>*}
                     </div><img src="/resources/landing/images/arrow.png" alt=""/>
                 </div>
             </div>

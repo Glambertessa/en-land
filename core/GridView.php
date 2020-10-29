@@ -108,7 +108,6 @@ class GridView extends Widget
                 $table .= '<tr>';
 
                 (isset($this->options['serial'])) ? $table .= '<td>' . ($i + 1) . '</td>' : $table .= '';
-
                 if (!empty($this->actionsBtn)) {
                     $table .= '<td>';
                     foreach ((array)$this->actionsBtn as $item)
