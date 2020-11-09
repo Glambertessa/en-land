@@ -20,11 +20,11 @@ class Elfinder
         ];
 
         $config['adminLeftMenu'] = [
-            [
-                'title' => 'Файлы',
-                'url' => '/admin/elfinder',
-                'icon' => '<i class="nav-icon fas fa-folder-open"></i>',
-            ],
+//            [
+//                'title' => 'Файлы',
+//                'url' => '/admin/elfinder',
+//                'icon' => '<i class="nav-icon fas fa-folder-open"></i>',
+//            ],
         ];
 
         App::mergeConfig($config);

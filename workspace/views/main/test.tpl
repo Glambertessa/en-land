@@ -33,27 +33,31 @@
         </div>
     </div>
 </div>
-<form class="form-horizontal" name="test_form" id="test_form" method="post" action="/test">
+<form class="form-horizontal" name="test_form" id="test_form" method="post">
     <div class="container">
         <h1 class="header__title _anim-items">{$test->title}</h1>
         <h2 class="header__about header__test _anim-items">{$test->description}</h2>
         <br>
         <ol>
             {foreach from=$test->questions item=item}
-                <li class="test__item">{$item->question}</li>
+                <li class="test__item">{$item->question}
                 {foreach from=$item->answers item=value}
                     <div class="form-check test__radio">
-                        <input class="form-check-input" type="radio" name="{$item->id}" id="{$item->id}">
                         <label class="form-check-label" for="{$item->id}">
+                            <input class="form-check-input" type="radio" name="{$item->id}"
+                                   id="{$item->id}-{$value->id}"
+                                   required="required" value="{$value->id}">
                             {$value->answer}
                         </label>
                     </div>
                 {/foreach}
+                </li>
             {/foreach}
         </ol>
+        <input type="text" name="test" id="test" class="hidden" required="required" value="{$test->id}"/>
         <a href="test" style="text-decoration: none">
             <div class="button test__button">
-                <button type="submit" class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Посмотреть
+                <button class="button__inner _anim-items __cjax" type="submit" id="test-submit" style="color:null;background:null;fontSize:null;">Посмотреть
                     результат
                     <div class="button__gradient"></div>
                 </button>
@@ -61,6 +65,10 @@
         </a>
     </div>
 </form>
+
+<div id="result_title" class="result__title"></div>
+<div id="result_description" class="result__description"></div>
+
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">

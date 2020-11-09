@@ -1,0 +1,11 @@
+{
+  "name": "result",
+  "version": "0.1",
+  "type": "module",
+  "class": "workspace\\modules\\result\\Result",
+  "description": "result module",
+  "configFile": "config/result.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": ""
+}

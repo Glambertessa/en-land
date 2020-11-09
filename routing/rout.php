@@ -13,6 +13,7 @@ App::$collector->any('sign-in', ['workspace\controllers\MainController', 'action
 App::$collector->any('logout', ['workspace\controllers\MainController', 'actionLogout']);
 App::$collector->any('admin', ['workspace\modules\adminlte\controllers\AdminController', 'actionIndex']);
 App::$collector->any('test', ['workspace\controllers\MainController', 'actionTest']);
+App::$collector->any('test-handler', ['workspace\controllers\MainController', 'actionTestHandler']);
 
 if (App::$config['codegen'] == 'on')
     App::$collector->any('codegen', ['workspace\controllers\CodegenController', 'actionCodeGenerator']);
