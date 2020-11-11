@@ -1,8 +1,13 @@
 <div class="header">
     <div class="container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
-            <div class="nav__about"><a class="nav__link" href="/">О нас</a><a class="nav__link" href="/">Бесплатные материалы</a><a class="nav__link" href="/">Новости</a>
+            <div class="nav__main"><a class="nav__link" href="/">Главная</a></div>
+            <div class="nav__about">
+                <a class="nav__link" href="#advantages">Преимущества</a>
+                <a class="nav__link" href="#offer">Предложение</a>
+                <a class="nav__link" href="#format">Формат</a>
+                <a class="nav__link" href="#about">Описание</a>
+                <a class="nav__link" href="#contact">Вопросы</a>
             </div>
             <div class="nav__social">
                 {foreach from=$social item=item}
@@ -62,6 +67,7 @@
         </div>
     </div>
 </div>
+<span id="advantages"></span>
 <div class="advantages">
     <div class="container">
         <div class="advantages__title _anim-items">
@@ -112,6 +118,7 @@
         </div>
     </div>
 </div>
+<span id="offer"></span>
 <div class="offer">
     <div class="container">
         <div class="offer__heading _anim-items">
@@ -182,6 +189,7 @@
         </div>
     </div>
 </div>
+<span id="format"></span>
 <div class="format">
     <div class="container">
         <img src="/resources/landing/images/-overlay-slash.png" alt="" id="format__slash-1"/>
@@ -313,6 +321,8 @@
         </div>
     </div>
 </div>
+
+<span id="about"></span>
 <div class="about">
     <div class="container">
         <div class="inner">
@@ -423,11 +433,18 @@
     </div>
     <div class="back_drop"></div>
 </div>
+
+<span id="contact"></span>
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
-            <div class="nav__about"><a class="nav__link" href="/">О нас</a><a class="nav__link" href="/">Бесплатные материалы</a><a class="nav__link" href="/">Новости</a>
+            <div class="nav__main"><a class="nav__link" href="/">Главная</a></div>
+            <div class="nav__about">
+                <a class="nav__link" href="#advantages">Преимущества</a>
+                <a class="nav__link" href="#offer">Предложение</a>
+                <a class="nav__link" href="#format">Формат</a>
+                <a class="nav__link" href="#about">Описание</a>
+                <a class="nav__link" href="#contact">Вопросы</a>
             </div>
             <div class="nav__social">
                 {foreach from=$social item=item}

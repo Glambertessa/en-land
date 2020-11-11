@@ -26,7 +26,7 @@ $(document).ready(function () {
                 result.answers.forEach(element => {
                     $("#"+element.question_id+"-"+element.right_answer_id).css("background-color", '#B1E07E');
                     if(element.right_answer_id !== element.chosen_answer_id) {
-                        $("#"+element.question_id+"-"+element.chosen_answer_id).css("background-color", '#FA7777');
+                        $("#"+element.question_id+"-"+element.chosen_answer_id).css("background-color", '#FA9A95');
                     }
                 });
             },

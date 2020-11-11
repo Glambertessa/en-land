@@ -1,9 +1,7 @@
 <div class="header">
     <div class="container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
-            <div class="nav__about"><a class="nav__link" href="/">О нас</a><a class="nav__link" href="/">Бесплатные материалы</a><a class="nav__link" href="/">Новости</a>
-            </div>
+            <div class="nav__main"><a class="nav__link" href="/">Вернуться на главную</a></div>
             <div class="nav__social">
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
@@ -72,9 +70,7 @@
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Все курсы</a></div>
-            <div class="nav__about"><a class="nav__link" href="/">О нас</a><a class="nav__link" href="/">Бесплатные материалы</a><a class="nav__link" href="/">Новости</a>
-            </div>
+            <div class="nav__main"><a class="nav__link" href="/">Вернуться на главную</a></div>
             <div class="nav__social">
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
