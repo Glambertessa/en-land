@@ -45,9 +45,8 @@
                     <div class="form-check test__radio">
                         <label class="form-check-label" for="{$item->id}">
                             <input class="form-check-input" type="radio" name="{$item->id}"
-                                   id="{$item->id}-{$value->id}"
                                    required="required" value="{$value->id}">
-                            {$value->answer}
+                            <span id="{$item->id}-{$value->id}">{$value->answer}</span>
                         </label>
                     </div>
                 {/foreach}
@@ -66,6 +65,7 @@
     </div>
 </form>
 
+<div id="result_score" class="result__score"></div>
 <div id="result_title" class="result__title"></div>
 <div id="result_description" class="result__description"></div>
 

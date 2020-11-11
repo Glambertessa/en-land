@@ -8,6 +8,7 @@ use core\App;
 use core\Controller;
 use workspace\modules\result\models\Result;
 use workspace\modules\result\requests\ResultSearchRequest;
+use workspace\modules\test\models\Test;
 
 class ResultController extends Controller
 {
@@ -31,32 +32,38 @@ class ResultController extends Controller
     {
         $model = Result::where('id', $id)->first();
 
-        $options = $this->setOptions();
+        $options = $this->setOptions($model);
 
         return $this->render('result/view.tpl', ['model' => $model, 'options' => $options]);
     }
 
     public function actionStore()
     {
-        if($this->validation()) {
+        $tests = Test::all();
+        $request = new ResultSearchRequest();
+
+        if($this->validation($request)) {
             $model = new Result();
             $model->_save();
 
-            $this->redirect('admin/result');
+            $this->redirect('admin/test/' . $request->test_id);
         } else
-            return $this->render('result/store.tpl', ['h1' => 'Добавить']);
+            return $this->render('result/store.tpl', ['h1' => 'Добавить', 'tests' => $tests,
+                'test_id' => $request->test_id]);
     }
 
     public function actionEdit($id)
     {
         $model = Result::where('id', $id)->first();
+        $tests = Test::all();
+        $request = new ResultSearchRequest();
 
-        if($this->validation()) {
+        if($this->validation($request)) {
             $model->_save();
 
-            $this->redirect('admin/result');
+            $this->redirect('admin/test/' . $request->test_id);
         } else
-            return $this->render('result/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model]);
+            return $this->render('result/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model, 'tests' => $tests]);
     }
 
     public function actionDelete()
@@ -80,12 +87,12 @@ class ResultController extends Controller
                 'created_at' => 'Created_at',
                 'updated_at' => 'Updated_at',
             ],
-            'baseUri' => 'result'
+            'baseUri' => '/admin/result'
         ];
    }
 
-   public function validation()
+   public function validation($request)
    {
-       return (isset($_POST["min_score"]) && isset($_POST["max_score"]) && isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["photo"]) && isset($_POST["test_id"])) ? true : false;
+       return isset($request->min_score) && isset($request->max_score) && isset($request->title) && isset($request->description);
    }
 }

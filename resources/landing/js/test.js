@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var form = document.querySelector("form");
+    var result_score = document.querySelector("#result_score");
     var result_title = document.querySelector("#result_title");
     var result_description = document.querySelector("#result_description");
 
@@ -18,9 +19,16 @@ $(document).ready(function () {
             data: {data: json_data},
             success: function (res) {
                 var result = JSON.parse(res);
-                console.log(result);
-                result_title.innerHTML = result.result.title;
+                result_score.innerHTML = "Кол-во правильных ответов: " + result.score;
+                result_title.innerHTML = "Ваш уровень: " + result.result.title;
                 result_description.innerHTML = result.result.description;
+
+                result.answers.forEach(element => {
+                    $("#"+element.question_id+"-"+element.right_answer_id).css("background-color", '#B1E07E');
+                    if(element.right_answer_id !== element.chosen_answer_id) {
+                        $("#"+element.question_id+"-"+element.chosen_answer_id).css("background-color", '#FA7777');
+                    }
+                });
             },
             error: function (res) {
                 console.log(res);

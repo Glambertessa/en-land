@@ -23,16 +23,23 @@
             <input type="text" name="description" id="description" class="form-control"   />
         </div>
 
-        <div class="form-group">
-            <label for="photo">Photo:</label>
-            <input type="text" name="photo" id="photo" class="form-control"   />
-        </div>
+{*        <div class="form-group">*}
+{*            <label for="photo">Photo:</label>*}
+{*            <input type="text" name="photo" id="photo" class="form-control"   />*}
+{*        </div>*}
 
         <div class="form-group">
-            <label for="test_id">Test_id:</label>
-            <input type="text" name="test_id" id="test_id" class="form-control"  required="required" />
+            <label for="test_id"></label>
+            <select class="form-control" name="test_id" id="test_id">
+                {foreach from=$tests item=item}
+                    {if $item->id eq $test_id}
+                        <option selected value="{$item->id}">{$item->title}</option>
+                    {else}
+                        <option value="{$item->id}">{$item->title}</option>
+                    {/if}
+                {/foreach}
+            </select>
         </div>
-
 
         <div class="form-group">
             <input type="submit" name="submit" id="submit_button" class="btn btn-dark" value="Submit">

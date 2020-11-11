@@ -8,9 +8,11 @@ use core\App;
 use core\Controller;
 use core\Debug;
 use core\GridViewHelper;
+use workspace\modules\answer\models\Answer;
 use workspace\modules\question\models\Question;
 use workspace\modules\question\requests\QuestionSearchRequest;
 use workspace\modules\test\models\Test;
+use workspace\modules\test_questions\models\TestQuestions;
 
 class QuestionController extends Controller
 {
@@ -69,7 +71,11 @@ class QuestionController extends Controller
 
     public function actionDelete()
     {
-        Question::where('id', $_POST['id'])->delete();
+        $request = new QuestionSearchRequest();
+
+        TestQuestions::where('question_id', $request->id)->delete();
+        Answer::where('question_id', $request->id)->delete();
+        Question::where('id', $request->id)->delete();
     }
 
     public function setOptions($data)

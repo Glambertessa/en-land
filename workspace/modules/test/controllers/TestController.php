@@ -7,8 +7,10 @@ namespace workspace\modules\test\controllers;
 use core\App;
 use core\Controller;
 use core\GridViewHelper;
+use workspace\modules\result\models\Result;
 use workspace\modules\test\models\Test;
 use workspace\modules\test\requests\TestSearchRequest;
+use workspace\modules\test_questions\models\TestQuestions;
 
 class TestController extends Controller
 {
@@ -33,7 +35,8 @@ class TestController extends Controller
         $model = Test::where('id', $id)->first();
 
         return $this->render('test/view.tpl', ['model' => $model, 'options' => $this->setOptions($model),
-            'questions_options' => $this->setQuestionsOptions($model->questions)]);
+            'questions_options' => $this->setQuestionsOptions($model->questions),
+            'results_options' => $this->setResultsOptions($model->results)]);
     }
 
     public function actionStore()
@@ -66,6 +69,8 @@ class TestController extends Controller
     {
         $request = new TestSearchRequest();
 
+        TestQuestions::where('test_id', $request->id)->delete();
+        Result::where('test_id', $request->id)->delete();
         Test::where('id', $request->id)->delete();
     }
 
@@ -91,15 +96,9 @@ class TestController extends Controller
                 '_time' => [
                     'label' => 'Время',
                     'value' => function($model) {
-                        if($model->time == 0)
-                            return 'Время не ограничено';
-                        else
-                            return $model->time;
+                         return ($model->time == 0) ? 'Время не ограничено' : $model->time;
                     }
                 ],
-//                'photo' => 'Картинка',
-//                'created_at' => 'Created_at',
-//                'updated_at' => 'Updated_at',
             ],
             'baseUri' => '/admin/test'
         ];
@@ -126,20 +125,27 @@ class TestController extends Controller
                 '_type' => [
                     'label' => 'Тип',
                     'value' => function($model) {
-                        if($model->type == 1)
-                            return 'Вопрос с одним ответом';
-                        else
-                            return '';
+                        return ($model->type == 1) ? 'Вопрос с одним ответом' : '';
                     }
                 ],
                 'point' => 'Баллы',
-//                'weight' => 'Вес',
-//                'photo' => 'Картинка',
-//                'test_id' => 'Test_id',
-//                'created_at' => 'Created_at',
-//                'updated_at' => 'Updated_at',
             ],
             'baseUri' => '/admin/question'
+        ];
+    }
+
+    public function setResultsOptions($data)
+    {
+        return [
+            'data' => $data,
+            'serial' => '#',
+            'fields' => [
+                'min_score' => 'Min',
+                'max_score' => 'Max',
+                'title' => 'Заголовок',
+                'description' => 'Описание',
+            ],
+            'baseUri' => '/admin/result'
         ];
     }
 
