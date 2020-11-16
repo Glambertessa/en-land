@@ -12,7 +12,7 @@
             <div class="nav__social">
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
-                        <a href="{$item->value}">
+                        <a href="{$item->value}" target="_blank">
                             <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
                                  alt="{$item->key}">
                             <span class="nav__social-title">Написать в {$item->key}</span>
@@ -26,13 +26,17 @@
                 <input id="menu__toggle" type="checkbox"/>
                 <label class="menu__btn" for="menu__toggle"><span></span></label>
                 <ul class="menu__box">
-                    <li><a class="menu__item" href="/">ВК
-                            <image src="/resources/landing/images/nav-vk-logo.png"></image></a></li>
-                    <li><a class="menu__item" href="/">WhatsApp
-                            <image src="/resources/landing/images/nav-wapp-logo.png"></image></a></li>
-                    <li><a class="menu__item" href="/">О нас</a></li>
-                    <li><a class="menu__item" href="/">Бесплатные материалы</a></li>
-                    <li><a class="menu__item" href="/">Новости</a></li>
+                    {foreach from=$social item=item}
+                        <li><a class="menu__item" href="{$item->value}">{$item->key}
+                                <img src="/resources/landing/images/{$item->key}.png" alt="{$item->key}">
+                            </a></li>
+                    {/foreach}
+                    <li><a class="menu__item" href="/">Главная</a></li>
+                    <li><a class="menu__item" href="#advantages">Преимущества</a></li>
+                    <li><a class="menu__item" href="#offer">Предложение</a></li>
+                    <li><a class="menu__item" href="#format">Формат</a></li>
+                    <li><a class="menu__item" href="#about">Описание</a></li>
+                    <li><a class="menu__item" href="#contact">Вопросы</a></li>
                 </ul>
             </div>
         </div>
@@ -55,7 +59,7 @@
     </div>
     <div class="header__intro _anim-items">
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Смотреть вступительный урок')">Смотреть вступительный урок
+            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Получить IT-словарь')">Получить IT-словарь
                 <div class="button__gradient"></div>
             </button>
         </div>
@@ -125,11 +129,6 @@
             <div class="offer__title">
                 <h3>Мы предлагаем</h3>
             </div>
-            <div class="offer__about">
-                <p>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni</p>
-                <p>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerciam,</p>
-                <p>quis nostrud exerci</p>
-            </div>
         </div>
         <div class="offer__main">
             <div class="offer__courses">
@@ -142,17 +141,6 @@
                     </div>
                     <div class="course__description">
                         <p>General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с грамматикой раз и навсегда, увеличите свой словарный запас, а также избавитесь от психологического барьера. Этот курс подойдет вам, если вы совсем новичок в английском или чувствуете себя не совсем уверенно.</p>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="course__heading">
-                        <div class="course__image"><img src="/resources/landing/images/star.png" alt=""/></div>
-                        <div class="course__title">
-                            <h3>Communication in IT</h3>
-                        </div>
-                    </div>
-                    <div class="course__description">
-                        <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне А2.</p>
                     </div>
                 </div>
                 <div class="offer__level">
@@ -169,22 +157,33 @@
                 </div>
             </div>
             <div class="offer__bonus">
-                <div class="offer__visual">
-                    <h4>Бонус курс</h4><img src="/resources/landing/images/offer-bg.png" alt=""/>
-                    <h5>UpWork прокачка</h5>
+                <div class="course">
+                    <div class="course__heading">
+                        <div class="course__image"><img src="/resources/landing/images/star.png" alt=""/></div>
+                        <div class="course__title">
+                            <h3>Communication in IT</h3>
+                        </div>
+                    </div>
+                    <div class="course__description">
+                        <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне А2.</p>
+                    </div>
                 </div>
-                <div class="offer__description">
-                    <p>
-                        По итогу дополнительного бонус курса , вы — профессиональный фрилансер
-                        с грамотно SEO-оптимизированным профилем Upwork, который привлекает лучших
-                        клиентов. Вы умеете вести переписку с клиентом на английском. Ваш навык
-                        написания цепляющих и продающих Cover Letter значительно улучшен, что
-                        позволяет привлекать заявки на постоянной основе. А так же, мы с вами
-                        записали отличное видеоинтервью. Вы наслаждаетесь гибким графиком и свободой
-                        передвижения, стабильно зарабатывая от $1 500/мес и продолжая развиваться,
-                        работая всего несколько часов в день.
-                    </p>
-                </div>
+{*                <div class="offer__visual">*}
+{*                    <h4>Бонус курс</h4><img src="/resources/landing/images/offer-bg.png" alt=""/>*}
+{*                    <h5>UpWork прокачка</h5>*}
+{*                </div>*}
+{*                <div class="offer__description">*}
+{*                    <p>*}
+{*                        По итогу дополнительного бонус курса , вы — профессиональный фрилансер*}
+{*                        с грамотно SEO-оптимизированным профилем Upwork, который привлекает лучших*}
+{*                        клиентов. Вы умеете вести переписку с клиентом на английском. Ваш навык*}
+{*                        написания цепляющих и продающих Cover Letter значительно улучшен, что*}
+{*                        позволяет привлекать заявки на постоянной основе. А так же, мы с вами*}
+{*                        записали отличное видеоинтервью. Вы наслаждаетесь гибким графиком и свободой*}
+{*                        передвижения, стабильно зарабатывая от $1 500/мес и продолжая развиваться,*}
+{*                        работая всего несколько часов в день.*}
+{*                    </p>*}
+{*                </div>*}
             </div>
         </div>
     </div>
@@ -201,48 +200,49 @@
             <div class="format__title">
                 <h3>Выберите удобный формат обучения</h3>
             </div>
-            <div class="format__about">
-                <p>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni</p>
-                <p>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerciam,</p>
-                <p>quis nostrud exerci</p>
-            </div>
         </div>
         <div class="format__main">
             <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
                 <div class="format-pack__title">
-                    <h3>Пакет Стандарт</h3>
+                    <h3>Курс "General":</h3>
                 </div>
-                <div class="format-pack__subtitle">
-                    <h4>мини текст должен быть тут</h4>
-                </div>
+{*                <div class="format-pack__subtitle">*}
+{*                    <h4>мини текст должен быть тут</h4>*}
+{*                </div>*}
                 <div class="format-pack__description _anim-items">
-                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>
+                    <p class="format-pack__video-collections"></p>
                     <div class="format-pack__video-collection">
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Из чего состоит кейс (структура), критерии успешного кейса</p>
+                            <p class="list-item__text">15 уроков по 1,5 часа на платформе ZOOM;</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Страхи: я не смогу заработать, мои работы никому не понравятся, я облажаюсь. Как раз и навсегда их побороть</p>
+                            <p class="list-item__text">все необходимые учебные материалы</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Публикация, продвижение кейса и переупаковка его для других соцсетей. Нюансы и лайфхаки.</p>
+                            <p class="list-item__text">чат в Тelegram/WhatsApp с поддержкой ментора 24/7</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text">сертификат об окончании курсов</p>
                         </div>
                     </div>
-                    <div class="format-pack__other">
-                        <p class="format-pack__other-item">8 домашних заданий</p>
-                        <p class="format-pack__other-item">Чат участников марафона</p>
-                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>
-                        <p class="format-pack__other-item">Самостоятельное прохождение</p>
-                    </div>
+{*                    <div class="format-pack__other">*}
+{*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
+{*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
+{*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
+{*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
+{*                    </div>*}
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
@@ -264,41 +264,59 @@
             </div>
             <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
                 <div class="format-pack__title">
-                    <h3>Пакет Продвинутый</h3>
+                    <h3>Курс "Communication in IT"</h3>
                 </div>
-                <div class="format-pack__subtitle">
-                    <h4>мини текст должен быть тут</h4>
-                </div>
+{*                <div class="format-pack__subtitle">*}
+{*                    <h4>мини текст должен быть тут</h4>*}
+{*                </div>*}
                 <div class="format-pack__description _anim-items">
-                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>
+{*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>*}
                     <div class="format-pack__video-collection">
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Из чего состоит кейс (структура), критерии успешного кейса</p>
+                            <p class="list-item__text">15 уроков по 1,5 часа на платформе ZOOM</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Страхи: я не смогу заработать, мои работы никому не понравятся, я облажаюсь. Как раз и навсегда их побороть</p>
+                            <p class="list-item__text">все необходимые учебные материалы</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">Публикация, продвижение кейса и переупаковка его для других соцсетей. Нюансы и лайфхаки.</p>
+                            <p class="list-item__text">чат в Тelegram/WhatsApp с поддержкой ментора 24/7</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text">сертификат об окончании курсов</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text">индивидуальный план развития ваших навыков на будущее</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text"> карьерное консультирование (вместе составим сильное CV и научимся проходить job interview)</p>
                         </div>
                     </div>
-                    <div class="format-pack__other">
-                        <p class="format-pack__other-item">8 домашних заданий</p>
-                        <p class="format-pack__other-item">Чат участников марафона</p>
-                        <p class="format-pack__other-item">3 разбора в формате live + проверка всех домашних заданий тренером</p>
-                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>
-                        <p class="format-pack__other-item">Самостоятельное прохождение</p>
-                        <p class="format-pack__other-item">Полноценный индивидуальный план развития на будущее с учётом всех твоих слабых сторон</p>
-                    </div>
+{*                    <div class="format-pack__other">*}
+{*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
+{*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
+{*                        <p class="format-pack__other-item">3 разбора в формате live + проверка всех домашних заданий тренером</p>*}
+{*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
+{*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
+{*                        <p class="format-pack__other-item">Полноценный индивидуальный план развития на будущее с учётом всех твоих слабых сторон</p>*}
+{*                    </div>*}
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
@@ -318,6 +336,36 @@
                     </div>
                 </div>
             </div>
+            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
+                <div class="format-pack__title">
+                    <h3>Индивидуальное занятие:</h3>
+                </div>
+                <div class="format-pack__description _anim-items">
+                    <div class="format-price">
+                        <div class="format-price__title">
+                            <h3>Стоимость</h3>
+                        </div>
+                        <div class="format-price__main">
+                            <div class="format-price__info">
+                                <p class="format-price__price">{$individual_price} &#8381;</p>
+                            </div>
+                            <div class="format-price__howToPay">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+                            <div class="button__gradient"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -327,51 +375,50 @@
     <div class="container">
         <div class="inner">
             <h2 class="title _anim-items">Как это работает:</h2>
-            <h3 class="subtitle _anim-items">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et d iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </h3>
             <div class="content_inner _anim-items">
                 <div class="col__left">
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим диагностику вашего уровня английского.</p>
-                        </div>
+{*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
-                            <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p><img class="content__image" src="/resources/landing/images/textbook.png"/>
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Проводим диагностику вашего уровня английского</p>
+                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим диагностику вашего уровня английского.</p>
-                        </div>
+{*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
-                            <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p><img class="content__image" src="/resources/landing/images/backlog.png"/>
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Ставим цели и подбираем программу обучения</p>
+                            <img class="content__image" src="/resources/landing/images/backlog.png"/>
                         </div>
                     </div>
                 </div>
                 <div class="col__right">
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим диагностику вашего уровня английского.</p>
-                        </div>
+{*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
-                            <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p><img class="content__image" src="/resources/landing/images/textbook.png"/>
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Формируем бэклог курса</p>
+                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="item__header__inner"><img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим диагностику вашего уровня английского.</p>
-                        </div>
+{*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
-                            <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p><img class="content__image" src="/resources/landing/images/baloons.png"/>
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Проводим интересные и полезные уроки</p>
+                            <img class="content__image" src="/resources/landing/images/baloons.png"/>
                         </div>
                     </div>
                 </div>
             </div><img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
             <div class="item">
-                <div class="item__header__inner additional"><img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                    <p class="item__title">Проводим диагностику вашего уровня английского.</p>
-                </div>
+{*                <div class="item__header__inner additional"></div>*}
                 <div class="item__content">
-                    <p class="item__text">Наше тестирование оценивает ваши знания не только в области английской грамматики, но и в таких важных аспектах языка как словарный запас, чтение и восприятие речи на слух.</p><img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
+                    <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                    <p class="item__title">Ретроспектива и Final Test</p>
+                    <img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
                 </div>
             </div>
             <div class="btn">
@@ -383,7 +430,9 @@
             </div>
             <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
             <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-            <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/><img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/><img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
+            <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/>
+                <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
+                <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
             <div class="social__submit"></div>
             <div class="social__btn">
                 <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
@@ -401,7 +450,9 @@
     <div class="modalDialog__inner">
         <p class="modal__title">Заказать</p>
         <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
-        <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/><img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/><img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
+        <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/>
+            <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
+            <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
         <button class="closeDialog" onClick="closeDialog('modalDialog')">
             <hr/>
             <hr/>
@@ -449,7 +500,7 @@
             <div class="nav__social">
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
-                        <a href="{$item->value}">
+                        <a href="{$item->value}" target="_blank">
                             <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
                                  alt="{$item->key}">
                             <span class="nav__social-title">Написать в {$item->key}</span>

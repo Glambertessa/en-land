@@ -27,13 +27,14 @@ class MainController extends Controller
 
         $standard_price = Settings::where('key', 'standard_price')->first();
         $advanced_price = Settings::where('key', 'advanced_price')->first();
+        $individual_price = Settings::where('key', 'individual_price')->first();
         $standard_left = Settings::where('key', 'standard_left')->first();
         $advanced_left = Settings::where('key', 'advanced_left')->first();
-        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
+        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->orWhere('key', 'Instagram')->get();
 
         return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
-            'advanced_price' => $advanced_price->value, 'standard_left' => $standard_left->value,
-            'advanced_left' => $advanced_left->value, 'social' => $social]);
+            'advanced_price' => $advanced_price->value, 'individual_price' => $individual_price->value,
+            'standard_left' => $standard_left->value, 'advanced_left' => $advanced_left->value, 'social' => $social]);
     }
 
     public function actionTest()
@@ -43,15 +44,9 @@ class MainController extends Controller
 
         $test = Test::where('title', 'Экспресс-тест на определение уровня')->first();
 
-        $standard_price = Settings::where('key', 'standard_price')->first();
-        $advanced_price = Settings::where('key', 'advanced_price')->first();
-        $standard_left = Settings::where('key', 'standard_left')->first();
-        $advanced_left = Settings::where('key', 'advanced_left')->first();
         $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
 
-        return $this->render('main/test.tpl', ['test' => $test, 'standard_price' => $standard_price->value,
-            'advanced_price' => $advanced_price->value, 'standard_left' => $standard_left->value,
-            'advanced_left' => $advanced_left->value, 'social' => $social]);
+        return $this->render('main/test.tpl', ['test' => $test, 'social' => $social]);
     }
 
     public function actionTestHandler()
