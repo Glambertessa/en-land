@@ -11,13 +11,14 @@ class Customer extends Model
 {
     protected $table = "customer";
 
-    public $fillable = ['name', 'phone', 'social_network', 'created_at', 'updated_at'];
+    public $fillable = ['name', 'phone', 'social_network', 'created_at', 'updated_at', 'email'];
 
     public function _save($data)
     {
         $this->name = (isset($data->name) && $data->name) ? $data->name : 'empty';
         $this->phone = $data->phoneNumber;
         $this->social_network = $data->socialLink;
+        $this->email = (isset($data->email) && $data->email) ? $data->email : 'empty';
 
         $this->save();
     }

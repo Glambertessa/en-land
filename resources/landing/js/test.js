@@ -3,6 +3,7 @@ $(document).ready(function () {
     var result_score = document.querySelector("#result_score");
     var result_title = document.querySelector("#result_title");
     var result_description = document.querySelector("#result_description");
+    var result_button = document.querySelector("#result_button");
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -22,6 +23,12 @@ $(document).ready(function () {
                 result_score.innerHTML = "Кол-во правильных ответов: " + result.score;
                 result_title.innerHTML = "Ваш уровень: " + result.result.title;
                 result_description.innerHTML = result.result.description;
+                result_button.innerHTML = ' <div class="button">\n' +
+                    '            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"\n' +
+                    '                    onClick="openDialog(\'Записаться\', \'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ\', \'Перезвоните мне\', \'order\')">Пофиксить мой английский\n' +
+                    '                <div class="button__gradient"></div>\n' +
+                    '            </button>\n' +
+                    '        </div>';
 
                 result.answers.forEach(element => {
                     $("#"+element.question_id+"-"+element.right_answer_id).css("background-color", '#B1E07E');

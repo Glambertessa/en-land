@@ -89,8 +89,22 @@ class MainController extends Controller
 
         $customer = new Customer();
         return $customer->_save($data);
+    }
 
-        //$this->redirect('');
+    public function actionShowTest()
+    {
+        $data = json_decode($_POST['data']);
+
+        $customer = new Customer();
+        return $customer->_save($data);
+    }
+
+    public function actionGetVocabulary()
+    {
+        $data = json_decode($_POST['data']);
+
+        $customer = new Customer();
+        return $customer->_save($data);
     }
 
     public function actionLanguage()

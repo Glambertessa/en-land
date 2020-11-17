@@ -66,6 +66,7 @@
 <div id="result_score" class="result__score"></div>
 <div id="result_title" class="result__title"></div>
 <div id="result_description" class="result__description"></div>
+<div id="result_button"></div>
 
 <div class="footer">
     <div class="container footer__container">

@@ -11,7 +11,11 @@ App::$collector->group(['after' => 'main_group', 'params' => ['AFTER']], functio
 App::$collector->any('sign-up', ['workspace\controllers\MainController', 'actionSignUp']);
 App::$collector->any('sign-in', ['workspace\controllers\MainController', 'actionSignIn']);
 App::$collector->any('logout', ['workspace\controllers\MainController', 'actionLogout']);
-App::$collector->any('admin', ['workspace\modules\adminlte\controllers\AdminController', 'actionIndex']);
+
+App::$collector->group(['before' => 'auth'], function ($router) {
+    App::$collector->any('admin', ['workspace\modules\adminlte\controllers\AdminController', 'actionIndex']);
+});
+
 App::$collector->any('test', ['workspace\controllers\MainController', 'actionTest']);
 App::$collector->any('test-handler', ['workspace\controllers\MainController', 'actionTestHandler']);
 
@@ -31,3 +35,5 @@ App::$collector->any('change-version', ['workspace\controllers\ModulesController
 App::$collector->any('update-manifest', ['workspace\controllers\ModulesController', 'actionAddLocalModulesToManifest']);
 
 App::$collector->any('add-order', ['workspace\controllers\MainController', 'actionAddOrder']);
+App::$collector->any('show-test', ['workspace\controllers\MainController', 'actionShowTest']);
+App::$collector->any('get-vocabulary', ['workspace\controllers\MainController', 'actionGetVocabulary']);

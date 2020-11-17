@@ -59,7 +59,8 @@
     </div>
     <div class="header__intro _anim-items">
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Получить IT-словарь')">Получить IT-словарь
+            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                    onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить IT-словарь
                 <div class="button__gradient"></div>
             </button>
         </div>
@@ -71,6 +72,7 @@
         </div>
     </div>
 </div>
+
 <span id="advantages"></span>
 <div class="advantages">
     <div class="container">
@@ -116,12 +118,14 @@
             </div>
         </div>
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                    onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                 <div class="button__gradient"></div>
             </button>
         </div>
     </div>
 </div>
+
 <span id="offer"></span>
 <div class="offer">
     <div class="container">
@@ -145,15 +149,22 @@
                 </div>
                 <div class="offer__level">
                     <div class="button">
-                        <a href="test" style="text-decoration: none">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Узнай свой уровень английского
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                                onClick="openDialog('Чтобы пройти тест...', '... заполните пожалуйста форму', 'Получить', 'test')">Узнай свой уровень английского
                             <div class="button__gradient"></div>
                         </button>
-                        </a>
+                    </div>
+{*                    <div class="button">*}
+{*                        <a href="test" style="text-decoration: none">*}
+{*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Узнай свой уровень английского*}
+{*                            <div class="button__gradient"></div>*}
+{*                        </button>*}
+{*                        </a>*}
 {*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Узнать свой уровень английского')">Узнай свой уровень английского*}
 {*                            <div class="button__gradient"></div>*}
 {*                        </button>*}
-                    </div><img src="/resources/landing/images/arrow.png" alt=""/>
+{*                    </div>*}
+                    <img src="/resources/landing/images/arrow.png" alt=""/>
                 </div>
             </div>
             <div class="offer__bonus">
@@ -188,6 +199,7 @@
         </div>
     </div>
 </div>
+
 <span id="format"></span>
 <div class="format">
     <div class="container">
@@ -256,7 +268,8 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -330,7 +343,8 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -341,26 +355,43 @@
                     <h3>Индивидуальное занятие:</h3>
                 </div>
                 <div class="format-pack__description _anim-items">
+                    <div class="format-pack__video-collection">
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text">гибкий график занятий: занимайся английским в любое удобное для тебя время</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text">комфортный темп занятий: не нужно ждать отстающих одногруппников, можно тщательнее проработать свои ошибки и т.д.</p>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item__circle-wrapper">
+                                <div class="list-item__circle small"></div>
+                            </div>
+                            <p class="list-item__text"> кастомизированный бэклог уроков: выбирайте темы для обсуждения, которые интересны тебе!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="format-pack__description _anim-items">
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
                         </div>
                         <div class="format-price__main">
                             <div class="format-price__info">
-                                <p class="format-price__price">{$individual_price} &#8381;</p>
+                                <p class="format-price__price">{$individual_price}&nbsp;&#8381;</p>
+                                <p class="format-price__places">/<br>Одно занятие</p>
                             </div>
-                            <div class="format-price__howToPay">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
+                            <p class="format-price__howToPay"></p>
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -423,7 +454,8 @@
             </div>
             <div class="btn">
                 <div class="button">
-                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog()">Хочу записаться
+                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                         <div class="button__gradient"></div>
                     </button>
                 </div>
@@ -446,6 +478,7 @@
         </div>
     </div>
 </div>
+
 <div class="modalDialog" style="display:none">
     <div class="modalDialog__inner">
         <p class="modal__title">Заказать</p>
@@ -460,15 +493,14 @@
         <form>
             <input class="form__input modal__input" id="nameModal" placeholder="Представьтесь, пожалуйста"/>
             <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel" name="phone"/>
+            <input class="form__input modal__input" id="emailModal" placeholder="Email" type="email" name="email"/>
         </form>
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="callMe(true)">Перезвоните мне
+            <button class="button__inner _anim-items modalButton" style="color:null;background:null;fontSize:null;" onClick="callMe(true)">Перезвоните мне
                 <div class="button__gradient"></div>
             </button>
         </div>
         <div class="submit__error__modal">Пожалуйста, выберите все поля</div>
-        <div class="modal__text">Мы объединили экспертов, чтобы воплощать ваши идеи в жизнь.
-        </div>
     </div>
     <div class="back_drop"></div>
 </div>
