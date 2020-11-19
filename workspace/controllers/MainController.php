@@ -44,7 +44,7 @@ class MainController extends Controller
 
         $test = Test::where('title', 'Экспресс-тест на определение уровня')->first();
 
-        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->get();
+        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->orWhere('key', 'Instagram')->get();
 
         return $this->render('main/test.tpl', ['test' => $test, 'social' => $social]);
     }

@@ -81,3 +81,7 @@
 .inactive-field {
     background-color: #FFBBA7;
 }
+
+.hidden {
+    visibility: hidden;
+}

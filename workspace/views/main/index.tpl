@@ -150,7 +150,7 @@
                 <div class="offer__level">
                     <div class="button">
                         <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
-                                onClick="openDialog('Чтобы пройти тест...', '... заполните пожалуйста форму', 'Получить', 'test')">Узнай свой уровень английского
+                                onClick="openDialog('Пройти тест', 'пожалуйста, заполните сначала форму', 'Перейти к тесту', 'test')">Узнай свой уровень английского
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -493,7 +493,7 @@
         <form>
             <input class="form__input modal__input" id="nameModal" placeholder="Представьтесь, пожалуйста"/>
             <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel" name="phone"/>
-            <input class="form__input modal__input" id="emailModal" placeholder="Email" type="email" name="email"/>
+            <input class="form__input modal__input" id="emailModal" placeholder="E-mail" type="email" name="email"/>
         </form>
         <div class="button">
             <button class="button__inner _anim-items modalButton" style="color:null;background:null;fontSize:null;" onClick="callMe(true)">Перезвоните мне
@@ -512,7 +512,6 @@
             <hr/>
             <hr/>
         </button>
-        <div class="modal__text">Мы объединили экспертов, чтобы воплощать ваши идеи в жизнь.</div>
     </div>
     <div class="back_drop"></div>
 </div>
