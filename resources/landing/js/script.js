@@ -17,7 +17,10 @@ if (animItems.length > 0) {
             if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight)
                 animItem.classList.add('_active');
             else if (!animItem.classList.contains('_anim-once'))
-                animItem.classList.remove('_active');
+
+                console.log();
+            let animFlagBreak = true;
+            //animItem.classList.remove('_active');
         }
     };
 

@@ -149,7 +149,7 @@
                 </div>
                 <div class="offer__level">
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                        <button class="button__inner _anim-items"
                                 onClick="openDialog('Пройти тест', 'пожалуйста, заполните сначала форму', 'Перейти к тесту', 'test')">Узнай свой уровень английского
                             <div class="button__gradient"></div>
                         </button>
@@ -384,7 +384,7 @@
                         <div class="format-price__main">
                             <div class="format-price__info">
                                 <p class="format-price__price">{$individual_price}&nbsp;&#8381;</p>
-                                <p class="format-price__places">/<br>Одно занятие</p>
+                                <p class="format-price__places">/ Одно занятие</p>
                             </div>
                             <p class="format-price__howToPay"></p>
                         </div>
