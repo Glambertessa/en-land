@@ -1,15 +1,15 @@
 'use strict';
 
-var animItems = document.querySelectorAll('._anim-items');
+let animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
-    var animOnScroll = function animOnScroll(params) {
-        for (var index = 0; index < animItems.length; index++) {
-            var animItem = animItems[index];
-            var animItemHeight = animItem.offsetHeight;
-            var animItemOffset = offset(animItem).top;
-            var animStart = 4;
-            var animItemPoint = window.innerHeight - animItemHeight / animStart;
+    let animOnScroll = function animOnScroll(params) {
+        for (let index = 0; index < animItems.length; index++) {
+            let animItem = animItems[index];
+            let animItemHeight = animItem.offsetHeight;
+            let animItemOffset = offset(animItem).top;
+            let animStart = 4;
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
             if (animItemHeight > window.innerHeight)
                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
@@ -26,8 +26,8 @@ if (animItems.length > 0) {
 
     window.addEventListener('scroll', animOnScroll);
 
-    var offset = function offset(el) {
-        var rect = el.getBoundingClientRect(),
+    let offset = function offset(el) {
+        let rect = el.getBoundingClientRect(),
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
@@ -37,54 +37,54 @@ if (animItems.length > 0) {
     }, 300);
 }
 
-var socialBlock = document.querySelectorAll('.social__block > img.icon');
+let socialBlock = document.querySelectorAll('.social__block > img.icon');
 socialBlock.forEach(function (e) {
     return e.addEventListener('click', function (e, i, arr) {
         return setActiveIcon(e, socialBlock);
     });
 });
-var socialBlockModal = document.querySelectorAll('.social__block__modal > img.icon');
+let socialBlockModal = document.querySelectorAll('.social__block__modal > img.icon');
 socialBlockModal.forEach(function (e) {
+
     return e.addEventListener('click', function (e, i, arr) {
         return setActiveIcon(e, socialBlockModal);
     });
 });
-var validate = document.querySelector('.submit__error');
-var validateModal = document.querySelector('.submit__error__modal');
-var modalResponse = document.querySelector('.modalResponse');
-var data = {
+let validate = document.querySelector('.submit__error');
+let validateModal = document.querySelector('.submit__error__modal');
+let modalResponse = document.querySelector('.modalResponse');
+let data = {
     phoneNumber: '',
     name: '',
     socialLink: ''
 };
 
-function callMe(isModal) {
+function callMe() {
+    let isModal = document.querySelector('[data-type]').getAttribute('data-type');
     if (isModal) {
         if (isFormValid('#nameModal', '#phoneModal') && isSocialBlockActive(socialBlockModal)) {
             validateModal.style.display = 'none';
-            var _modalDialog = document.querySelector('.modalDialog');
+            let _modalDialog = document.querySelector('.modalDialog');
             _modalDialog.style.display = 'none';
             setData('#phoneModal', '#nameModal', socialBlockModal, '#emailModal');
-
-            var modalType = $('.modalButton').data('type');
-
-            if (modalType === 'order')
+            if (isModal === 'order')
                 openResponseModal();
 
             $.ajax({
-                    url: '/add-order',
-                    type: 'POST',
-                    data: {data: JSON.stringify(data)},
-                    success: function () {
-                        if (modalType === 'vocabulary') {
-                            var link = document.createElement('a');
-                            link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
-                            link.setAttribute('download', 'download');
-                            link.click();
-                            body.style.overflow = 'auto';
-                        } else if (modalType === 'test')
-                            location.href = 'http://en-land.loc/test';
-                    },
+                url: '/add-order',
+                type: 'POST',
+                data: {data: JSON.stringify(data)},
+                success: function () {
+
+                    if (isModal === 'vocabulary') {
+                        let link = document.createElement('a');
+                        link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
+                        link.setAttribute('download', 'download');
+                        link.click();
+                        body.style.overflow = 'hidden';
+                    } else if (isModal === 'test')
+                        location.href = 'http://en-land.loc/test';
+                },
                 error: function () {
                 }
             });
@@ -109,7 +109,7 @@ function callMe(isModal) {
     }
 }
 
-var setActiveIcon = function setActiveIcon(e, block) {
+let setActiveIcon = function setActiveIcon(e, block) {
     e.preventDefault();
     block.forEach(function (e) {
         return e.classList.contains('icon__active') ? e.classList.remove('icon__active') : null;
@@ -117,21 +117,21 @@ var setActiveIcon = function setActiveIcon(e, block) {
     e.target.classList.add('icon__active');
 };
 
-var isSocialBlockActive = function isSocialBlockActive(block) {
-    for (var i = 0; i < block.length; i++)
+let isSocialBlockActive = function isSocialBlockActive(block) {
+    for (let i = 0; i < block.length; i++)
         if (block[i].classList.contains('icon__active'))
             return block[i];
 
     return false;
 };
-var isDialogActive = function isDialogActive(nameOfDialog) {
-    var dialog = document.querySelector('.' + nameOfDialog);
+let isDialogActive = function isDialogActive(nameOfDialog) {
+    let dialog = document.querySelector('.' + nameOfDialog);
     return !(dialog.style.display === 'none' || dialog.style.display.length === 0);
 
 };
-var isFormValid = function isFormValid(nameInput, phoneInput) {
-    var nameInp = document.querySelector(nameInput);
-    var phoneInp = document.querySelector(phoneInput);
+let isFormValid = function isFormValid(nameInput, phoneInput) {
+    let nameInp = document.querySelector(nameInput);
+    let phoneInp = document.querySelector(phoneInput);
     if (nameInput)
         return nameInp.value.length > 0 && phoneInp.value.length === 16;
     else
@@ -143,10 +143,10 @@ function openResponseModal() {
 }
 
 function setData(phoneNumber, name, socialLink, email) {
-    var nameInp = name !== '' ? document.querySelector(name) : '';
-    var phoneInp = document.querySelector(phoneNumber);
-    var emailInp = document.querySelector(email);
-    var social = isSocialBlockActive(socialLink);
+    let nameInp = name !== '' ? document.querySelector(name) : '';
+    let phoneInp = document.querySelector(phoneNumber);
+    let emailInp = document.querySelector(email);
+    let social = isSocialBlockActive(socialLink);
     data = {
         phoneNumber: phoneInp.value,
         name: nameInp.value,
@@ -155,15 +155,16 @@ function setData(phoneNumber, name, socialLink, email) {
     };
 }
 
-var element = document.getElementById('phone');
-var maskOptions = {
+let element = document.getElementById('phone');
+let maskOptions = {
     mask: '+{7}(000)000-00-00'
 };
-var mask = IMask(element, maskOptions);
-var element1 = document.getElementById('phoneModal');
-var mask1 = IMask(element1, maskOptions);
-var modalDialog = document.querySelector('.modalDialog');
-var body = document.querySelector('body');
+
+let mask = IMask(element, maskOptions);
+let element1 = document.getElementById('phoneModal');
+let mask1 = IMask(element1, maskOptions);
+let modalDialog = document.querySelector('.modalDialog');
+let body = document.querySelector('body');
 
 function closeDialog(element) {
     let dialog = document.querySelector('.' + element);
@@ -173,7 +174,8 @@ function closeDialog(element) {
 
 function openDialog(title, description, button_text, type) {
     let socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
-    console.log(socialBlock);
+   /* let lol = document.querySelector();
+    let kek = (type = true) ? type.removeEventListener() : console.log("Евента нет") ;*/
     socialBlock.forEach(function (e) {
         return e.addEventListener('click', function (e) {
             return setActiveIcon(e, socialBlock);

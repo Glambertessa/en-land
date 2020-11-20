@@ -143,7 +143,7 @@ body {
 }
 
 .title__form {
-    font-family: 'GT Eesti Pro Display UltraBold',sans-serif;
+    font-family: 'GT Eesti Pro Display UltraBold', sans-serif;
     margin-top: 0;
     margin-bottom: 90px;
 }
@@ -220,7 +220,7 @@ body {
 .item__title {
     font-size: 22px;
     max-width: 290px;
-    font-family: 'GT Eesti Pro Display Medium' , sans-serif;
+    font-family: 'GT Eesti Pro Display Medium', sans-serif;
 }
 
 .item__content {
@@ -674,6 +674,7 @@ body {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        margin: 10px 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -1421,6 +1422,8 @@ body {
     }
 }
 
+
+
 @media (max-width: 1200px) {
     .format-pack__image {
         display: none;
@@ -1557,7 +1560,6 @@ body {
 }
 
 .header .nav {
-    max-width: 869px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1568,6 +1570,14 @@ body {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
+}
+
+@media (max-width: 1290px) {
+    .header .nav  {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .header__main {

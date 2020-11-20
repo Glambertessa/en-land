@@ -20,10 +20,10 @@
                 <label class="menu__btn" for="menu__toggle"><span></span></label>
                 <ul class="menu__box">
                     <li><a class="menu__item" href="/">ВК
-                            <image src="/resources/landing/images/nav-vk-logo.png"></image>
+                            <img src="/resources/landing/images/nav-vk-logo.png" alt="vk-logo">
                         </a></li>
                     <li><a class="menu__item" href="/">WhatsApp
-                            <image src="/resources/landing/images/nav-wapp-logo.png"></image>
+                            <img src="/resources/landing/images/nav-wapp-logo.png" alt="wapp-logo">
                         </a></li>
                     <li><a class="menu__item" href="/">О нас</a></li>
                     <li><a class="menu__item" href="/">Бесплатные материалы</a></li>
@@ -57,9 +57,8 @@
         <input type="text" name="test" id="test" class="hidden" required="required" value="{$test->id}"/>
         <a href="test" style="text-decoration: none">
             <div class="button test__button">
-                <button class="button__inner _anim-items __cjax" type="submit" id="test-submit"
-                        style="color:null;background:null;fontSize:null;">Посмотреть
-                    результат
+                <button class="button__inner _anim-items __cjax" type="submit" id="test-submit">
+                    Посмотреть результат
                     <div class="button__gradient"></div>
                 </button>
             </div>
@@ -71,7 +70,7 @@
 <div id="result_title" class="result__title"></div>
 <div id="result_description" class="result__description"></div>
 <div id="result_button" class="button hidden">
-    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+    <button class="button__inner _anim-items"
             onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу
         записаться
         <div class="button__gradient"></div>
@@ -97,8 +96,7 @@
             <input class="form__input modal__input" id="emailModal" placeholder="Email" type="email" name="email"/>
         </form>
         <div class="button">
-            <button class="button__inner _anim-items modalButton" style="color:null;background:null;fontSize:null;"
-                    onClick="callMe(true)">Перезвоните мне
+            <button class="button__inner _anim-items modalButton" onClick="callMe(true)">Перезвоните мне
                 <div class="button__gradient"></div>
             </button>
         </div>
