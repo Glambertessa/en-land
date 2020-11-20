@@ -81,7 +81,7 @@ function callMe() {
                         link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
                         link.setAttribute('download', 'download');
                         link.click();
-                        body.style.overflow = 'hidden';
+                        body.style.overflow = 'auto';
                     } else if (isModal === 'test')
                         location.href = 'http://en-land.loc/test';
                 },
