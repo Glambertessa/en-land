@@ -65,16 +65,17 @@
         </a>
     </div>
 </form>
-
-<div id="result_score" class="result__score"></div>
-<div id="result_title" class="result__title"></div>
-<div id="result_description" class="result__description"></div>
-<div id="result_button" class="button hidden">
-    <button class="button__inner _anim-items"
-            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу
-        записаться
-        <div class="button__gradient"></div>
-    </button>
+<div id="result_container_test" class="result_container_test" style="display: none">
+    <div id="result_score" class="result__score"></div>
+    <div id="result_title" class="result__title"></div>
+    <div id="result_description" class="result__description"></div>
+    <div id="result_button" class="button hidden">
+        <button class="button__inner _anim-items"
+                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+            Хочу записаться
+            <div class="button__gradient"></div>
+        </button>
+    </div>
 </div>
 
 <div class="modalDialog" style="display:none">
@@ -104,7 +105,17 @@
     </div>
     <div class="back_drop"></div>
 </div>
-
+<div class="modalResponse" style="display:none">
+    <div class="modalDialog__inner">
+        <p class="modal__title">Спасибо</p>
+        <p>Скоро мы с вами свяжемся</p>
+        <button class="closeDialog" onClick="closeDialog('modalResponse')">
+            <hr>
+            <hr>
+        </button>
+    </div>
+    <div class="back_drop"></div>
+</div>
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">

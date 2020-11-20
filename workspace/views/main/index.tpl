@@ -59,9 +59,11 @@
     </div>
     <div class="header__intro _anim-items">
         <div class="button">
-            <button class="button__inner _anim-items" "
-                    onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить IT-словарь
-                <div class="button__gradient"></div>
+            <button class="button__inner _anim-items"
+            "
+            onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить
+            IT-словарь
+            <div class="button__gradient"></div>
             </button>
         </div>
         <div class="header__intro-text _anim-items">
@@ -118,9 +120,11 @@
             </div>
         </div>
         <div class="button">
-            <button class="button__inner _anim-items""
-                    onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
-                <div class="button__gradient"></div>
+            <button class="button__inner _anim-items"
+            "
+            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу
+            записаться
+            <div class="button__gradient"></div>
             </button>
         </div>
     </div>
@@ -144,26 +148,30 @@
                         </div>
                     </div>
                     <div class="course__description">
-                        <p>General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с грамматикой раз и навсегда, увеличите свой словарный запас, а также избавитесь от психологического барьера. Этот курс подойдет вам, если вы совсем новичок в английском или чувствуете себя не совсем уверенно.</p>
+                        <p>General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с
+                            грамматикой раз и навсегда, увеличите свой словарный запас, а также избавитесь от
+                            психологического барьера. Этот курс подойдет вам, если вы совсем новичок в английском или
+                            чувствуете себя не совсем уверенно.</p>
                     </div>
                 </div>
                 <div class="offer__level">
                     <div class="button">
                         <button class="button__inner _anim-items"
-                                onClick="openDialog('Пройти тест', 'пожалуйста, заполните сначала форму', 'Перейти к тесту', 'test')">Узнай свой уровень английского
+                                onClick="openDialog('Пройти тест', 'пожалуйста, заполните сначала форму', 'Перейти к тесту', 'test')">
+                            Узнай свой уровень английского
                             <div class="button__gradient"></div>
                         </button>
                     </div>
-{*                    <div class="button">*}
-{*                        <a href="test" style="text-decoration: none">*}
-{*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Узнай свой уровень английского*}
-{*                            <div class="button__gradient"></div>*}
-{*                        </button>*}
-{*                        </a>*}
-{*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Узнать свой уровень английского')">Узнай свой уровень английского*}
-{*                            <div class="button__gradient"></div>*}
-{*                        </button>*}
-{*                    </div>*}
+                    {*                    <div class="button">*}
+                    {*                        <a href="test" style="text-decoration: none">*}
+                    {*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;">Узнай свой уровень английского*}
+                    {*                            <div class="button__gradient"></div>*}
+                    {*                        </button>*}
+                    {*                        </a>*}
+                    {*                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="openDialog('Узнать свой уровень английского')">Узнай свой уровень английского*}
+                    {*                            <div class="button__gradient"></div>*}
+                    {*                        </button>*}
+                    {*                    </div>*}
                     <img src="/resources/landing/images/arrow.png" alt=""/>
                 </div>
             </div>
@@ -176,25 +184,28 @@
                         </div>
                     </div>
                     <div class="course__description">
-                        <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне А2.</p>
+                        <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с
+                            командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на
+                            английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне
+                            А2.</p>
                     </div>
                 </div>
-{*                <div class="offer__visual">*}
-{*                    <h4>Бонус курс</h4><img src="/resources/landing/images/offer-bg.png" alt=""/>*}
-{*                    <h5>UpWork прокачка</h5>*}
-{*                </div>*}
-{*                <div class="offer__description">*}
-{*                    <p>*}
-{*                        По итогу дополнительного бонус курса , вы — профессиональный фрилансер*}
-{*                        с грамотно SEO-оптимизированным профилем Upwork, который привлекает лучших*}
-{*                        клиентов. Вы умеете вести переписку с клиентом на английском. Ваш навык*}
-{*                        написания цепляющих и продающих Cover Letter значительно улучшен, что*}
-{*                        позволяет привлекать заявки на постоянной основе. А так же, мы с вами*}
-{*                        записали отличное видеоинтервью. Вы наслаждаетесь гибким графиком и свободой*}
-{*                        передвижения, стабильно зарабатывая от $1 500/мес и продолжая развиваться,*}
-{*                        работая всего несколько часов в день.*}
-{*                    </p>*}
-{*                </div>*}
+                {*                <div class="offer__visual">*}
+                {*                    <h4>Бонус курс</h4><img src="/resources/landing/images/offer-bg.png" alt=""/>*}
+                {*                    <h5>UpWork прокачка</h5>*}
+                {*                </div>*}
+                {*                <div class="offer__description">*}
+                {*                    <p>*}
+                {*                        По итогу дополнительного бонус курса , вы — профессиональный фрилансер*}
+                {*                        с грамотно SEO-оптимизированным профилем Upwork, который привлекает лучших*}
+                {*                        клиентов. Вы умеете вести переписку с клиентом на английском. Ваш навык*}
+                {*                        написания цепляющих и продающих Cover Letter значительно улучшен, что*}
+                {*                        позволяет привлекать заявки на постоянной основе. А так же, мы с вами*}
+                {*                        записали отличное видеоинтервью. Вы наслаждаетесь гибким графиком и свободой*}
+                {*                        передвижения, стабильно зарабатывая от $1 500/мес и продолжая развиваться,*}
+                {*                        работая всего несколько часов в день.*}
+                {*                    </p>*}
+                {*                </div>*}
             </div>
         </div>
     </div>
@@ -218,9 +229,9 @@
                 <div class="format-pack__title">
                     <h3>Курс "General":</h3>
                 </div>
-{*                <div class="format-pack__subtitle">*}
-{*                    <h4>мини текст должен быть тут</h4>*}
-{*                </div>*}
+                {*                <div class="format-pack__subtitle">*}
+                {*                    <h4>мини текст должен быть тут</h4>*}
+                {*                </div>*}
                 <div class="format-pack__description _anim-items">
                     <p class="format-pack__video-collections"></p>
                     <div class="format-pack__video-collection">
@@ -249,12 +260,12 @@
                             <p class="list-item__text">сертификат об окончании курсов</p>
                         </div>
                     </div>
-{*                    <div class="format-pack__other">*}
-{*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
-{*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
-{*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
-{*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
-{*                    </div>*}
+                    {*                    <div class="format-pack__other">*}
+                    {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
+                    {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
+                    {*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
+                    {*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
+                    {*                    </div>*}
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
@@ -269,7 +280,8 @@
                     </div>
                     <div class="button">
                         <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+                            Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -279,11 +291,11 @@
                 <div class="format-pack__title">
                     <h3>Курс "Communication in IT"</h3>
                 </div>
-{*                <div class="format-pack__subtitle">*}
-{*                    <h4>мини текст должен быть тут</h4>*}
-{*                </div>*}
+                {*                <div class="format-pack__subtitle">*}
+                {*                    <h4>мини текст должен быть тут</h4>*}
+                {*                </div>*}
                 <div class="format-pack__description _anim-items">
-{*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>*}
+                    {*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>*}
                     <div class="format-pack__video-collection">
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
@@ -319,17 +331,18 @@
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text"> карьерное консультирование (вместе составим сильное CV и научимся проходить job interview)</p>
+                            <p class="list-item__text"> карьерное консультирование (вместе составим сильное CV и
+                                научимся проходить job interview)</p>
                         </div>
                     </div>
-{*                    <div class="format-pack__other">*}
-{*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
-{*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
-{*                        <p class="format-pack__other-item">3 разбора в формате live + проверка всех домашних заданий тренером</p>*}
-{*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
-{*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
-{*                        <p class="format-pack__other-item">Полноценный индивидуальный план развития на будущее с учётом всех твоих слабых сторон</p>*}
-{*                    </div>*}
+                    {*                    <div class="format-pack__other">*}
+                    {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
+                    {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
+                    {*                        <p class="format-pack__other-item">3 разбора в формате live + проверка всех домашних заданий тренером</p>*}
+                    {*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
+                    {*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
+                    {*                        <p class="format-pack__other-item">Полноценный индивидуальный план развития на будущее с учётом всех твоих слабых сторон</p>*}
+                    {*                    </div>*}
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
@@ -344,7 +357,8 @@
                     </div>
                     <div class="button">
                         <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+                            Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -360,19 +374,22 @@
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">гибкий график занятий: занимайся английским в любое удобное для тебя время</p>
+                            <p class="list-item__text">гибкий график занятий: занимайся английским в любое удобное для
+                                тебя время</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text">комфортный темп занятий: не нужно ждать отстающих одногруппников, можно тщательнее проработать свои ошибки и т.д.</p>
+                            <p class="list-item__text">комфортный темп занятий: не нужно ждать отстающих одногруппников,
+                                можно тщательнее проработать свои ошибки и т.д.</p>
                         </div>
                         <div class="list-item">
                             <div class="list-item__circle-wrapper">
                                 <div class="list-item__circle small"></div>
                             </div>
-                            <p class="list-item__text"> кастомизированный бэклог уроков: выбирайте темы для обсуждения, которые интересны тебе!</p>
+                            <p class="list-item__text"> кастомизированный бэклог уроков: выбирайте темы для обсуждения,
+                                которые интересны тебе!</p>
                         </div>
                     </div>
                 </div>
@@ -391,7 +408,8 @@
                     </div>
                     <div class="button">
                         <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
+                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+                            Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
                     </div>
@@ -409,7 +427,7 @@
             <div class="content_inner _anim-items">
                 <div class="col__left">
                     <div class="item">
-{*                        <div class="item__header__inner"></div>*}
+                        {*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
                             <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
                             <p class="item__title">Проводим диагностику вашего уровня английского</p>
@@ -417,7 +435,7 @@
                         </div>
                     </div>
                     <div class="item">
-{*                        <div class="item__header__inner"></div>*}
+                        {*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
                             <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
                             <p class="item__title">Ставим цели и подбираем программу обучения</p>
@@ -427,7 +445,7 @@
                 </div>
                 <div class="col__right">
                     <div class="item">
-{*                        <div class="item__header__inner"></div>*}
+                        {*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
                             <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
                             <p class="item__title">Формируем бэклог курса</p>
@@ -435,7 +453,7 @@
                         </div>
                     </div>
                     <div class="item">
-{*                        <div class="item__header__inner"></div>*}
+                        {*                        <div class="item__header__inner"></div>*}
                         <div class="item__content">
                             <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
                             <p class="item__title">Проводим интересные и полезные уроки</p>
@@ -443,9 +461,10 @@
                         </div>
                     </div>
                 </div>
-            </div><img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
+            </div>
+            <img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
             <div class="item">
-{*                <div class="item__header__inner additional"></div>*}
+                {*                <div class="item__header__inner additional"></div>*}
                 <div class="item__content">
                     <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
                     <p class="item__title">Ретроспектива и Final Test</p>
@@ -455,14 +474,16 @@
             <div class="btn">
                 <div class="button">
                     <button class="button__inner _anim-items"
-                            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
+                            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+                        Хочу записаться
                         <div class="button__gradient"></div>
                     </button>
                 </div>
             </div>
             <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
             <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-            <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/>
+            <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png"
+                                            alt="telegram"/>
                 <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
                 <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
             <div class="social__submit"></div>
@@ -483,7 +504,8 @@
     <div class="modalDialog__inner">
         <p class="modal__title">Заказать</p>
         <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
-        <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png" alt="telegram"/>
+        <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png"
+                                               alt="telegram"/>
             <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
             <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
         <button class="closeDialog" onClick="closeDialog('modalDialog')">
@@ -492,7 +514,8 @@
         </button>
         <form>
             <input class="form__input modal__input" id="nameModal" placeholder="Представьтесь, пожалуйста"/>
-            <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel" name="phone"/>
+            <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel"
+                   name="phone"/>
             <input class="form__input modal__input" id="emailModal" placeholder="E-mail" type="email" name="email"/>
         </form>
         <div class="button">
@@ -509,8 +532,8 @@
         <p class="modal__title">Спасибо</p>
         <p>Скоро мы с вами свяжемся</p>
         <button class="closeDialog" onClick="closeDialog('modalResponse')">
-            <hr/>
-            <hr/>
+            <hr>
+            <hr>
         </button>
     </div>
     <div class="back_drop"></div>
