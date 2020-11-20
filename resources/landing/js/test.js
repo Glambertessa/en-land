@@ -10,7 +10,7 @@ $(document).ready(function () {
         var data = new FormData(form);
         var json_data = '{';
         for (const entry of data)
-            json_data += '"' + entry[0] + '":"' + entry[1] + '",'
+            json_data += '"' + entry[0] + '":"' + entry[1] + '",';
         json_data = json_data.substring(0, json_data.length - 1);
         json_data += '}';
 
@@ -26,9 +26,9 @@ $(document).ready(function () {
                 result_button.classList.remove("hidden");
 
                 result.answers.forEach(element => {
-                    $("#"+element.question_id+"-"+element.right_answer_id).css("background-color", '#B1E07E');
-                    if(element.right_answer_id !== element.chosen_answer_id) {
-                        $("#"+element.question_id+"-"+element.chosen_answer_id).css("background-color", '#FA9A95');
+                    $("#" + element.question_id + "-" + element.right_answer_id).css("background-color", '#B1E07E');
+                    if (element.right_answer_id !== element.chosen_answer_id) {
+                        $("#" + element.question_id + "-" + element.chosen_answer_id).css("background-color", '#FA9A95');
                     }
                 });
             },

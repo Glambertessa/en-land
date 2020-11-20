@@ -59,7 +59,7 @@
     </div>
     <div class="header__intro _anim-items">
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+            <button class="button__inner _anim-items" "
                     onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить IT-словарь
                 <div class="button__gradient"></div>
             </button>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div class="button">
-            <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+            <button class="button__inner _anim-items""
                     onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                 <div class="button__gradient"></div>
             </button>
@@ -268,7 +268,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                        <button class="button__inner _anim-items"
                                 onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
@@ -343,7 +343,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                        <button class="button__inner _anim-items"
                                 onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
@@ -390,7 +390,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                        <button class="button__inner _anim-items"
                                 onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                             <div class="button__gradient"></div>
                         </button>
@@ -454,7 +454,7 @@
             </div>
             <div class="btn">
                 <div class="button">
-                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;"
+                    <button class="button__inner _anim-items"
                             onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу записаться
                         <div class="button__gradient"></div>
                     </button>
@@ -469,7 +469,7 @@
             <div class="social__btn">
                 <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
                 <div class="button">
-                    <button class="button__inner _anim-items" style="color:null;background:null;fontSize:null;" onClick="callMe()">Перезвоните мне
+                    <button class="button__inner _anim-items" onClick="callMe()">Перезвоните мне
                         <div class="button__gradient"></div>
                     </button>
                 </div>
@@ -496,7 +496,7 @@
             <input class="form__input modal__input" id="emailModal" placeholder="E-mail" type="email" name="email"/>
         </form>
         <div class="button">
-            <button class="button__inner _anim-items modalButton" style="color:null;background:null;fontSize:null;" onClick="callMe(true)">Перезвоните мне
+            <button class="button__inner _anim-items modalButton" onClick="callMe(true)">Перезвоните мне
                 <div class="button__gradient"></div>
             </button>
         </div>

@@ -72,19 +72,19 @@ function callMe(isModal) {
                 openResponseModal();
 
             $.ajax({
-                url: '/add-order',
-                type: 'POST',
-                data: {data: JSON.stringify(data)},
-                success: function () {
-                    if (modalType === 'vocabulary') {
-                        var link = document.createElement('a');
-                        link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
-                        link.setAttribute('download', 'download');
-                        link.click();
-                        body.style.overflow = 'auto';
-                    } else if (modalType === 'test')
-                        location.href = 'http://en-land.loc/test';
-                },
+                    url: '/add-order',
+                    type: 'POST',
+                    data: {data: JSON.stringify(data)},
+                    success: function () {
+                        if (modalType === 'vocabulary') {
+                            var link = document.createElement('a');
+                            link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
+                            link.setAttribute('download', 'download');
+                            link.click();
+                            body.style.overflow = 'auto';
+                        } else if (modalType === 'test')
+                            location.href = 'http://en-land.loc/test';
+                    },
                 error: function () {
                 }
             });
@@ -166,15 +166,16 @@ var modalDialog = document.querySelector('.modalDialog');
 var body = document.querySelector('body');
 
 function closeDialog(element) {
-    var dialog = document.querySelector('.' + element);
+    let dialog = document.querySelector('.' + element);
     dialog.style.display = 'none';
     body.style.overflow = 'auto';
 }
 
 function openDialog(title, description, button_text, type) {
-    var socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
+    let socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
+    console.log(socialBlock);
     socialBlock.forEach(function (e) {
-        return e.addEventListener('click', function (e, i, arr) {
+        return e.addEventListener('click', function (e) {
             return setActiveIcon(e, socialBlock);
         });
     });
