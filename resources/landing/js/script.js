@@ -52,7 +52,7 @@ socialBlockModal.forEach(function (e) {
 });
 let validate = document.querySelector('.submit__error');
 let validateModal = document.querySelector('.submit__error__modal');
-let modalResponse = document.querySelector('.modalResponse');
+
 let data = {
     phoneNumber: '',
     name: '',
@@ -61,6 +61,7 @@ let data = {
 
 function callMe() {
     let isModal = document.querySelector('[data-type]').getAttribute('data-type');
+    let body = document.querySelector('body');
     if (isModal) {
         if (isFormValid('#nameModal', '#phoneModal') && isSocialBlockActive(socialBlockModal)) {
             validateModal.style.display = 'none';
@@ -81,7 +82,7 @@ function callMe() {
                         link.setAttribute('href', 'http://en-land.loc/resources/pdf/it_vocabulary.pdf');
                         link.setAttribute('download', 'download');
                         link.click();
-                        body.style.overflow = 'hidden';
+                        body.style.overflow = 'auto';
                     } else if (isModal === 'test')
                         location.href = 'http://en-land.loc/test';
                 },
@@ -139,6 +140,8 @@ let isFormValid = function isFormValid(nameInput, phoneInput) {
 };
 
 function openResponseModal() {
+    let modalResponse = document.querySelector('.modalResponse');
+    console.log(modalResponse);
     modalResponse.style.display = 'flex';
 }
 
@@ -163,10 +166,9 @@ let maskOptions = {
 let mask = IMask(element, maskOptions);
 let element1 = document.getElementById('phoneModal');
 let mask1 = IMask(element1, maskOptions);
-let modalDialog = document.querySelector('.modalDialog');
-let body = document.querySelector('body');
 
 function closeDialog(element) {
+    let body = document.querySelector('body');
     let dialog = document.querySelector('.' + element);
     dialog.style.display = 'none';
     body.style.overflow = 'auto';
@@ -174,13 +176,14 @@ function closeDialog(element) {
 
 function openDialog(title, description, button_text, type) {
     let socialBlock = document.querySelectorAll('.social__block__modal > img.icon');
-   /* let lol = document.querySelector();
-    let kek = (type = true) ? type.removeEventListener() : console.log("Евента нет") ;*/
+    let modalDialog = document.querySelector('.modalDialog');
+    let body = document.querySelector('body');
     socialBlock.forEach(function (e) {
         return e.addEventListener('click', function (e) {
             return setActiveIcon(e, socialBlock);
         });
     });
+
     modalDialog.children[0].children[0].textContent = title || 'Записаться';
     modalDialog.children[0].children[1].textContent = description || 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ';
     modalDialog.style.display = 'flex';
