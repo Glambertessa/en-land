@@ -12,12 +12,14 @@ use core\RequestSearch;
  *
  * @property string $key
  * @property string $value
+ * @property string $label
  */
 
 class SettingsSearchRequest extends RequestSearch
 {
     public $key;
     public $value;
+    public $label;
 
     public function rules()
     {

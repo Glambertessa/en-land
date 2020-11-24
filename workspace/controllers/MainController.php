@@ -26,6 +26,10 @@ class MainController extends Controller
         $this->view->setTitle(Settings::where('key', 'title')->first()->value);
         $this->view->addMeta('description', Settings::where('key', 'description')->first()->value);
 
+        $og_tags = Settings::where('label', 'og_meta_tag')->get();
+        foreach ($og_tags as $og_tag)
+            $this->view->addMeta($og_tag->key, $og_tag->value, [], ['attribute_name' => 'property']);
+
         $standard_price = Settings::where('key', 'standard_price')->first();
         $advanced_price = Settings::where('key', 'advanced_price')->first();
         $individual_price = Settings::where('key', 'individual_price')->first();
@@ -45,6 +49,10 @@ class MainController extends Controller
         $this->setLayout('front.tpl');
         $this->view->setTitle(Settings::where('key', 'test_title')->first()->value);
         $this->view->addMeta('description', Settings::where('key', 'test_description')->first()->value);
+
+        $og_tags = Settings::where('label', 'og_meta_tag')->get();
+        foreach ($og_tags as $og_tag)
+            $this->view->addMeta($og_tag->key, $og_tag->value, [], ['attribute_name' => 'property']);
 
         $test = Test::where('title', 'Экспресс-тест на определение уровня')->first();
         $social = Settings::where('label', 'social')->get();

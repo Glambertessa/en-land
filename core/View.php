@@ -48,9 +48,9 @@ class View
         $this->title = $title;
     }
 
-    public function addMeta($name, $content, $params = [])
+    public function addMeta($name, $content, $params = [], $options = ['attribute_name' => 'name'])
     {
-        $this->meta[] = ['name' => $name, 'content' => $content, 'params' => $params];
+        $this->meta[] = [$options['attribute_name'] => $name, 'content' => $content, 'params' => $params];
     }
 
     public function getMetaHtml()
@@ -58,7 +58,11 @@ class View
         $metaHtml = '';
         foreach ($this->meta as $item) {
             $params = $this->generateAdditionalParams($item['params']);
-            $metaHtml .= "<meta name='" . $item['name'] . "' content='" . $item['content'] . "' " . $params . " >" . "\n";
+            if(isset($item['property']))
+                $metaHtml .= "<meta property='" . $item['property'];
+            else
+                $metaHtml .= "<meta name='" . $item['name'];
+            $metaHtml .= "' content='" . $item['content'] . "' " . $params . " >" . "\n";
         }
         return $metaHtml;
     }
