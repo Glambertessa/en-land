@@ -3,7 +3,6 @@
 
 namespace core;
 
-
 class View
 {
     public $title = 'No title';
@@ -111,5 +110,4 @@ class View
 
         return $params;
     }
-
 }

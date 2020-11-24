@@ -5,12 +5,7 @@ namespace core;
 
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Arr;
 use Phroute\Phroute\Dispatcher;
-use Phroute\Phroute\RouteCollector;
-use Illuminate\Database\Capsule\Manager as Capsule;
-use routing\Filter;
-use workspace\models\User;
 
 /**
  * Class App

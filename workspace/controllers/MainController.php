@@ -22,29 +22,32 @@ class MainController extends Controller
 {
     public function actionIndex()
     {
-        $this->view->setTitle('Английский');
         $this->setLayout('front.tpl');
+        $this->view->setTitle(Settings::where('key', 'title')->first()->value);
+        $this->view->addMeta('description', Settings::where('key', 'description')->first()->value);
 
         $standard_price = Settings::where('key', 'standard_price')->first();
         $advanced_price = Settings::where('key', 'advanced_price')->first();
         $individual_price = Settings::where('key', 'individual_price')->first();
         $standard_left = Settings::where('key', 'standard_left')->first();
         $advanced_left = Settings::where('key', 'advanced_left')->first();
-        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->orWhere('key', 'Instagram')->get();
+        $social = Settings::where('label', 'social')->get();
+        $h1 = Settings::where('key', 'h1')->first();
 
         return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
             'advanced_price' => $advanced_price->value, 'individual_price' => $individual_price->value,
-            'standard_left' => $standard_left->value, 'advanced_left' => $advanced_left->value, 'social' => $social]);
+            'standard_left' => $standard_left->value, 'advanced_left' => $advanced_left->value, 'social' => $social,
+            'h1' => $h1->value]);
     }
 
     public function actionTest()
     {
-        $this->view->setTitle('Тест');
         $this->setLayout('front.tpl');
+        $this->view->setTitle(Settings::where('key', 'test_title')->first()->value);
+        $this->view->addMeta('description', Settings::where('key', 'test_description')->first()->value);
 
         $test = Test::where('title', 'Экспресс-тест на определение уровня')->first();
-
-        $social = Settings::where('key', 'Vk')->orWhere('key', 'Whatsapp')->orWhere('key', 'Instagram')->get();
+        $social = Settings::where('label', 'social')->get();
 
         return $this->render('main/test.tpl', ['test' => $test, 'social' => $social]);
     }

@@ -43,7 +43,7 @@
     </div>
     <div class="header__main">
         <div class="header__main-text">
-            <h1 class="header__title _anim-items">Английский<br/>для IT-специалистов</h1>
+            <h1 class="header__title _anim-items">{$h1}</h1>
             <h2 class="header__about _anim-items">
                 Мы не просто обучаем английскому, мы тренеруем
                 софт скиллы и развиваем навыки 21 века – критическое

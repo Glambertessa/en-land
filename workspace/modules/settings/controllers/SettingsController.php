@@ -35,11 +35,9 @@ class SettingsController extends Controller
 
         $options = [
             'fields' => [
-                'key' => 'key',
-                'category' => [
-                    'label' => 'value',
-                    'value' => function($model) { return $model->value; }
-                ]
+                'key' => 'Ключ',
+                'value' => 'Значение',
+                'label' => 'Категория',
             ],
         ];
 
@@ -49,10 +47,11 @@ class SettingsController extends Controller
     public function actionStore()
     {
         if(isset($_POST['key']) && isset($_POST['value'])) {
-            $settings = new Settings();
-            $settings->key = $_POST['key'];
-            $settings->value = $_POST['value'];
-            $settings->save();
+            $model = new Settings();
+            $model->key = $_POST['key'];
+            $model->value = $_POST['value'];
+            $model->label = $_POST['label'];
+            $model->save();
 
             $this->redirect('admin/settings');
         } else
@@ -66,6 +65,7 @@ class SettingsController extends Controller
         if(isset($_POST['key']) && isset($_POST['value'])) {
             $model->key = $_POST['key'];
             $model->value = $_POST['value'];
+            $model->label = $_POST['label'];
             $model->save();
 
             $this->redirect('admin/settings');
@@ -85,10 +85,8 @@ class SettingsController extends Controller
             'serial' => '#',
             'fields' => [
                 'key' => 'Ключ',
-                'category' => [
-                    'label' => 'Значение',
-                    'value' => function($model) { return $model->value; }
-                ]
+                'value' => 'Значение',
+                'label' => 'Категория',
             ],
             'baseUri' => 'settings'
         ];
