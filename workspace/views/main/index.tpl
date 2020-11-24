@@ -46,7 +46,7 @@
             <h1 class="header__title _anim-items">Английский<br/>для IT-специалистов</h1>
             <h2 class="header__about _anim-items">
                 Мы не просто обучаем английскому, мы тренеруем
-                софт скиллы и развиваемнавыки 21 века – критическое
+                софт скиллы и развиваем навыки 21 века – критическое
                 мышление, креативность, коммуникативность,
                 командная работа.
             </h2>
@@ -225,41 +225,28 @@
             </div>
         </div>
         <div class="format__main">
-            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
-                <div class="format-pack__title">
-                    <h3>Курс "General":</h3>
-                </div>
-                {*                <div class="format-pack__subtitle">*}
-                {*                    <h4>мини текст должен быть тут</h4>*}
-                {*                </div>*}
-                <div class="format-pack__description _anim-items">
-                    <p class="format-pack__video-collections"></p>
-                    <div class="format-pack__video-collection">
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">15 уроков по 1,5 часа на платформе ZOOM;</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">все необходимые учебные материалы</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">чат в Тelegram/WhatsApp с поддержкой ментора 24/7</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">сертификат об окончании курсов</p>
-                        </div>
+            <div class="format-pack">
+                <div class="format-pack__card _anim-items">
+                    <div class="format-pack__title">
+                        <h3>Курс "General":</h3>
                     </div>
+                    {*                <div class="format-pack__subtitle">*}
+                    {*                    <h4>мини текст должен быть тут</h4>*}
+                    {*                </div>*}
+                    <ul class="format-pack__description _anim-items">
+                        <li class="list-item">
+                            15 уроков по 1,5 часа на платформе ZOOM;
+                        </li>
+                        <li class="list-item">
+                            все необходимые учебные материалы
+                        </li>
+                        <li class="list-item">
+                            чат в Тelegram/WhatsApp с поддержкой ментора 24/7
+                        </li>
+                        <li class="list-item">
+                            сертификат об окончании курсов
+                        </li>
+                    </ul>
                     {*                    <div class="format-pack__other">*}
                     {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
                     {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
@@ -287,54 +274,37 @@
                     </div>
                 </div>
             </div>
-            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
-                <div class="format-pack__title">
-                    <h3>Курс "Communication in IT"</h3>
-                </div>
-                {*                <div class="format-pack__subtitle">*}
-                {*                    <h4>мини текст должен быть тут</h4>*}
-                {*                </div>*}
-                <div class="format-pack__description _anim-items">
-                    {*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>*}
-                    <div class="format-pack__video-collection">
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">15 уроков по 1,5 часа на платформе ZOOM</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">все необходимые учебные материалы</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">чат в Тelegram/WhatsApp с поддержкой ментора 24/7</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">сертификат об окончании курсов</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">индивидуальный план развития ваших навыков на будущее</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text"> карьерное консультирование (вместе составим сильное CV и
-                                научимся проходить job interview)</p>
-                        </div>
+            <div class="format-pack">
+                <div class="format-pack__card _anim-items">
+                    <div class="format-pack__title">
+                        <h3>Курс "Communication in IT"</h3>
                     </div>
+                    {*                <div class="format-pack__subtitle">*}
+                    {*                    <h4>мини текст должен быть тут</h4>*}
+                    {*                </div>*}
+
+                    {*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>        центральный*}
+                    <ul class="format-pack__description _anim-items">
+                        <li class="list-item">
+                            15 уроков по 1,5 часа на платформе ZOOM
+                        </li>
+                        <li class="list-item">
+                            все необходимые учебные материалы
+                        </li>
+                        <li class="list-item">
+                            чат в Тelegram/WhatsApp с поддержкой ментора 24/7
+                        </li>
+                        <li class="list-item">
+                            сертификат об окончании курсов
+                        </li>
+                        <li class="list-item">
+                            индивидуальный план развития ваших навыков на будущее
+                        </li>
+                        <li class="list-item">
+                            карьерное консультирование (вместе составим сильное CV и
+                            научимся проходить job interview)
+                        </li>
+                    </ul>
                     {*                    <div class="format-pack__other">*}
                     {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
                     {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
@@ -364,36 +334,28 @@
                     </div>
                 </div>
             </div>
-            <div class="format-pack"><img class="format-pack__image" src="/resources/landing/images/Ramka.png"/>
-                <div class="format-pack__title">
-                    <h3>Индивидуальное занятие:</h3>
-                </div>
-                <div class="format-pack__description _anim-items">
-                    <div class="format-pack__video-collection">
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">гибкий график занятий: занимайся английским в любое удобное для
-                                тебя время</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text">комфортный темп занятий: не нужно ждать отстающих одногруппников,
-                                можно тщательнее проработать свои ошибки и т.д.</p>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-item__circle-wrapper">
-                                <div class="list-item__circle small"></div>
-                            </div>
-                            <p class="list-item__text"> кастомизированный бэклог уроков: выбирайте темы для обсуждения,
-                                которые интересны тебе!</p>
-                        </div>
+            <div class="format-pack">
+                <div class="format-pack__card _anim-items">
+                    <div class="format-pack__title">
+                        <h3>Индивидуальное занятие:</h3>
                     </div>
-                </div>
-                <div class="format-pack__description _anim-items">
+
+                    <ul class="format-pack__description _anim-items">
+                        <li class="list-item">
+                            гибкий график занятий: занимайся английским в любое удобное для
+                            тебя время
+                        </li>
+                        <li class="list-item">
+                            комфортный темп занятий: не нужно ждать отстающих одногруппников,
+                            можно тщательнее проработать свои ошибки и т.д.
+                        </li>
+                        <li class="list-item">
+                            кастомизированный бэклог уроков: выбирайте темы для обсуждения,
+                            которые интересны тебе!
+                        </li>
+                    </ul>
+
+
                     <div class="format-price">
                         <div class="format-price__title">
                             <h3>Стоимость</h3>
@@ -413,6 +375,7 @@
                             <div class="button__gradient"></div>
                         </button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -543,14 +506,6 @@
 <div class="footer">
     <div class="container footer__container">
         <div class="nav">
-            <div class="nav__main"><a class="nav__link" href="/">Главная</a></div>
-            <div class="nav__about">
-                <a class="nav__link" href="#advantages">Преимущества</a>
-                <a class="nav__link" href="#offer">Предложение</a>
-                <a class="nav__link" href="#format">Формат</a>
-                <a class="nav__link" href="#about">Описание</a>
-                <a class="nav__link" href="#contact">Вопросы</a>
-            </div>
             <div class="nav__social">
                 {foreach from=$social item=item}
                     <div class="nav__social-item">
