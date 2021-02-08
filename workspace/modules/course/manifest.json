@@ -1,0 +1,11 @@
+{
+  "name": "course",
+  "version": "1.0",
+  "type": "module",
+  "class": "workspace\\modules\\course\\Course",
+  "description": "courses module",
+  "configFile": "config/course.php",
+  "routFile": "routing/rout.php",
+  "migrationPath": "console/migrations",
+  "relations": []
+}
