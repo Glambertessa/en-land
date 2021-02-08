@@ -7,6 +7,7 @@ use core\component_manager\lib\Mod;
 use core\Controller;
 use core\Debug;
 use workspace\modules\answer\models\AnswerResult;
+use workspace\modules\course\models\Course;
 use workspace\modules\customer\models\Customer;
 use workspace\modules\result\models\Result;
 use workspace\modules\settings\models\Settings;
@@ -38,10 +39,12 @@ class MainController extends Controller
         $social = Settings::where('label', 'social')->get();
         $h1 = Settings::where('key', 'h1')->first();
 
+        $corses = Course::all()->toArray();
+
         return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
             'advanced_price' => $advanced_price->value, 'individual_price' => $individual_price->value,
             'standard_left' => $standard_left->value, 'advanced_left' => $advanced_left->value, 'social' => $social,
-            'h1' => $h1->value]);
+            'h1' => $h1->value, 'courses' => $corses]);
     }
 
     public function actionTest()

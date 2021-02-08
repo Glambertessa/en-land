@@ -1,3 +1,15 @@
+<!-- CRM -->
+<script data-b24-form="click/8/8ovhjg" data-skip-moving="true">
+    (function (w, d, u) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = u + '?' + (Date.now() / 180000 | 0);
+        var h = d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s, h);
+    })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_8.js');
+</script>
+<!-- End of CRM -->
+
 <div class="header">
     <div class="container">
         <div class="nav">
@@ -57,14 +69,17 @@
         </div>
         <div class="header__main-image _anim-items"><img src="/resources/landing/images/header-bg.png" alt=""/></div>
     </div>
+
     <div class="header__intro _anim-items">
         <div class="button">
-            <button class="button__inner _anim-items"
-            "
-            onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить
-            IT-словарь
-            <div class="button__gradient"></div>
-            </button>
+            <form action="https://drive.google.com/file/d/1T_J1fNidUejXey3mQIzj1x4XnFMlyINW/view" target="_blank">
+                <button class="button__inner _anim-items"
+                "
+                onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить
+                IT-словарь
+                <div class="button__gradient"></div>
+                </button>
+            </form>
         </div>
         <div class="header__intro-text _anim-items">
             <p>
@@ -75,7 +90,65 @@
     </div>
 </div>
 
-<span id="advantages"></span>
+
+<script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+
+</script>
+
+<div class="button" style="margin-top: 7rem">
+    <button id="vidbutton" class="button__inner _anim-items">
+        Ознакомительное видео
+        <div class="button__gradient"></div>
+    </button>
+</div>
+
+
+<div class="container" id="video-block" hidden>
+    <img id="loading-gif" src="/resources/img/loading.gif" height="720" style="display: block; margin: auto">
+    <video id="video1" controls src="/resources/video/www.mp4"
+           style="max-width: 100%; width: 100%; margin-top: 3rem; opacity: 0" hidden preload="auto"></video>
+</div>
+
+<script type="text/javascript">
+    var is_open = false;
+
+    $('#vidbutton').on('click', function () {
+
+
+        $('#video-block').slideToggle(200, function () {
+
+            if (false === is_open) {
+                $('#loading-gif').css('display', 'none');
+
+                $('#video1').removeAttr('hidden');
+
+                $("#video1").animate({
+                    opacity: "+=1",
+                }, 1000);
+
+                is_open = true;
+            } else {
+                $("#video1").animate({
+                    opacity: "-=1",
+                }, 200);
+
+                $('#loading-gif').css('display', 'block');
+
+                document.getElementById('video1').setAttribute('hidden', null);
+
+                is_open = false;
+            }
+        });
+    });
+
+</script>
+
+
+<span id="advantage"></span>
+
 <div class="advantages">
     <div class="container">
         <div class="advantages__title _anim-items">
@@ -224,47 +297,105 @@
                 <h3>Выберите удобный формат обучения</h3>
             </div>
         </div>
+        {$chunked_courses = array_chunk($courses, 3)}
+        {foreach from=$chunked_courses item=$three_courses}
         <div class="format__main">
-            <div class="format-pack">
-                <div class="format-pack__card _anim-items">
-                    <div class="format-pack__title">
-                        <h3>Курс "General":</h3>
-                    </div>
-                    {*                <div class="format-pack__subtitle">*}
-                    {*                    <h4>мини текст должен быть тут</h4>*}
-                    {*                </div>*}
-                    <ul class="format-pack__description _anim-items">
-                        <li class="list-item">
-                            15 уроков по 1,5 часа на платформе ZOOM;
-                        </li>
-                        <li class="list-item">
-                            все необходимые учебные материалы
-                        </li>
-                        <li class="list-item">
-                            чат в Тelegram/WhatsApp с поддержкой ментора 24/7
-                        </li>
-                        <li class="list-item">
-                            сертификат об окончании курсов
-                        </li>
-                    </ul>
-                    {*                    <div class="format-pack__other">*}
-                    {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
-                    {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
-                    {*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
-                    {*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
-                    {*                    </div>*}
-                    <div class="format-price">
-                        <div class="format-price__title">
-                            <h3>Стоимость</h3>
+
+            {foreach from=$three_courses item=$course}
+                <div class="format-pack">
+                    <div class="format-pack__card _anim-items">
+                        <div class="format-pack__title">
+                            <h3>{$course['title']}</h3>
                         </div>
-                        <div class="format-price__main">
-                            <div class="format-price__info">
-                                <p class="format-price__price">{$standard_price} &#8381;</p>
-                                <p class="format-price__places">/ Осталось мест: {$standard_left}</p>
+                        <ul class="format-pack__description _anim-items">
+                            {$options = explode("\n", $course['options'])}
+                            {foreach from=$options item=$option}
+                                <li class="list-item">
+                                    {$option}
+                                </li>
+                            {/foreach}
+                        </ul>
+                        <div class="format-price">
+                            <div class="format-price__title">
+                                <h3>Стоимость</h3>
                             </div>
-                            <p class="format-price__howToPay">Оплата частями по рассрочке</p>
+                            <div class="format-price__main">
+                                <div class="format-price__info">
+                                    <p class="format-price__price">{$course['price']} &#8381;</p>
+                                    <p class="format-price__places">/ {$course['place_left']}</p>
+                                </div>
+                                <p class="format-price__howToPay">Оплата частями по рассрочке</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button class="button__inner _anim-items"
+                                    onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+                                Хочу записаться
+                                <div class="button__gradient"></div>
+                            </button>
                         </div>
                     </div>
+                </div>
+            {/foreach}
+
+        </div>
+        {/foreach}
+        </div>
+    </div>
+
+    <span id="about"></span>
+    <div class="about">
+        <div class="container">
+            <div class="inner">
+                <h2 class="title _anim-items">Как это работает:</h2>
+                <div class="content_inner _anim-items">
+                    <div class="col__left">
+                        <div class="item">
+                            {*                        <div class="item__header__inner"></div>*}
+                            <div class="item__content">
+                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                                <p class="item__title">Проводим диагностику вашего уровня английского</p>
+                                <img class="content__image" src="/resources/landing/images/textbook.png"/>
+                            </div>
+                        </div>
+                        <div class="item">
+                            {*                        <div class="item__header__inner"></div>*}
+                            <div class="item__content">
+                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                                <p class="item__title">Ставим цели и подбираем программу обучения</p>
+                                <img class="content__image" src="/resources/landing/images/backlog.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col__right">
+                        <div class="item">
+                            {*                        <div class="item__header__inner"></div>*}
+                            <div class="item__content">
+                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                                <p class="item__title">Формируем бэклог курса</p>
+                                <img class="content__image" src="/resources/landing/images/textbook.png"/>
+                            </div>
+                        </div>
+                        <div class="item">
+                            {*                        <div class="item__header__inner"></div>*}
+                            <div class="item__content">
+                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                                <p class="item__title">Проводим интересные и полезные уроки</p>
+                                <img class="content__image" src="/resources/landing/images/baloons.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
+                <div class="item">
+                    {*                <div class="item__header__inner additional"></div>*}
+                    <div class="item__content">
+                        <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                        <p class="item__title">Ретроспектива и Final Test</p>
+                        <img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
+                    </div>
+                </div>
+                <div class="btn">
                     <div class="button">
                         <button class="button__inner _anim-items"
                                 onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
@@ -273,250 +404,80 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="format-pack">
-                <div class="format-pack__card _anim-items">
-                    <div class="format-pack__title">
-                        <h3>Курс "Communication in IT"</h3>
-                    </div>
-                    {*                <div class="format-pack__subtitle">*}
-                    {*                    <h4>мини текст должен быть тут</h4>*}
-                    {*                </div>*}
-
-                    {*                    <p class="format-pack__video-collections">3 видеоколлекции на темы:</p>        центральный*}
-                    <ul class="format-pack__description _anim-items">
-                        <li class="list-item">
-                            15 уроков по 1,5 часа на платформе ZOOM
-                        </li>
-                        <li class="list-item">
-                            все необходимые учебные материалы
-                        </li>
-                        <li class="list-item">
-                            чат в Тelegram/WhatsApp с поддержкой ментора 24/7
-                        </li>
-                        <li class="list-item">
-                            сертификат об окончании курсов
-                        </li>
-                        <li class="list-item">
-                            индивидуальный план развития ваших навыков на будущее
-                        </li>
-                        <li class="list-item">
-                            карьерное консультирование (вместе составим сильное CV и
-                            научимся проходить job interview)
-                        </li>
-                    </ul>
-                    {*                    <div class="format-pack__other">*}
-                    {*                        <p class="format-pack__other-item">8 домашних заданий</p>*}
-                    {*                        <p class="format-pack__other-item">Чат участников марафона</p>*}
-                    {*                        <p class="format-pack__other-item">3 разбора в формате live + проверка всех домашних заданий тренером</p>*}
-                    {*                        <p class="format-pack__other-item">Файлы и помощь наставника!</p>*}
-                    {*                        <p class="format-pack__other-item">Самостоятельное прохождение</p>*}
-                    {*                        <p class="format-pack__other-item">Полноценный индивидуальный план развития на будущее с учётом всех твоих слабых сторон</p>*}
-                    {*                    </div>*}
-                    <div class="format-price">
-                        <div class="format-price__title">
-                            <h3>Стоимость</h3>
-                        </div>
-                        <div class="format-price__main">
-                            <div class="format-price__info">
-                                <p class="format-price__price">{$advanced_price} &#8381;</p>
-                                <p class="format-price__places">/ Осталось мест: {$advanced_left}</p>
-                            </div>
-                            <p class="format-price__howToPay">Оплата частями по рассрочке</p>
-                        </div>
-                    </div>
+                <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
+                <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
+                <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png"
+                                                alt="telegram"/>
+                    <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
+                    <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
+                <div class="social__submit"></div>
+                <div class="social__btn">
+                    <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
                     <div class="button">
-                        <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
-                            Хочу записаться
+                        <button class="button__inner _anim-items" onClick="callMe()">Перезвоните мне
                             <div class="button__gradient"></div>
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="format-pack">
-                <div class="format-pack__card _anim-items">
-                    <div class="format-pack__title">
-                        <h3>Индивидуальное занятие:</h3>
-                    </div>
-
-                    <ul class="format-pack__description _anim-items">
-                        <li class="list-item">
-                            гибкий график занятий: занимайся английским в любое удобное для
-                            тебя время
-                        </li>
-                        <li class="list-item">
-                            комфортный темп занятий: не нужно ждать отстающих одногруппников,
-                            можно тщательнее проработать свои ошибки и т.д.
-                        </li>
-                        <li class="list-item">
-                            кастомизированный бэклог уроков: выбирайте темы для обсуждения,
-                            которые интересны тебе!
-                        </li>
-                    </ul>
-
-
-                    <div class="format-price">
-                        <div class="format-price__title">
-                            <h3>Стоимость</h3>
-                        </div>
-                        <div class="format-price__main">
-                            <div class="format-price__info">
-                                <p class="format-price__price">{$individual_price}&nbsp;&#8381;</p>
-                                <p class="format-price__places">/ Одно занятие</p>
-                            </div>
-                            <p class="format-price__howToPay"></p>
-                        </div>
-                    </div>
-                    <div class="button">
-                        <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
-                            Хочу записаться
-                            <div class="button__gradient"></div>
-                        </button>
-                    </div>
-
-                </div>
+                <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
             </div>
         </div>
     </div>
-</div>
 
-<span id="about"></span>
-<div class="about">
-    <div class="container">
-        <div class="inner">
-            <h2 class="title _anim-items">Как это работает:</h2>
-            <div class="content_inner _anim-items">
-                <div class="col__left">
-                    <div class="item">
-                        {*                        <div class="item__header__inner"></div>*}
-                        <div class="item__content">
-                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим диагностику вашего уровня английского</p>
-                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        {*                        <div class="item__header__inner"></div>*}
-                        <div class="item__content">
-                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Ставим цели и подбираем программу обучения</p>
-                            <img class="content__image" src="/resources/landing/images/backlog.png"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col__right">
-                    <div class="item">
-                        {*                        <div class="item__header__inner"></div>*}
-                        <div class="item__content">
-                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Формируем бэклог курса</p>
-                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        {*                        <div class="item__header__inner"></div>*}
-                        <div class="item__content">
-                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                            <p class="item__title">Проводим интересные и полезные уроки</p>
-                            <img class="content__image" src="/resources/landing/images/baloons.png"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
-            <div class="item">
-                {*                <div class="item__header__inner additional"></div>*}
-                <div class="item__content">
-                    <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                    <p class="item__title">Ретроспектива и Final Test</p>
-                    <img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
-                </div>
-            </div>
-            <div class="btn">
-                <div class="button">
-                    <button class="button__inner _anim-items"
-                            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
-                        Хочу записаться
-                        <div class="button__gradient"></div>
-                    </button>
-                </div>
-            </div>
-            <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
-            <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-            <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png"
-                                            alt="telegram"/>
+    <div class="modalDialog" style="display:none">
+        <div class="modalDialog__inner">
+            <p class="modal__title">Заказать</p>
+            <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
+            <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png"
+                                                   alt="telegram"/>
                 <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
                 <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
-            <div class="social__submit"></div>
-            <div class="social__btn">
-                <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
-                <div class="button">
-                    <button class="button__inner _anim-items" onClick="callMe()">Перезвоните мне
-                        <div class="button__gradient"></div>
-                    </button>
-                </div>
+            <button class="closeDialog" onClick="closeDialog('modalDialog')">
+                <hr/>
+                <hr/>
+            </button>
+            <form>
+                <input class="form__input modal__input" id="nameModal" placeholder="Представьтесь, пожалуйста"/>
+                <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel"
+                       name="phone"/>
+                <input class="form__input modal__input" id="emailModal" placeholder="E-mail" type="email" name="email"/>
+            </form>
+            <div class="button">
+                <button class="button__inner _anim-items modalButton" onClick="callMe(true)">Перезвоните мне
+                    <div class="button__gradient"></div>
+                </button>
             </div>
-            <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
+            <div class="submit__error__modal">Пожалуйста, выберите все поля</div>
         </div>
+        <div class="back_drop"></div>
     </div>
-</div>
-
-<div class="modalDialog" style="display:none">
-    <div class="modalDialog__inner">
-        <p class="modal__title">Заказать</p>
-        <p class="social__subtitle">ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ</p>
-        <div class="social__block__modal"><img class="icon" src="/resources/landing/images/telegram-brands.png"
-                                               alt="telegram"/>
-            <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
-            <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
-        <button class="closeDialog" onClick="closeDialog('modalDialog')">
-            <hr/>
-            <hr/>
-        </button>
-        <form>
-            <input class="form__input modal__input" id="nameModal" placeholder="Представьтесь, пожалуйста"/>
-            <input class="form__input modal__input" id="phoneModal" placeholder="Номер телефона" type="tel"
-                   name="phone"/>
-            <input class="form__input modal__input" id="emailModal" placeholder="E-mail" type="email" name="email"/>
-        </form>
-        <div class="button">
-            <button class="button__inner _anim-items modalButton" onClick="callMe(true)">Перезвоните мне
-                <div class="button__gradient"></div>
+    <div class="modalResponse" style="display:none">
+        <div class="modalDialog__inner">
+            <p class="modal__title">Спасибо</p>
+            <p>Скоро мы с вами свяжемся</p>
+            <button class="closeDialog" onClick="closeDialog('modalResponse')">
+                <hr>
+                <hr>
             </button>
         </div>
-        <div class="submit__error__modal">Пожалуйста, выберите все поля</div>
+        <div class="back_drop"></div>
     </div>
-    <div class="back_drop"></div>
-</div>
-<div class="modalResponse" style="display:none">
-    <div class="modalDialog__inner">
-        <p class="modal__title">Спасибо</p>
-        <p>Скоро мы с вами свяжемся</p>
-        <button class="closeDialog" onClick="closeDialog('modalResponse')">
-            <hr>
-            <hr>
-        </button>
-    </div>
-    <div class="back_drop"></div>
-</div>
 
-<span id="contact"></span>
-<div class="footer">
-    <div class="container footer__container">
-        <div class="nav">
-            <div class="nav__social">
-                {foreach from=$social item=item}
-                    <div class="nav__social-item">
-                        <a href="{$item->value}" target="_blank">
-                            <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
-                                 alt="{$item->key}">
-                            <span class="nav__social-title">Написать в {$item->key}</span>
-                        </a>
-                    </div>
-                {/foreach}
+    <span id="contact"></span>
+    <div class="footer">
+        <div class="container footer__container">
+            <div class="nav">
+                <div class="nav__social">
+                    {foreach from=$social item=item}
+                        <div class="nav__social-item">
+                            <a href="{$item->value}" target="_blank">
+                                <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
+                                     alt="{$item->key}">
+                                <span class="nav__social-title">Написать в {$item->key}</span>
+                            </a>
+                        </div>
+                    {/foreach}
+                </div>
             </div>
         </div>
     </div>
-</div>
