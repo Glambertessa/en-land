@@ -437,8 +437,8 @@
                 <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
             <div class="social__submit"></div>*}
             {*                    <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>*}
-            <div class="btn">
-                <div class="button">
+
+                <div class="button" style="margin-bottom: 7rem">
                     <button class="button__inner _anim-items">
                         <!-- CRM -->
                         <script data-b24-form="click/20/tp9plp" data-skip-moving="true">
@@ -454,7 +454,6 @@
                         <div class="button__gradient"></div>
                     </button>
                 </div>
-            </div>
             <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
         </div>
     </div>
