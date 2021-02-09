@@ -72,9 +72,11 @@ class UsersController  extends Controller
             return $this->render('users/edit.tpl', ['h1' => 'Редактировать: ', 'model' => $model]);
     }
 
-    public function actionDelete($id)
+    public function actionDelete()
     {
-        User::where('id', $_POST['id'])->delete();
+        $request = new UsersSearchRequest();
+
+        User::where('id', $request->id)->delete();
     }
 
     public function setOptions($data)
