@@ -141,8 +141,7 @@
 </script>
 
 
-<span id="advantage"></span>
-
+<span id="advantages"></span>
 <div class="advantages">
     <div class="container">
         <div class="advantages__title _anim-items">
