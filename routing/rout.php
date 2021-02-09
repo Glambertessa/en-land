@@ -8,7 +8,7 @@ App::$collector->group(['after' => 'main_group', 'params' => ['AFTER']], functio
             ['before' => 'some', 'params' => ['param to some, BEFORE']]);
     });
 });
-App::$collector->any('sign-up', ['workspace\controllers\MainController', 'actionSignUp']);
+//App::$collector->any('sign-up', ['workspace\controllers\MainController', 'actionSignUp']);
 App::$collector->any('sign-in', ['workspace\controllers\MainController', 'actionSignIn']);
 App::$collector->any('logout', ['workspace\controllers\MainController', 'actionLogout']);
 

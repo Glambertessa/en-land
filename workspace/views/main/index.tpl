@@ -1,5 +1,3 @@
-
-
 <div class="header">
     <div class="container">
         <div class="nav">
@@ -62,28 +60,18 @@
 
     <div class="header__intro _anim-items">
         <div class="button">
-
-            <!-- CRM -->
-            <script data-b24-form="click/8/8ovhjg" data-skip-moving="true">
-                (function (w, d, u) {
-                    var s = d.createElement('script');
-                    s.async = true;
-                    s.src = u + '?' + (Date.now() / 180000 | 0);
-                    var h = d.getElementsByTagName('script')[0];
-                    h.parentNode.insertBefore(s, h);
-                })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_8.js');
-            </script>
-            <!-- End of CRM -->
-
-            <form{* action="https://drive.google.com/file/d/1T_J1fNidUejXey3mQIzj1x4XnFMlyINW/view" *}target="_blank">
-                <button class="button__inner _anim-items"
-                {*"
-                onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')"*}>Получить
-                IT-словарь
+            <button class="button__inner _anim-items" onclick="OpenDictionaryInNewTab()">
+                Получить IT-словарь
                 <div class="button__gradient"></div>
-                </button>
-            </form>
+            </button>
+            <script>
+                function OpenDictionaryInNewTab() {
+                    window.open(
+                        "https://drive.google.com/file/d/1T_J1fNidUejXey3mQIzj1x4XnFMlyINW/view", "_blank");
+                }
+            </script>
         </div>
+        </a>
         <div class="header__intro-text _anim-items">
             <p>
                 С нами вы научитесь свободно общаться с иностранными партнерами, перестанете краснеть
@@ -122,7 +110,6 @@
 
 
         $('#video-block').slideToggle(200, function () {
-
 
 
             if (false === is_open) {
@@ -200,11 +187,21 @@
             </div>
         </div>
         <div class="button">
-            <button class="button__inner _anim-items"
-            "
-            onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">Хочу
-            записаться
-            <div class="button__gradient"></div>
+
+            <!-- CRM -->
+            <script data-b24-form="click/18/4f0b6v" data-skip-moving="true">
+                (function (w, d, u) {
+                    var s = d.createElement('script');
+                    s.async = true;
+                    s.src = u + '?' + (Date.now() / 180000 | 0);
+                    var h = d.getElementsByTagName('script')[0];
+                    h.parentNode.insertBefore(s, h);
+                })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_18.js');
+            </script>
+            <!-- End of CRM -->
+
+            <button class="button__inner _anim-items">Хочу записаться
+                <div class="button__gradient"></div>
             </button>
         </div>
     </div>
@@ -306,130 +303,163 @@
         </div>
         {$chunked_courses = array_chunk($courses, 3)}
         {foreach from=$chunked_courses item=$three_courses}
-        <div class="format__main">
+            <div class="format__main">
 
-            {foreach from=$three_courses item=$course}
-                <div class="format-pack">
-                    <div class="format-pack__card _anim-items">
-                        <div class="format-pack__title">
-                            <h3>{$course['title']}</h3>
-                        </div>
-                        <ul class="format-pack__description _anim-items">
-                            {$options = explode("\n", $course['options'])}
-                            {foreach from=$options item=$option}
-                                <li class="list-item">
-                                    {$option}
-                                </li>
-                            {/foreach}
-                        </ul>
-                        <div class="format-price">
-                            <div class="format-price__title">
-                                <h3>Стоимость</h3>
+                {foreach from=$three_courses item=$course}
+                    <div class="format-pack">
+                        <div class="format-pack__card _anim-items">
+                            <div class="format-pack__title">
+                                <h3>{$course['title']}</h3>
                             </div>
-                            <div class="format-price__main">
-                                <div class="format-price__info">
-                                    <p class="format-price__price">{$course['price']} &#8381;</p>
-                                    <p class="format-price__places">/ {$course['place_left']}</p>
+                            <ul class="format-pack__description _anim-items">
+                                {$options = explode("\n", $course['options'])}
+                                {foreach from=$options item=$option}
+                                    <li class="list-item">
+                                        {$option}
+                                    </li>
+                                {/foreach}
+                            </ul>
+                            <div class="format-price">
+                                <div class="format-price__title">
+                                    <h3>Стоимость</h3>
                                 </div>
-                                <p class="format-price__howToPay">Оплата частями по рассрочке</p>
+                                <div class="format-price__main">
+                                    <div class="format-price__info">
+                                        <p class="format-price__price">{$course['price']} &#8381;</p>
+                                        <p class="format-price__places">/ {$course['place_left']}</p>
+                                    </div>
+                                    <p class="format-price__howToPay">Оплата частями по рассрочке</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="button">
-                            <button class="button__inner _anim-items"
-                                    onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
-                                Хочу записаться
-                                <div class="button__gradient"></div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            {/foreach}
+                            <div class="button">
 
-        </div>
-        {/foreach}
-        </div>
-    </div>
+                                <!-- CRM -->
+                                <script data-b24-form="click/18/4f0b6v" data-skip-moving="true">
+                                    (function (w, d, u) {
+                                        var s = d.createElement('script');
+                                        s.async = true;
+                                        s.src = u + '?' + (Date.now() / 180000 | 0);
+                                        var h = d.getElementsByTagName('script')[0];
+                                        h.parentNode.insertBefore(s, h);
+                                    })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_18.js');
+                                </script>
+                                <!-- End of CRM -->
 
-    <span id="about"></span>
-    <div class="about">
-        <div class="container">
-            <div class="inner">
-                <h2 class="title _anim-items">Как это работает:</h2>
-                <div class="content_inner _anim-items">
-                    <div class="col__left">
-                        <div class="item">
-                            {*                        <div class="item__header__inner"></div>*}
-                            <div class="item__content">
-                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                                <p class="item__title">Проводим диагностику вашего уровня английского</p>
-                                <img class="content__image" src="/resources/landing/images/textbook.png"/>
-                            </div>
-                        </div>
-                        <div class="item">
-                            {*                        <div class="item__header__inner"></div>*}
-                            <div class="item__content">
-                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                                <p class="item__title">Ставим цели и подбираем программу обучения</p>
-                                <img class="content__image" src="/resources/landing/images/backlog.png"/>
+                                <button class="button__inner _anim-items">
+                                    Хочу записаться
+                                    <div class="button__gradient"></div>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col__right">
-                        <div class="item">
-                            {*                        <div class="item__header__inner"></div>*}
-                            <div class="item__content">
-                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                                <p class="item__title">Формируем бэклог курса</p>
-                                <img class="content__image" src="/resources/landing/images/textbook.png"/>
-                            </div>
-                        </div>
-                        <div class="item">
-                            {*                        <div class="item__header__inner"></div>*}
-                            <div class="item__content">
-                                <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                                <p class="item__title">Проводим интересные и полезные уроки</p>
-                                <img class="content__image" src="/resources/landing/images/baloons.png"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
-                <div class="item">
-                    {*                <div class="item__header__inner additional"></div>*}
-                    <div class="item__content">
-                        <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
-                        <p class="item__title">Ретроспектива и Final Test</p>
-                        <img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
-                    </div>
-                </div>
-                <div class="btn">
-                    <div class="button">
-                        <button class="button__inner _anim-items"
-                                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
-                            Хочу записаться
-                            <div class="button__gradient"></div>
-                        </button>
-                    </div>
-                </div>
-                <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
-                <h3 class="subtitle__form">Ввберите удобный способ связи</h3>
-                <div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png"
-                                                alt="telegram"/>
-                    <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>
-                    <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
-                <div class="social__submit"></div>
-                <div class="social__btn">
-                    <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>
-                    <div class="button">
-                        <button class="button__inner _anim-items" onClick="callMe()">Перезвоните мне
-                            <div class="button__gradient"></div>
-                        </button>
-                    </div>
-                </div>
-                <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
+                {/foreach}
+
             </div>
+        {/foreach}
+    </div>
+</div>
+
+<span id="about"></span>
+<div class="about">
+    <div class="container">
+        <div class="inner">
+            <h2 class="title _anim-items">Как это работает:</h2>
+            <div class="content_inner _anim-items">
+                <div class="col__left">
+                    <div class="item">
+                        {*                        <div class="item__header__inner"></div>*}
+                        <div class="item__content">
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Проводим диагностику вашего уровня английского</p>
+                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
+                        </div>
+                    </div>
+                    <div class="item">
+                        {*                        <div class="item__header__inner"></div>*}
+                        <div class="item__content">
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Ставим цели и подбираем программу обучения</p>
+                            <img class="content__image" src="/resources/landing/images/backlog.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col__right">
+                    <div class="item">
+                        {*                        <div class="item__header__inner"></div>*}
+                        <div class="item__content">
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Формируем бэклог курса</p>
+                            <img class="content__image" src="/resources/landing/images/textbook.png"/>
+                        </div>
+                    </div>
+                    <div class="item">
+                        {*                        <div class="item__header__inner"></div>*}
+                        <div class="item__content">
+                            <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                            <p class="item__title">Проводим интересные и полезные уроки</p>
+                            <img class="content__image" src="/resources/landing/images/baloons.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="strelkaVniz" src="/resources/landing/images/StrelkaVniz.png"/>
+            <div class="item">
+                {*                <div class="item__header__inner additional"></div>*}
+                <div class="item__content">
+                    <img class="item__icon" src="/resources/landing/images/icon_plus.png"/>
+                    <p class="item__title">Ретроспектива и Final Test</p>
+                    <img class="content__image" src="/resources/landing/images/retrospectiva.png"/>
+                </div>
+            </div>
+            <div class="btn">
+                <div class="button">
+                    <!-- CRM -->
+                    <script data-b24-form="click/18/4f0b6v" data-skip-moving="true">
+                        (function (w, d, u) {
+                            var s = d.createElement('script');
+                            s.async = true;
+                            s.src = u + '?' + (Date.now() / 180000 | 0);
+                            var h = d.getElementsByTagName('script')[0];
+                            h.parentNode.insertBefore(s, h);
+                        })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_18.js');
+                    </script>
+                    <!-- End of CRM -->
+                    <button class="button__inner _anim-items">
+                        Хочу записаться
+                        <div class="button__gradient"></div>
+                    </button>
+                </div>
+            </div>
+            <h2 class="title title__form _anim-items">У Вас еще остались вопросы?</h2>
+            <h3 class="subtitle__form">Оставьте заявку и мы с вами сяжемся!</h3>
+            {*<div class="social__block"><img class="icon" src="/resources/landing/images/telegram-brands.png"
+                                            alt="telegram"/>
+                <img class="icon" src="/resources/landing/images/whatsapp-brands.png" alt="whatsapp"/>а
+                <img class="icon" src="/resources/landing/images/viber-brands.png" alt="viber"/></div>
+            <div class="social__submit"></div>*}
+            {*                    <input class="form__input" id="phone" placeholder="+7 (    ) ___-__ - __" type="tel" name="phone"/>*}
+            <div class="btn">
+                <div class="button">
+                    <button class="button__inner _anim-items">
+                        <!-- CRM -->
+                        <script data-b24-form="click/20/tp9plp" data-skip-moving="true">
+                            (function (w, d, u) {
+                                var s = d.createElement('script');
+                                s.async = true;
+                                s.src = u + '?' + (Date.now() / 180000 | 0);
+                                var h = d.getElementsByTagName('script')[0];
+                                h.parentNode.insertBefore(s, h);
+                            })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_20.js');
+                        </script>
+                        <!-- End of CRM -->Перезвоните мне
+                        <div class="button__gradient"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="submit__error">Пожалуйста, выберите способ связи и введите номер телефона.</div>
         </div>
     </div>
+</div>
 
     <div class="modalDialog" style="display:none">
         <div class="modalDialog__inner">
@@ -470,21 +500,21 @@
         <div class="back_drop"></div>
     </div>
 
-    <span id="contact"></span>
-    <div class="footer">
-        <div class="container footer__container">
-            <div class="nav">
-                <div class="nav__social">
-                    {foreach from=$social item=item}
-                        <div class="nav__social-item">
-                            <a href="{$item->value}" target="_blank">
-                                <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
-                                     alt="{$item->key}">
-                                <span class="nav__social-title">Написать в {$item->key}</span>
-                            </a>
-                        </div>
-                    {/foreach}
-                </div>
+<span id="contact"></span>
+<div class="footer">
+    <div class="container footer__container">
+        <div class="nav">
+            <div class="nav__social">
+                {foreach from=$social item=item}
+                    <div class="nav__social-item">
+                        <a href="{$item->value}" target="_blank">
+                            <img class="nav__social-logo" src="/resources/landing/images/{$item->key}.png"
+                                 alt="{$item->key}">
+                            <span class="nav__social-title">Написать в {$item->key}</span>
+                        </a>
+                    </div>
+                {/foreach}
             </div>
         </div>
     </div>
+</div>

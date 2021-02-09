@@ -19,7 +19,6 @@
         </div>
         <div class="form-group">
             <input type="submit" id="submit_button" class="btn btn-dark" value="Войти">
-            <a href="/sign-up" class="btn btn-dark">Зарегестрироваться</a>
         </div>
     </form>
 </div>
