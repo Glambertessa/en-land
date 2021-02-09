@@ -1,14 +1,4 @@
-<!-- CRM -->
-<script data-b24-form="click/8/8ovhjg" data-skip-moving="true">
-    (function (w, d, u) {
-        var s = d.createElement('script');
-        s.async = true;
-        s.src = u + '?' + (Date.now() / 180000 | 0);
-        var h = d.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s, h);
-    })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_8.js');
-</script>
-<!-- End of CRM -->
+
 
 <div class="header">
     <div class="container">
@@ -72,10 +62,23 @@
 
     <div class="header__intro _anim-items">
         <div class="button">
-            <form action="https://drive.google.com/file/d/1T_J1fNidUejXey3mQIzj1x4XnFMlyINW/view" target="_blank">
+
+            <!-- CRM -->
+            <script data-b24-form="click/8/8ovhjg" data-skip-moving="true">
+                (function (w, d, u) {
+                    var s = d.createElement('script');
+                    s.async = true;
+                    s.src = u + '?' + (Date.now() / 180000 | 0);
+                    var h = d.getElementsByTagName('script')[0];
+                    h.parentNode.insertBefore(s, h);
+                })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_8.js');
+            </script>
+            <!-- End of CRM -->
+
+            <form{* action="https://drive.google.com/file/d/1T_J1fNidUejXey3mQIzj1x4XnFMlyINW/view" *}target="_blank">
                 <button class="button__inner _anim-items"
-                "
-                onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')">Получить
+                {*"
+                onClick="openDialog('IT-словарь', 'Заполните пожалуйста форму', 'Получить', 'vocabulary')"*}>Получить
                 IT-словарь
                 <div class="button__gradient"></div>
                 </button>
@@ -120,6 +123,8 @@
 
         $('#video-block').slideToggle(200, function () {
 
+
+
             if (false === is_open) {
                 $('#loading-gif').css('display', 'none');
 
@@ -136,6 +141,8 @@
                 }, 200);
 
                 $('#loading-gif').css('display', 'block');
+
+                document.getElementById('video1').pause();
 
                 document.getElementById('video1').setAttribute('hidden', null);
 
