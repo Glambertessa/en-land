@@ -31,19 +31,12 @@ class MainController extends Controller
         foreach ($og_tags as $og_tag)
             $this->view->addMeta($og_tag->key, $og_tag->value, [], ['attribute_name' => 'property']);
 
-        $standard_price = Settings::where('key', 'standard_price')->first();
-        $advanced_price = Settings::where('key', 'advanced_price')->first();
-        $individual_price = Settings::where('key', 'individual_price')->first();
-        $standard_left = Settings::where('key', 'standard_left')->first();
-        $advanced_left = Settings::where('key', 'advanced_left')->first();
         $social = Settings::where('label', 'social')->get();
         $h1 = Settings::where('key', 'h1')->first();
 
         $corses = Course::all()->toArray();
 
-        return $this->render('main/index.tpl', ['standard_price' => $standard_price->value,
-            'advanced_price' => $advanced_price->value, 'individual_price' => $individual_price->value,
-            'standard_left' => $standard_left->value, 'advanced_left' => $advanced_left->value, 'social' => $social,
+        return $this->render('main/index.tpl', ['social' => $social,
             'h1' => $h1->value, 'courses' => $corses]);
     }
 
@@ -51,7 +44,7 @@ class MainController extends Controller
     {
         $this->setLayout('front.tpl');
         $this->view->setTitle(Settings::where('key', 'test_title')->first()->value);
-        $this->view->addMeta('description', Settings::where('key', 'test_description')->first()->value);
+//        $this->view->addMeta('description', Settings::where('key', 'test_description')->first()->value);
 
         $og_tags = Settings::where('label', 'og_meta_tag')->get();
         foreach ($og_tags as $og_tag)

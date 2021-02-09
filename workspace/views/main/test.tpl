@@ -70,8 +70,21 @@
     <div id="result_title" class="result__title"></div>
     <div id="result_description" class="result__description"></div>
     <div id="result_button" class="button hidden">
-        <button class="button__inner _anim-items"
-                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')">
+        <!-- CRM -->
+        <script data-b24-form="click/18/4f0b6v" data-skip-moving="true">
+
+            (function (w, d, u) {
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = u + '?' + (Date.now() / 180000 | 0);
+                var h = d.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(s, h);
+            })(window, document, 'https://cdn.bitrix24.ua/b16130923/crm/form/loader_18.js');
+        </script>
+        <!-- End of CRM -->
+
+        <button class="button__inner _anim-items"{*
+                onClick="openDialog('Записаться', 'ВЫБЕРИТЕ УДОБНЫЙ СПОСОБ СВЯЗИ', 'Перезвоните мне', 'order')"*}>
             Хочу записаться
             <div class="button__gradient"></div>
         </button>
