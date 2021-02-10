@@ -16,6 +16,11 @@ class Settings
                 'icon' => '<i class="nav-icon fa fa-address-book"></i>',
             ],
             [
+                'title' => 'Ключевые слова',
+                'url' => '/admin/keywords',
+                'icon' => '<i class="nav-icon fa fa-address-book"></i>', //TODO
+            ],
+            [
                 'title' => 'Настройки',
                 'url' => '/admin/settings',
                 'icon' => '<i class="nav-icon fa fa-cog"></i>',

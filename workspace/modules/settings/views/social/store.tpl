@@ -8,7 +8,7 @@
             <input type="text" name="key" id="key" class="form-control" required="required" />
         </div>
         <div class="form-group">
-            <label for="value">Value:</label>
+            <label for="value">Link:</label>
             <textarea rows="7" name="value" id="value" class="form-control" required="required"></textarea>
         </div>
 

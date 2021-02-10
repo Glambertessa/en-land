@@ -32,4 +32,37 @@ class Settings extends Model
 
         return $query->get();
     }
+
+    /**
+     * Making slug
+     *
+     * @param $string
+     * @return false|string
+     */
+    public static function makeSlug($string)
+    {
+        return $slug = \Transliterator::createFromRules(
+            ':: Any-Latin;'
+            . ':: NFD;'
+            . ':: [:Nonspacing Mark:] Remove;'
+            . ':: NFC;'
+            . ':: [:Punctuation:] Remove;'
+            . ':: Lower();'
+            . '[:Separator:] > \'-\''
+        )
+            ->transliterate($string);
+    }
+
+
+    public static function getKeywords(): string
+    {
+        $keywords = Settings::where('label', 'keyword')->get();
+        $keywords_to_string = '';
+
+        foreach ($keywords as $keyword) {
+            $keywords_to_string .= $keyword->value . ',';
+        }
+
+        return $keywords_to_string;
+    }
 }

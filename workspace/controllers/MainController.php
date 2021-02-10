@@ -6,6 +6,7 @@ use core\App;
 use core\component_manager\lib\Mod;
 use core\Controller;
 use core\Debug;
+use core\View;
 use workspace\modules\answer\models\AnswerResult;
 use workspace\modules\course\models\Course;
 use workspace\modules\customer\models\Customer;
@@ -30,6 +31,8 @@ class MainController extends Controller
         $og_tags = Settings::where('label', 'og_meta_tag')->get();
         foreach ($og_tags as $og_tag)
             $this->view->addMeta($og_tag->key, $og_tag->value, [], ['attribute_name' => 'property']);
+
+        $this->view->addMeta('keywords', Settings::getKeywords());
 
         $social = Settings::where('label', 'social')->get();
         $h1 = Settings::where('key', 'h1')->first();
