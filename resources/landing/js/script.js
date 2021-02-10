@@ -157,6 +157,7 @@ function setData(phoneNumber, name, socialLink, email) {
         email: emailInp.value
     };
 }
+/*
 
 let element = document.getElementById('phone');
 let maskOptions = {
@@ -166,6 +167,7 @@ let maskOptions = {
 let mask = IMask(element, maskOptions);
 let element1 = document.getElementById('phoneModal');
 let mask1 = IMask(element1, maskOptions);
+*/
 
 function closeDialog(element) {
     let body = document.querySelector('body');
