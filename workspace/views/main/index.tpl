@@ -327,7 +327,6 @@
                                         <p class="format-price__price">{$course['price']} &#8381;</p>
                                         <p class="format-price__places">/ {$course['place_left']}</p>
                                     </div>
-                                    <p class="format-price__howToPay">Оплата частями по рассрочке</p>
                                 </div>
                             </div>
                             <div class="button">
