@@ -26,7 +26,7 @@ class MainController extends Controller
     {
         $this->setLayout('front.tpl');
         $this->view->setTitle(Settings::where('key', 'title')->first()->value);
-        $this->view->addMeta('description', Settings::where('key', 'description')->first()->value);
+//        $this->view->addMeta('description', Settings::where('key', 'og:description')->first()->value);
 
         $og_tags = Settings::where('label', 'og_meta_tag')->get();
         foreach ($og_tags as $og_tag)

@@ -20,6 +20,9 @@ class Settings extends Model
     public static function search(SettingsSearchRequest $request)
     {
         $query = self::query();
+        
+        if ($request->label !== 'keyword')
+            $query->where('label', '!=', 'keyword');
 
         if ($request->key)
             $query->where('key', 'LIKE', "%$request->key%");
@@ -29,6 +32,8 @@ class Settings extends Model
 
         if ($request->label)
             $query->where('label', 'LIKE', "%$request->label%");
+
+
 
         return $query->get();
     }
