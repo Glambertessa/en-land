@@ -10,7 +10,7 @@
 
         <div class="form-group mt-3">
             <label for="text">Описание:</label>
-            {workspace\modules\ckeditor\widgets\CkEditorWidget::widget(['name' => 'description', 'id' => 'text_editor_description'])->run()}
+            {workspace\modules\ckeditor\widgets\CkEditorWidget::widget(['name' => 'description', 'id' => 'text_editor_caption'])->run()}
             <small id="descriptionMessage"
                    class="form-text">{if isset($errors['description'])}{$errors['description']}{/if}</small>
         </div>

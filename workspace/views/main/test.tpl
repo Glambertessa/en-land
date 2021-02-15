@@ -68,7 +68,7 @@
 <div id="result_container_test" class="result_container_test" style="display: none">
     <div id="result_score" class="result__score"></div>
     <div id="result_title" class="result__title"></div>
-    <div id="result_description" class="result__description"></div>
+    <div id="result_caption" class="result__caption"></div>
     <div id="result_button" class="button hidden">
         <!-- CRM -->
         <script data-b24-form="click/18/4f0b6v" data-skip-moving="true">

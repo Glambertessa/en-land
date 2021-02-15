@@ -2,7 +2,7 @@ $(document).ready(function () {
     let form = document.querySelector("form");
     let result_score = document.querySelector("#result_score");
     let result_title = document.querySelector("#result_title");
-    let result_description = document.querySelector("#result_description");
+    let result_description = document.querySelector("#result_caption");
     let result_button = document.querySelector("#result_button");
     let result_container = document.querySelector("#result_container_test");
 

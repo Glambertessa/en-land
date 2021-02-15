@@ -157,7 +157,7 @@
                     <div class="advantage__title">
                         <h4>Материалы</h4>
                     </div>
-                    <div class="advantage__description">
+                    <div class="advantage__caption">
                         <p>Cовременные материалы, а не устаревшие учебники;</p>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                     <div class="advantage__title">
                         <h4>Урок</h4>
                     </div>
-                    <div class="advantage__description">
+                    <div class="advantage__caption">
                         <p>90% на уроке – разговорная практика, 10% - теория;</p>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                     <div class="advantage__title">
                         <h4>Методика</h4>
                     </div>
-                    <div class="advantage__description">
+                    <div class="advantage__caption">
                         <p>eduSCRUM: обучение проходит спринтами, собственная система трекинга прогресса</p>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                             <h3>General English</h3>
                         </div>
                     </div>
-                    <div class="course__description">
+                    <div class="course__caption">
                         <p>General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с
                             грамматикой раз и навсегда, увеличите свой словарный запас, а также избавитесь от
                             психологического барьера. Этот курс подойдет вам, если вы совсем новичок в английском или
@@ -259,7 +259,7 @@
                             <h3>Communication in IT</h3>
                         </div>
                     </div>
-                    <div class="course__description">
+                    <div class="course__caption">
                         <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с
                             командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на
                             английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне
@@ -310,7 +310,7 @@
                             <div class="format-pack__title">
                                 <h3>{$course['title']}</h3>
                             </div>
-                            <ul class="format-pack__description _anim-items">
+                            <ul class="format-pack__caption _anim-items">
                                 {$options = explode("\n", $course['options'])}
                                 {foreach from=$options item=$option}
                                     <li class="list-item">

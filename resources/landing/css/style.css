@@ -627,14 +627,14 @@ body {
     border-bottom: 1px solid #525151;
 }
 
-.advantage__description {
+.advantage__caption {
     margin-top: .5rem;
     color: #5b5b5b;
     font-size: 15px;
     font-family: 'GT Eesti Pro Display Regular', 'monospace';
 }
 
-.advantage__description {
+.advantage__caption {
     line-height: 19px;
 }
 
@@ -1356,7 +1356,7 @@ body {
     font-family: 'GT Eesti Pro Display Regular', 'monospace';
 }
 
-.format-pack__description {
+.format-pack__caption {
     margin: 0 auto;
 }
 
@@ -1420,7 +1420,7 @@ body {
     top: 0;
 }
 
-.format-pack__description {
+.format-pack__caption {
     -webkit-transform: scale(0.5);
     -ms-transform: scale(0.5);
     transform: scale(0.5);
@@ -1429,7 +1429,7 @@ body {
     transition: all .4s ease;
 }
 
-.format-pack__description._active {
+.format-pack__caption._active {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
@@ -2424,7 +2424,7 @@ body {
     right: 5rem;
 }
 
-.offer__description {
+.offer__caption {
     margin-top: 3.5rem;
     color: #282828;
     font-size: 17px;
@@ -2432,7 +2432,7 @@ body {
     font-weight: 700;
 }
 
-.offer__description {
+.offer__caption {
     line-height: 26px;
 }
 
@@ -2543,7 +2543,7 @@ body {
         margin-top: 0;
     }
 
-    .offer__description {
+    .offer__caption {
         margin-top: 2rem;
     }
 }
@@ -2593,7 +2593,7 @@ body {
     margin-left: 2rem;
 }
 
-.course__description p {
+.course__caption p {
     margin-top: 2rem;
     margin-left: 10px;
     color: #282828;
@@ -2631,7 +2631,7 @@ body {
         padding: 0;
     }
 
-    .course__description {
+    .course__caption {
         margin: 1rem 0;
     }
 }
@@ -2656,7 +2656,7 @@ body {
     flex-wrap: wrap;
 }
 
-.vacancy__description {
+.vacancy__caption {
     margin-top: .6rem;
 }
 
@@ -2736,7 +2736,7 @@ body {
     text-align: center;
 }
 
-.result__description {
+.result__caption {
     color: #282828;
     font-size: 15px;
     font-family: 'Lato', 'monospace';
