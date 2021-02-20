@@ -15,10 +15,14 @@ class CourseController extends Controller
 
     protected function init()
     {
-        $this->viewPath = '/modules/course/views/';
-        $this->layoutPath = App::$config['adminLayoutPath'];
-        App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
-        App::$breadcrumbs->addItem(['text' => 'Courses', 'url' => 'admin/course']);
+        if (isset($_SESSION['username'])) {
+            $this->viewPath = '/modules/course/views/';
+            $this->layoutPath = App::$config['adminLayoutPath'];
+            App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
+            App::$breadcrumbs->addItem(['text' => 'Courses', 'url' => 'admin/course']);
+        } else {
+            $this->redirect('sign-in');
+        }
     }
 
     public function actionIndex()
@@ -47,7 +51,7 @@ class CourseController extends Controller
 
     public function actionStore()
     {
-        if(isset($_POST['title']) && isset($_POST['price']) && isset($_POST['options'])) {
+        if (isset($_POST['title']) && isset($_POST['price']) && isset($_POST['options'])) {
             $model = new Course();
             $model->title = $_POST['title'];
             $model->price = $_POST['price'];
@@ -64,7 +68,7 @@ class CourseController extends Controller
     {
         $model = Course::where('id', $id)->first();
 
-        if(isset($_POST['title']) && isset($_POST['price']) && isset($_POST['options'])) {
+        if (isset($_POST['title']) && isset($_POST['price']) && isset($_POST['options'])) {
             $model->title = $_POST['title'];
             $model->price = $_POST['price'];
             $model->options = $_POST['options'];

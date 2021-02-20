@@ -15,10 +15,14 @@ class SettingsController extends Controller
 
     protected function init()
     {
-        $this->viewPath = '/modules/settings/views/';
-        $this->layoutPath = App::$config['adminLayoutPath'];
-        App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
-        App::$breadcrumbs->addItem(['text' => 'Settings', 'url' => 'admin/settings']);
+        if (isset($_SESSION['username'])) {
+            $this->viewPath = '/modules/settings/views/';
+            $this->layoutPath = App::$config['adminLayoutPath'];
+            App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
+            App::$breadcrumbs->addItem(['text' => 'Settings', 'url' => 'admin/settings']);
+        } else {
+            $this->redirect('sign-in');
+        }
     }
 
     public function actionIndex()
@@ -46,7 +50,7 @@ class SettingsController extends Controller
 
     public function actionStore()
     {
-        if(isset($_POST['key']) && isset($_POST['value'])) {
+        if (isset($_POST['key']) && isset($_POST['value'])) {
             $model = new Settings();
             $model->key = $_POST['key'];
             $model->value = $_POST['value'];
@@ -62,7 +66,7 @@ class SettingsController extends Controller
     {
         $model = Settings::where('id', $id)->first();
 
-        if(isset($_POST['key']) && isset($_POST['value'])) {
+        if (isset($_POST['key']) && isset($_POST['value'])) {
             $model->key = $_POST['key'];
             $model->value = $_POST['value'];
             $model->label = $_POST['label'];

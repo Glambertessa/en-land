@@ -12,10 +12,14 @@ class KeywordController extends SettingsController
 {
     protected function init()
     {
-        $this->viewPath = '/modules/settings/views/';
-        $this->layoutPath = App::$config['adminLayoutPath'];
-        App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
-        App::$breadcrumbs->addItem(['text' => 'Keywords', 'url' => 'admin/keywords']);
+        if (isset($_SESSION['username'])) {
+            $this->viewPath = '/modules/settings/views/';
+            $this->layoutPath = App::$config['adminLayoutPath'];
+            App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
+            App::$breadcrumbs->addItem(['text' => 'Keywords', 'url' => 'admin/keywords']);
+        } else {
+            $this->redirect('sign-in');
+        }
     }
 
     public function actionIndex()

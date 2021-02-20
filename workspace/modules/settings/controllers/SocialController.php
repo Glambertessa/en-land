@@ -13,10 +13,14 @@ class SocialController extends SettingsController
 {
     protected function init()
     {
-        $this->viewPath = '/modules/settings/views/';
-        $this->layoutPath = App::$config['adminLayoutPath'];
-        App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
-        App::$breadcrumbs->addItem(['text' => 'Social', 'url' => 'admin/social']);
+        if (isset($_SESSION['username'])) {
+            $this->viewPath = '/modules/settings/views/';
+            $this->layoutPath = App::$config['adminLayoutPath'];
+            App::$breadcrumbs->addItem(['text' => 'AdminPanel', 'url' => 'adminlte']);
+            App::$breadcrumbs->addItem(['text' => 'Social', 'url' => 'admin/social']);
+        } else {
+            $this->redirect('sign-in');
+        }
     }
 
     public function actionIndex()
@@ -30,7 +34,7 @@ class SocialController extends SettingsController
 
     public function actionStore()
     {
-        if(isset($_POST['key']) && isset($_POST['value'])) {
+        if (isset($_POST['key']) && isset($_POST['value'])) {
             $model = new Settings();
             $model->key = $_POST['key'];
             $model->value = $_POST['value'];

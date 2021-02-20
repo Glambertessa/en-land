@@ -8,6 +8,7 @@
     {$css}
     {$smarty.capture.js_head}
     {$jsHead}
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
