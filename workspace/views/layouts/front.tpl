@@ -1,6 +1,7 @@
 <html>
 {include file="{$workspace_dir}/assets/front_resources.tpl"}
 <head>
+    <link rel="shortcut icon" href="/resources/landing/images/ico/favicon.ico" type="image/x-icon">
     {$smarty.capture.meta}
     <title>{$title}</title>
     {$meta}
@@ -8,7 +9,7 @@
     {$css}
     {$smarty.capture.js_head}
     {$jsHead}
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+{*    <link rel="icon" href="/favicon.ico" type="image/x-icon">*}
 </head>
 <body>
 
