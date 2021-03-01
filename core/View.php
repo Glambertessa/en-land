@@ -59,10 +59,10 @@ class View
         foreach ($this->meta as $item) {
             $params = $this->generateAdditionalParams($item['params']);
             if(isset($item['property']))
-                $metaHtml .= "<meta property='" . $item['property'];
+                $metaHtml .= "<meta property=\"" . $item['property'];
             else
-                $metaHtml .= "<meta name='" . $item['name'];
-            $metaHtml .= "' content='" . $item['content'] . "' " . $params . " >" . "\n";
+                $metaHtml .= "<meta name=\"" . $item['name'];
+            $metaHtml .= "\" content=\"" . $item['content'] . "\" " . $params . " >" . "\n";
         }
         return $metaHtml;
     }
