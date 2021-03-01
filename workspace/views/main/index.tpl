@@ -45,10 +45,12 @@
         <div class="header__main-text">
             <h1 class="header__title _anim-items">{$h1}</h1>
             <h2 class="header__about _anim-items">
+                <noindex>
                 Мы не просто обучаем английскому, мы тренеруем
                 софт скиллы и развиваем навыки 21 века – критическое
                 мышление, креативность, коммуникативность,
                 командная работа.
+                </noindex>
             </h2>
             <div class="header__vacancies">
                 <div class="vacancy"><img src="/resources/landing/images/imageVacancy.png"/>
@@ -74,8 +76,10 @@
         </a>
         <div class="header__intro-text _anim-items">
             <p>
+                <noindex>
                 С нами вы научитесь свободно общаться с иностранными партнерами, перестанете краснеть
                 на переговорах и митингах и будете писать грамотные имейлы.
+                    </noindex>
             </p>
         </div>
     </div>
@@ -224,10 +228,13 @@
                         </div>
                     </div>
                     <div class="course__caption">
-                        <p>General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с
+                        <p><noindex>
+                            General English. По итогу курса вы будете свободно говорить на общие темы, разберетесь с
                             грамматикой раз и навсегда, увеличите свой словарный запас, а также избавитесь от
                             психологического барьера. Этот курс подойдет вам, если вы совсем новичок в английском или
-                            чувствуете себя не совсем уверенно.</p>
+                            чувствуете себя не совсем уверенно.
+                            </noindex>
+                        </p>
                     </div>
                 </div>
                 <div class="offer__level">
@@ -260,10 +267,13 @@
                         </div>
                     </div>
                     <div class="course__caption">
-                        <p>Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с
+                        <p><noindex>
+                            Communication in IT. По итогу курса вы научитесь обсуждать проекты с заказчиками, общаться с
                             командой на митингах, вести деловую переписку и переговоры, а также проводить презентации на
                             английском. Этот курс подойдет вам, если вы уже владеете английским как минимум на уровне
-                            А2.</p>
+                            А2
+                            </noindex>
+                        </p>
                     </div>
                 </div>
                 {*                <div class="offer__visual">*}
@@ -314,7 +324,7 @@
                                 {$options = explode("\n", $course['options'])}
                                 {foreach from=$options item=$option}
                                     <li class="list-item">
-                                        {$option}
+                                        <noindex>{$option}</noindex>
                                     </li>
                                 {/foreach}
                             </ul>
