@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /admin/*
 Disallow: /sign-*/
 Allow: /*
+Sitemap: https://english.craft-group.xyz/sitemap.xml
